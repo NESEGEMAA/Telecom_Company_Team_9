@@ -18,6 +18,21 @@ namespace Telecom_Company_Team_9
         {
 
         }
+        
+
+        //Method to check if input is a number only 
+        public bool AreDigitsOnly(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return false;
+            foreach (char character in text)
+            {
+                if (character < '0' || character > '9')
+                    return false;
+            }
+            return true;
+        }
+        //Part 1
         protected void ViewBenefits(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -36,14 +51,15 @@ namespace Telecom_Company_Team_9
             {
                 GridBenefitView.DataSource = dt;
                 GridBenefitView.DataBind();
-                BenefitErrorMessage.Visible = false;
+                
             }
             else
             {
                 BenefitErrorMessage.Text = "No benefits available to display.";
-                BenefitErrorMessage.Visible = true;
+                
 
             }
+            conn.Close();
 
         }
 
@@ -51,6 +67,8 @@ namespace Telecom_Company_Team_9
         {
 
         }
+
+        //Part 2
         protected void ViewTickets(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -64,32 +82,52 @@ namespace Telecom_Company_Team_9
             count_func.Parameters.Add(new SqlParameter("@NID", nationalID));
 
             conn.Open();
-            SqlDataReader reader = count_func.ExecuteReader();
-
-            if (reader.Read())
+            if (!AreDigitsOnly(nationalID))
             {
-                int ticketCount = Convert.ToInt32(reader["Count"]);
-                if (ticketCount > 0)
+                lblTicketCount.Text = "Please insert a valid National ID";
+                return;
+            }
+
+            if (!int.TryParse(nationalID, out _))
+            {
+                lblTicketCount.Text = "Error: National ID must be a valid integer and within the range of 0 to 2,147,483,647.";
+                return;
+            }
+            SqlDataReader reader = count_func.ExecuteReader();
+           
+            
+                if(reader.Read())
                 {
-                    lblTicketCount.Text = "Number of Unresolved Tickets:  " + reader["Count"];
+                    int ticketCount = Convert.ToInt32(reader["Count"]);
+                    if (ticketCount > 0)
+                    {
+                        lblTicketCount.Text = "Number of Unresolved Tickets:  " + reader["Count"];
+                    }
+
+                    else
+                    {
+
+                        lblTicketCount.Text = "No data found for the given National ID.";
+                    }
+
                 }
 
-                else
+            else
                 {
                     lblTicketCount.Text = "No data found for the given National ID.";
                 }
-
-            }
-
-            else
-            {
-                lblTicketCount.Text = "No data found for the given National ID.";
-            }
+            
+            
 
             conn.Close();
 
         }
 
+
+           
+        
+
+        //Part 3
         protected void ViewVoucher(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -103,16 +141,32 @@ namespace Telecom_Company_Team_9
             conn.Open();
             SqlDataReader reader = voucher_func.ExecuteReader();
 
-            if (reader.Read())
+            if (String.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))
             {
-                LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
-
+                LabelVoucher.Visible = true;
+                LabelVoucher.Text = "Please insert a valid mobile number";
             }
             else
             {
-                LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
+                if (reader.Read())
+                {
+                    LabelVoucher.Visible = true;
+                    LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
+
+                }
+                else
+                {
+                    LabelVoucher.Visible = true;
+                    LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
+                }
             }
+            conn.Close();
+
+            
         }
+
+
+        //Part 4
         protected void ViewRemainingAmount(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -127,9 +181,15 @@ namespace Telecom_Company_Team_9
             Check_amount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
 
             conn.Open();
+            if(String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
+            {
+                LabelRem.Text = "Please insert a valid mobile number and plan name";
+                return;
+            }
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
-            conn.Close();
+            
+            
 
             if (amount > 0)
             {
@@ -140,7 +200,10 @@ namespace Telecom_Company_Team_9
             {
                 LabelRem.Text = "There is no remaining balance for this account";
             }
+            conn.Close();
         }
+
+        //Part 5
         protected void ViewExtraAmount(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -155,9 +218,15 @@ namespace Telecom_Company_Team_9
             Check_amount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
 
             conn.Open();
+            if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
+            {
+                LabelExt.Text = "Please insert a valid mobile number and plan name";
+                return;
+            }
+
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
-            conn.Close();
+            
 
             if (amount > 0)
             {
@@ -168,8 +237,11 @@ namespace Telecom_Company_Team_9
             {
                 LabelExt.Text = "There is no extra balance for this account";
             }
+            conn.Close();
         }
 
+
+        //Part 6
         protected void PaymentView(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -181,12 +253,37 @@ namespace Telecom_Company_Team_9
             payment_func.CommandType = CommandType.StoredProcedure;
             payment_func.Parameters.Add(new SqlParameter("@mobile_num", mobile));
             conn.Open();
+
+            if(string.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))
+            {
+                GridViewPayment.Visible = false;
+                LabelPayment.Visible = true;
+                LabelPayment.Text = "Please insert a valid mobile number";
+                return;
+            }
+           
             SqlDataAdapter reader = new SqlDataAdapter(payment_func);
             DataTable dt = new DataTable();
             reader.Fill(dt);
 
-            GridViewPayment.DataSource = dt;
-            GridViewPayment.DataBind();
+           
+            if (dt.Rows.Count == 0)
+            {
+                GridViewPayment.Visible = false;
+                LabelPayment.Visible = true;
+                LabelPayment.Text = "No data found for the given Mobile Number.";
+                
+                
+            }
+            else
+            {
+                LabelPayment.Visible = false;
+                GridViewPayment.Visible = true;
+                GridViewPayment.DataSource = dt;
+                GridViewPayment.DataBind();
+                
+            }
+
         }
     }
 }

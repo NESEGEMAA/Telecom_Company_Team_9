@@ -7,27 +7,28 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="height: 2120px">
     <form id="form1" runat="server">
         <div>
+            <!-- Part 1-->
             <h2>View all Active Benefits</h2>
             <br />
             <br />
             <asp:Button ID="ButtonView" runat="server" Text="Click Here" OnClick ="ViewBenefits"/>
             <br />
             <br />
-             <asp:GridView ID="GridBenefitView" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+             <asp:GridView ID="GridBenefitView" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
             </asp:GridView>
 
            
             <br />
             <br />
-            <asp:Label ID="BenefitErrorMessage" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="BenefitErrorMessage" runat="server"></asp:Label>
             <br />
 
            
             <br />
-            
+            <!-- Part 2-->
               <h2>Check for Unresolved Tickets Here </h2>
             <br />
                 <p1> Enter National ID:</p1>
@@ -41,8 +42,9 @@
 
             <br />
             <br />
-            <asp:Label ID="lblTicketCount" runat="server" Text="Number of Unresolved Tickets:"></asp:Label>
+            <asp:Label ID="lblTicketCount" runat="server" ></asp:Label>
                 
+            <!-- Part 3-->
             <h2>Checking Highest Voucher ID</h2>
             
             <br />
@@ -56,9 +58,11 @@
             <br />
             <br />
 
-            <asp:Label ID="LabelVoucher" runat="server" Text="The ID of the highest value voucher is:"></asp:Label>
+            <asp:Label ID="LabelVoucher" runat="server" Visible="false" ></asp:Label>
             <br />
             <br />
+
+            <!-- Part 4-->
             <h2> Check Here for Remaining balance on the account </h2>
             <br />
             <br />
@@ -72,11 +76,12 @@
             <asp:Button ID="ButtonRemAmount" runat="server" Text="Check" OnClick ="ViewRemainingAmount" />
             <br />
             <br />
-            <asp:Label ID="LabelRem" runat="server" Text="The remaining amount is:"></asp:Label>
+            <asp:Label ID="LabelRem" runat="server" ></asp:Label>
             <br />
             <br />
                 
             <br />
+            <!--Part 5-->
             <h2>Check Here for the Extra Balance on the account</h2>
             <br />
             Mobile Number:<br />
@@ -89,29 +94,29 @@
             <asp:Button ID="ButtonExtAmount" runat="server" Text="Check" OnClick ="ViewExtraAmount" />
             <br />
             <br />
-            <asp:Label ID="LabelExt" runat="server" Text="The extra amount is:"></asp:Label>
+            <asp:Label ID="LabelExt" runat="server" ></asp:Label>
             <br />
 
             <br />
             <br />
-            
+            <!-- Part 6-->
             <h2>Check Top 10 Successful Payments on the account</h2><br />
             Mobile Number:<br />
             <asp:TextBox ID="mob" runat="server"></asp:TextBox>
             <br />
             <br />
         
-        <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" />
-        <asp:GridView ID="GridViewPayment" runat="server">
-        </asp:GridView>
-        <br />
-        <br />
+             <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" />
+            <asp:GridView ID="GridViewPayment" runat="server"> </asp:GridView>
+            <br />
+            <asp:Label ID="LabelPayment" runat="server" ></asp:Label>
+            <br />
+            <br />
+            <br />
+            <br />
+        
+            
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
     </form>
 </body>
 </html>
