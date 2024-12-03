@@ -203,6 +203,8 @@ namespace Telecom_Company_Team_9
             }
             conn.Close();
         }
+
+        //Part 5
         protected void ViewExtraAmount(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -217,9 +219,16 @@ namespace Telecom_Company_Team_9
             Check_amount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
 
             conn.Open();
+            if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
+            {
+                LabelExt.Text = "Please insert a valid mobile number and plan name";
+                return;
+            }
+
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
             conn.Close();
+
 
             if (amount > 0)
             {
@@ -230,6 +239,7 @@ namespace Telecom_Company_Team_9
             {
                 LabelExt.Text = "There is no extra balance for this account";
             }
+            conn.Close();
         }
 
         protected void PaymentView(object sender, EventArgs e)
