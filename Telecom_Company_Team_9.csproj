@@ -68,10 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllShops.aspx" />
+    <Content Include="CashbackCalculator.aspx" />
     <Content Include="CustomerComponent2.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
     <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="RenewSubscription.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -89,6 +91,13 @@
     </Compile>
     <Compile Include="AllShops.aspx.designer.cs">
       <DependentUpon>AllShops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CashbackCalculator.aspx.cs">
+      <DependentUpon>CashbackCalculator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CashbackCalculator.aspx.designer.cs">
+      <DependentUpon>CashbackCalculator.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerComponent2.aspx.cs">
       <DependentUpon>CustomerComponent2.aspx</DependentUpon>
@@ -112,6 +121,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenewSubscription.aspx.cs">
+      <DependentUpon>RenewSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RenewSubscription.aspx.designer.cs">
+      <DependentUpon>RenewSubscription.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
