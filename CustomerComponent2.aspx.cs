@@ -56,7 +56,7 @@ namespace Telecom_Company_Team_9
             else
             {
                 BenefitErrorMessage.Text = "No benefits available to display.";
-
+                
 
             }
             conn.Close();
@@ -94,29 +94,29 @@ namespace Telecom_Company_Team_9
                 return;
             }
             SqlDataReader reader = count_func.ExecuteReader();
-
+           
             
                 if(reader.Read())
-            {
-                int ticketCount = Convert.ToInt32(reader["Count"]);
-                if (ticketCount > 0)
                 {
-                    lblTicketCount.Text = "Number of Unresolved Tickets:  " + reader["Count"];
+                    int ticketCount = Convert.ToInt32(reader["Count"]);
+                    if (ticketCount > 0)
+                    {
+                        lblTicketCount.Text = "Number of Unresolved Tickets:  " + reader["Count"];
+                    }
+
+                    else
+                    {
+
+                        lblTicketCount.Text = "No data found for the given National ID.";
+                    }
+
                 }
-
-                else
-                {
-
-                    lblTicketCount.Text = "No data found for the given National ID.";
-                }
-
-            }
 
             else
-            {
-                lblTicketCount.Text = "No data found for the given National ID.";
-            }
-
+                {
+                    lblTicketCount.Text = "No data found for the given National ID.";
+                }
+            
             
 
             conn.Close();
@@ -148,18 +148,18 @@ namespace Telecom_Company_Team_9
             }
             else
             {
-            if (reader.Read())
-            {
+                if (reader.Read())
+                {
                     LabelVoucher.Visible = true;
-                LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
+                    LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
 
-            }
-            else
-            {
+                }
+                else
+                {
                     LabelVoucher.Visible = true;
-                LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
+                    LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
+                }
             }
-        }
             conn.Close();
 
             
@@ -189,7 +189,7 @@ namespace Telecom_Company_Team_9
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
             
-
+            
 
             if (amount > 0)
             {
@@ -226,7 +226,7 @@ namespace Telecom_Company_Team_9
 
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
-
+            
 
             if (amount > 0)
             {
@@ -279,8 +279,8 @@ namespace Telecom_Company_Team_9
             {
                 LabelPayment.Visible = false;
                 GridViewPayment.Visible = true;
-            GridViewPayment.DataSource = dt;
-            GridViewPayment.DataBind();
+                GridViewPayment.DataSource = dt;
+                GridViewPayment.DataBind();
                 
             }
 

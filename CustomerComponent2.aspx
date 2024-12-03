@@ -106,14 +106,14 @@
             <br />
             <br />
         
-        <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" />
+             <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" />
             <asp:GridView ID="GridViewPayment" runat="server"> </asp:GridView>
-        <br />
+            <br />
             <asp:Label ID="LabelPayment" runat="server" ></asp:Label>
-        <br />
-        <br />
-        <br />
-        <br />
+            <br />
+            <br />
+            <br />
+            <br />
         
             
         </div>
