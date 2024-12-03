@@ -18,6 +18,21 @@ namespace Telecom_Company_Team_9
         {
 
         }
+        
+
+        //Method to check if input is a number only 
+        public bool AreDigitsOnly(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return false;
+            foreach (char character in text)
+            {
+                if (character < '0' || character > '9')
+                    return false;
+            }
+            return true;
+        }
+        //Part 1
         protected void ViewBenefits(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
