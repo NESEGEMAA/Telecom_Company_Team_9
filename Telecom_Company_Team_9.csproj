@@ -67,12 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AllShops.aspx" />
     <Content Include="CustomerComponent2.aspx" />
-    <Content Include="CustomerComponent3.aspx" />
+    <Content Include="LastFiveMonthSubscribedPlans.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllShops.aspx.cs">
+      <DependentUpon>AllShops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllShops.aspx.designer.cs">
+      <DependentUpon>AllShops.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerComponent2.aspx.cs">
       <DependentUpon>CustomerComponent2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -80,12 +88,12 @@
     <Compile Include="CustomerComponent2.aspx.designer.cs">
       <DependentUpon>CustomerComponent2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerComponent3.aspx.cs">
-      <DependentUpon>CustomerComponent3.aspx</DependentUpon>
+    <Compile Include="LastFiveMonthSubscribedPlans.aspx.cs">
+      <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerComponent3.aspx.designer.cs">
-      <DependentUpon>CustomerComponent3.aspx</DependentUpon>
+    <Compile Include="LastFiveMonthSubscribedPlans.aspx.designer.cs">
+      <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
