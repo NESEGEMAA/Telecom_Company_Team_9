@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomerComponent2.aspx.cs" Inherits="Telecom_Company_Team_9.CustomerComponent2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="CustomerComponent2.aspx.cs" Inherits="Telecom_Company_Team_9.CustomerComponent2" %>
 
 
 <!DOCTYPE html>

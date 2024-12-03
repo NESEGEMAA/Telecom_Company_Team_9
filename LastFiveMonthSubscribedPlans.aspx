@@ -1,21 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LastFiveMonthSubscribedPlans.aspx.cs" Inherits="Telecom_Company_Team_9.LastFiveMonthSubscribedPlans" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="LastFiveMonthSubscribedPlans.aspx.cs" Inherits="Telecom_Company_Team_9.LastFiveMonthSubscribedPlans" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <p>Service plans you subscribed to in the past 5 months:</p>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <p>Service plans you subscribed to in the past 5 months:</p>
+    <asp:TextBox ID="LastFiveMonthsPlansInputNumber" runat="server" placeholder="Enter your mobile number"></asp:TextBox><br />
 
-        <asp:TextBox ID="LastFiveMonthsPlansInputNumber" runat="server" placeholder="Enter your mobile number"></asp:TextBox><br />
-
-        <asp:Button ID="ButtonLastFiveMonthsPlans" runat="server" Text="View past 5 months' plans" OnClick="ViewLastFiveMonthsPlans" />
-        <asp:GridView ID="LastFiveMonthsPlans" runat="server">
-        </asp:GridView>
-        <asp:Label ID="LastFiveMonthsPlansErrorMessage" runat="server" Text=""></asp:Label>
-    </form>
-</body>
-</html>
+    <asp:Button ID="ButtonLastFiveMonthsPlans" runat="server" Text="View past 5 months' plans" OnClick="ViewLastFiveMonthsPlans" />
+    <asp:GridView ID="LastFiveMonthsPlans" runat="server">
+    </asp:GridView>
+    <asp:Label ID="LastFiveMonthsPlansErrorMessage" runat="server" Text=""></asp:Label>
+</asp:Content>

@@ -1,13 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RedeemVoucher.aspx.cs" Inherits="Telecom_Company_Team_9.RedeemVoucher" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="RedeemVoucher.aspx.cs" Inherits="Telecom_Company_Team_9.RedeemVoucher" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Redeem your Voucher here:</h1>
     <section>
         <asp:Label ID="mobileNumberLabel" runat="server" Text="Input your Mobile Number"></asp:Label>
@@ -25,6 +18,4 @@
         <asp:Label ID="Message" runat="server" Text=""></asp:Label>
     </section>
     <asp:Button ID="redeemButton" runat="server" Text="Redeem!" OnClick="Redeem" />
-</form>
-</body>
-</html>
+</asp:Content>
