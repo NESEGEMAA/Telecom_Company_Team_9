@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomerComponent2.aspx" />
+    <Content Include="CustomerComponent3.aspx" />
     <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Test.aspx" />
@@ -79,6 +81,20 @@
     </Compile>
     <Compile Include="admin_view.aspx.designer.cs">
       <DependentUpon>admin_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerComponent2.aspx.cs">
+      <DependentUpon>CustomerComponent2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerComponent2.aspx.designer.cs">
+      <DependentUpon>CustomerComponent2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerComponent3.aspx.cs">
+      <DependentUpon>CustomerComponent3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerComponent3.aspx.designer.cs">
+      <DependentUpon>CustomerComponent3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
