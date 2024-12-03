@@ -124,6 +124,11 @@ namespace Telecom_Company_Team_9
 
         }
 
+
+           
+        
+
+        //Part 3
         protected void ViewVoucher(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -137,16 +142,32 @@ namespace Telecom_Company_Team_9
             conn.Open();
             SqlDataReader reader = voucher_func.ExecuteReader();
 
+            if (String.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))
+            {
+                LabelVoucher.Visible = true;
+                LabelVoucher.Text = "Please insert a valid mobile number";
+            }
+            else
+            {
             if (reader.Read())
             {
+                    LabelVoucher.Visible = true;
                 LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
 
             }
             else
             {
+                    LabelVoucher.Visible = true;
                 LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
             }
         }
+            conn.Close();
+
+            
+        }
+
+
+        //Part 4
         protected void ViewRemainingAmount(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
