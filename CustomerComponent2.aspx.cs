@@ -51,12 +51,13 @@ namespace Telecom_Company_Team_9
             {
                 GridBenefitView.DataSource = dt;
                 GridBenefitView.DataBind();
-                BenefitErrorMessage.Visible = false;
+                
             }
             else
             {
                 BenefitErrorMessage.Text = "No benefits available to display.";
                 BenefitErrorMessage.Visible = true;
+
 
             }
 
@@ -66,6 +67,8 @@ namespace Telecom_Company_Team_9
         {
 
         }
+
+        //Part 2
         protected void ViewTickets(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -79,18 +82,32 @@ namespace Telecom_Company_Team_9
             count_func.Parameters.Add(new SqlParameter("@NID", nationalID));
 
             conn.Open();
+            if (!AreDigitsOnly(nationalID))
+            {
+                lblTicketCount.Text = "Please insert a valid National ID";
+                return;
+            }
+
+            if (!int.TryParse(nationalID, out _))
+            {
+                lblTicketCount.Text = "Error: National ID must be a valid integer and within the range of 0 to 2,147,483,647.";
+                return;
+            }
             SqlDataReader reader = count_func.ExecuteReader();
 
-            if (reader.Read())
+            
+                if(reader.Read())
             {
                 int ticketCount = Convert.ToInt32(reader["Count"]);
                 if (ticketCount > 0)
                 {
+
                     lblTicketCount.Text = "Number of Unresolved Tickets:  " + reader["Count"];
                 }
 
                 else
                 {
+
                     lblTicketCount.Text = "No data found for the given National ID.";
                 }
 
@@ -100,6 +117,8 @@ namespace Telecom_Company_Team_9
             {
                 lblTicketCount.Text = "No data found for the given National ID.";
             }
+
+            
 
             conn.Close();
 
