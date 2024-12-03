@@ -56,10 +56,10 @@ namespace Telecom_Company_Team_9
             else
             {
                 BenefitErrorMessage.Text = "No benefits available to display.";
-                BenefitErrorMessage.Visible = true;
 
 
             }
+            conn.Close();
 
         }
 
@@ -101,7 +101,6 @@ namespace Telecom_Company_Team_9
                 int ticketCount = Convert.ToInt32(reader["Count"]);
                 if (ticketCount > 0)
                 {
-
                     lblTicketCount.Text = "Number of Unresolved Tickets:  " + reader["Count"];
                 }
 
@@ -189,7 +188,7 @@ namespace Telecom_Company_Team_9
             }
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
-            conn.Close();
+            
 
 
             if (amount > 0)
@@ -227,7 +226,6 @@ namespace Telecom_Company_Team_9
 
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
-            conn.Close();
 
 
             if (amount > 0)
