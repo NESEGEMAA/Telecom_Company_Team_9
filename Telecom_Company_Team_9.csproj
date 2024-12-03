@@ -70,10 +70,20 @@
     <Content Include="AllShops.aspx" />
     <Content Include="CustomerComponent2.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
+    <Content Include="CustomerComponent3.aspx" />
+    <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin_view.aspx.cs">
+      <DependentUpon>admin_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_view.aspx.designer.cs">
+      <DependentUpon>admin_view.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AllShops.aspx.cs">
       <DependentUpon>AllShops.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,6 +113,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
