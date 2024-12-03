@@ -79,6 +79,7 @@ namespace Telecom_Company_Team_9
             count_func.Parameters.Add(new SqlParameter("@NID", nationalID));
 
             conn.Open();
+
             if (!AreDigitsOnly(nationalID))
             {
                 lblTicketCount.Text = "Please insert a valid National ID";
@@ -90,22 +91,24 @@ namespace Telecom_Company_Team_9
                 lblTicketCount.Text = "Error: National ID must be a valid integer and within the range of 0 to 2,147,483,647.";
                 return;
             }
-            SqlDataReader reader = count_func.ExecuteReader();
+            object reader = count_func.ExecuteScalar();
            
             
-                if(reader.Read())
+                if(reader != null  && int.TryParse(reader.ToString(), out int ticketcount))
                 {
-                    int ticketCount = Convert.ToInt32(reader["Count"]);
-                    if (ticketCount > 0)
-                    {
-                        lblTicketCount.Text = "Number of Unresolved Tickets:  " + reader["Count"];
+                    if(ticketcount > 0)
+                     { 
+                        lblTicketCount.Text = "Number of Unresolved Tickets:  " + ticketcount;
                     }
 
-                    else
+                  else
                     {
-
                         lblTicketCount.Text = "No data found for the given National ID.";
                     }
+                 
+
+                
+                   
 
                 }
 
