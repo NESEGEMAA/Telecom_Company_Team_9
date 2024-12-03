@@ -17,7 +17,7 @@
             <asp:Button ID="ButtonView" runat="server" Text="Click Here" OnClick ="ViewBenefits"/>
             <br />
             <br />
-             <asp:GridView ID="GridBenefitView" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
+             <asp:GridView ID="GridBenefitView" runat="server"  >
             </asp:GridView>
 
            

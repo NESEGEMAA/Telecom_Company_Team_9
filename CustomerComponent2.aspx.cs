@@ -63,10 +63,7 @@ namespace Telecom_Company_Team_9
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //Part 2
         protected void ViewTickets(object sender, EventArgs e)
