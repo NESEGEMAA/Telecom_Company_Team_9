@@ -74,6 +74,7 @@
     <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="RechargeBalance.aspx" />
+    <Content Include="RedeemVoucher.aspx" />
     <Content Include="RenewSubscription.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="Web.config" />
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="RechargeBalance.aspx.designer.cs">
       <DependentUpon>RechargeBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RedeemVoucher.aspx.cs">
+      <DependentUpon>RedeemVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RedeemVoucher.aspx.designer.cs">
+      <DependentUpon>RedeemVoucher.aspx</DependentUpon>
     </Compile>
     <Compile Include="RenewSubscription.aspx.cs">
       <DependentUpon>RenewSubscription.aspx</DependentUpon>
