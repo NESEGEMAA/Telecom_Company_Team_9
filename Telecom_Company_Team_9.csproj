@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomerComponent2.aspx" />
+    <Content Include="CustomerComponent3.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -78,6 +79,13 @@
     </Compile>
     <Compile Include="CustomerComponent2.aspx.designer.cs">
       <DependentUpon>CustomerComponent2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerComponent3.aspx.cs">
+      <DependentUpon>CustomerComponent3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerComponent3.aspx.designer.cs">
+      <DependentUpon>CustomerComponent3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
