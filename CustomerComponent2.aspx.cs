@@ -242,6 +242,8 @@ namespace Telecom_Company_Team_9
             conn.Close();
         }
 
+
+        //Part 6
         protected void PaymentView(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -253,12 +255,37 @@ namespace Telecom_Company_Team_9
             payment_func.CommandType = CommandType.StoredProcedure;
             payment_func.Parameters.Add(new SqlParameter("@mobile_num", mobile));
             conn.Open();
+
+            if(string.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))
+            {
+                GridViewPayment.Visible = false;
+                LabelPayment.Visible = true;
+                LabelPayment.Text = "Please insert a valid mobile number";
+                return;
+            }
+           
             SqlDataAdapter reader = new SqlDataAdapter(payment_func);
             DataTable dt = new DataTable();
             reader.Fill(dt);
 
+           
+            if (dt.Rows.Count == 0)
+            {
+                GridViewPayment.Visible = false;
+                LabelPayment.Visible = true;
+                LabelPayment.Text = "No data found for the given Mobile Number.";
+                
+                
+            }
+            else
+            {
+                LabelPayment.Visible = false;
+                GridViewPayment.Visible = true;
             GridViewPayment.DataSource = dt;
             GridViewPayment.DataBind();
+                
+            }
+
         }
     }
 }
