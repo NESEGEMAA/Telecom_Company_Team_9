@@ -70,7 +70,6 @@
     <Content Include="AllShops.aspx" />
     <Content Include="CustomerComponent2.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
-    <Content Include="CustomerComponent3.aspx" />
     <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Test.aspx" />
