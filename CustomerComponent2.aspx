@@ -10,19 +10,20 @@
 <body style="height: 2120px">
     <form id="form1" runat="server">
         <div>
+            <!-- Part 1-->
             <h2>View all Active Benefits</h2>
             <br />
             <br />
             <asp:Button ID="ButtonView" runat="server" Text="Click Here" OnClick ="ViewBenefits"/>
             <br />
             <br />
-             <asp:GridView ID="GridBenefitView" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+             <asp:GridView ID="GridBenefitView" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
             </asp:GridView>
 
            
             <br />
             <br />
-            <asp:Label ID="BenefitErrorMessage" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="BenefitErrorMessage" runat="server"></asp:Label>
             <br />
 
            
