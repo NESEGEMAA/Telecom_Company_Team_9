@@ -182,9 +182,15 @@ namespace Telecom_Company_Team_9
             Check_amount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
 
             conn.Open();
+            if(String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
+            {
+                LabelRem.Text = "Please insert a valid mobile number and plan name";
+                return;
+            }
             Check_amount.ExecuteNonQuery();
             int amount = (int)Check_amount.ExecuteScalar();
             conn.Close();
+
 
             if (amount > 0)
             {
@@ -195,6 +201,7 @@ namespace Telecom_Company_Team_9
             {
                 LabelRem.Text = "There is no remaining balance for this account";
             }
+            conn.Close();
         }
         protected void ViewExtraAmount(object sender, EventArgs e)
         {
