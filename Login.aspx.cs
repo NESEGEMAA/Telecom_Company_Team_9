@@ -34,13 +34,14 @@ namespace Telecom_Company_Team_9
             Boolean success = (bool)login_func.ExecuteScalar();
             conn.Close();
 
-            if (success == true)
+            if (success == false)
             {
-                Response.Write("Hello");
+                Session["admin"] = mob;
+                Response.Redirect("admin_view.aspx");
             }
             else
             {
-                Response.Write("manwab");
+                Response.Redirect("customer_view.aspx");
 
             }
         }
