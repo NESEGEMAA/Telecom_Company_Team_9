@@ -19,7 +19,7 @@ namespace Telecom_Company_Team_9
 
         protected void UnsubscribedTable(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["TelecomeProject"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {

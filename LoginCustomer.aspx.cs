@@ -38,7 +38,7 @@ namespace Telecom_Company_Team_9
                         bool result = (bool)cmd.ExecuteScalar();
                         if (result)
                         {
-                            Response.Redirect("Dashboard.aspx");
+                            Response.Redirect("DashBoard.aspx");
                         }
                         else
                         {

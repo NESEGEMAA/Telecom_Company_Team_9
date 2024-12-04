@@ -30,7 +30,7 @@ namespace Telecom_Company_Team_9
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MyUsage;
+        protected global::System.Web.UI.WebControls.Label Usage;
 
         /// <summary>
         /// Mobileno control.

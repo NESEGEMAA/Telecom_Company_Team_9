@@ -21,7 +21,7 @@ namespace Telecom_Company_Team_9
             string planName = PlanList.Text;
             DateTime StartDate = Start.SelectedDate;
             DateTime EndDate = End.SelectedDate;
-            string connectionString = ConfigurationManager.ConnectionStrings["TelecomeProject"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
@@ -56,5 +56,4 @@ namespace Telecom_Company_Team_9
             }
         }
     }
-}
 }
