@@ -1,60 +1,106 @@
-﻿/* Ensure the body and html occupy the full viewport height */
-html, body {
+﻿/* Reset and Basic Styling */
+body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent unnecessary scrolling */
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* Flex container for the entire page */
+/* Header Styling */
+header {
+    background-color: #4CAF50; /* Modern green tone for branding */
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Flex Container for Layout */
 #flex-container {
     display: flex;
     flex-direction: row;
-    height: 100%; /* Full height of the screen */
-    width: 100%; /* Full width of the screen */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent unnecessary scrolling */
 }
 
-/* Side navbar styling */
+/* Navbar Styling */
 .navbar {
-    background-color: #f1f1f1;
-    min-width: 15%;
-    max-width: 30%;
-    height: 100%; /* Full height of the screen */
-    overflow-y: auto; /* Add scrolling if content overflows */
+    background-color: #333; /* Dark background for contrast */
+    color: white;
+    width: 250px;
+    min-width: 200px;
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Scroll if content overflows */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar menu styling */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-    li a.active {
-        background-color: #04AA6D;
-        color: white;
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
 
-    li a:hover:not(.active) {
-        background-color: #555;
-        color: white;
-    }
+        .navbar ul li {
+            border-bottom: 1px solid #444; /* Subtle separation */
+        }
 
-/* Content area styling */
+            .navbar ul li a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 12px 20px;
+                font-size: 14px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                .navbar ul li a:hover {
+                    background-color: #575757; /* Highlight on hover */
+                    color: #fff;
+                }
+
+                .navbar ul li a.active {
+                    background-color: #4CAF50; /* Highlight the active link */
+                    color: white;
+                }
+
+/* Content Styling */
 .content {
     flex-grow: 1;
-    padding: 16px;
-    overflow-y: auto; /* Allow content to scroll if needed */
+    padding: 20px;
+    overflow-y: auto; /* Allow content scrolling */
 }
 
-header {
-    text-align: right;
+/* Buttons (if needed) */
+button, .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button:hover, .btn:hover {
+        background-color: #45a049;
+    }
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    #flex-container {
+        flex-direction: column;
+    }
+
+    .navbar {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        padding: 10px;
+    }
 }

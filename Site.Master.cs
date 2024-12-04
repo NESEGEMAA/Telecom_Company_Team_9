@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -77,6 +73,5 @@ namespace Telecom_Company_Team_9
             // Inject the HTML into the placeholder
             navMenuPlaceholder.Text = navbarHtml;
         }
-
     }
 }

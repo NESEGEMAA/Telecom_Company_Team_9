@@ -29,14 +29,5 @@
             </form>
         </div>
     </div>
-
-    <!-- Add your JavaScript to toggle the menu visibility -->
-    <script>
-        $(document).ready(function () {
-            $("#menuToggle").click(function () {
-                $("#navMenu").toggleClass("show");
-            });
-        });
-    </script>
 </body>
 </html>
