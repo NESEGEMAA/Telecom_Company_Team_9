@@ -8,15 +8,46 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div#flex-container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 100%;
+        }
+
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          width: 200px;
+          background-color: #f1f1f1;
+        }
+
+        li a {
+          display: block;
+          color: #000;
+          padding: 8px 16px;
+          text-decoration: none;
+        }
+
+        li a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        li a:hover:not(.active) {
+          background-color: #555;
+          color: white;
+        }
+    </style>
 </head>
+<header>
+    <div class="logo">PO27Y</div>
+</header>
 <body>
-    <form id="form1" runat="server">
-        <div class="header">
-            <div class="logo">PO27Y</div>
-            <!-- Sandwich (hamburger) Menu -->
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
+    <div id="flex-container">
+        <div class="navbar">
             <div class="nav" id="navMenu">
                 <ul>
                     <li><a href="AllShops.aspx">All Shops</a></li>
@@ -28,10 +59,12 @@
                 </ul>
             </div>
         </div>
-        <div class="content">
-            <asp:ContentPlaceHolder id="MainContent" runat="server" />
+        <div>
+            <form id="form1" runat="server">
+                <asp:ContentPlaceHolder id="MainContent" runat="server" />
+            </form>
         </div>
-    </form>
+    </div>
 
     <!-- Add your JavaScript to toggle the menu visibility -->
     <script>
