@@ -8,12 +8,21 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             GenerateNavbar();
-            /*
-            if (!IsPostBack)
+
+            // Check if the user is logged in
+            if (Session["UserRole"] != null)
             {
-                GenerateNavbar();
+                // Show the Logout link
+                LogoutContainer.Visible = true;
+
+                // Attach click event for Logout
+                LogoutLink.ServerClick += LogoutLink_ServerClick;
             }
-            */
+            else
+            {
+                // Hide the Logout link
+                LogoutContainer.Visible = false;
+            }
         }
 
         private void GenerateNavbar()
@@ -22,7 +31,7 @@ namespace Telecom_Company_Team_9
             string role = Session["UserRole"] as string; // e.g., "Admin", "Customer", or null
 
             // Build the navbar HTML
-            string navbarHtml = "<ul>";
+            string navbarHtml = "";
 
             if (role == "Admin")
             {
@@ -68,15 +77,26 @@ namespace Telecom_Company_Team_9
                 navbarHtml += "<li><a href='LoginCustomer.aspx'>Log In as a Customer</a></li>";
                 navbarHtml += "<li><a href='LoginAdmin.aspx'>Log In as a Admin</a></li>";
             }
-            else
-            {
-                navbarHtml += "<li><a href='Logout.aspx'>Log Out</a></li>";
-            }
-
-            navbarHtml += "</ul>";
 
             // Inject the HTML into the placeholder
             navMenuPlaceholder.Text = navbarHtml;
+        }
+
+        // Handle the Logout logic
+        private void LogoutLink_ServerClick(object sender, EventArgs e)
+        {
+            // Clear the session
+            Session.Clear(); // Removes all keys and values
+            Session.Abandon(); // Ends the session
+
+            // Optionally clear cookies
+            if (Request.Cookies["ASP.NET_SessionId"] != null)
+            {
+                Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddDays(-1);
+            }
+
+            // Redirect the user to the login page
+            Response.Redirect("AboutUs.aspx");
         }
     }
 }

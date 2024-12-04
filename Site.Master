@@ -18,7 +18,13 @@
         <!-- Navbar -->
         <div class="navbar">
             <div id="navMenu">
-                <asp:Literal ID="navMenuPlaceholder" runat="server"></asp:Literal>
+                <ul>
+                    <asp:Literal ID="navMenuPlaceholder" runat="server"></asp:Literal>
+                    <!-- Log Out link -->
+                    <li id="LogoutContainer" runat="server">
+                        <a id="LogoutLink" runat="server" href="#">Log Out</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- Main Content -->
