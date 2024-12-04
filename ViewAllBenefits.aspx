@@ -7,9 +7,6 @@
     <h2>View all Active Benefits</h2>
     <br />
     <br />
-    <asp:Button ID="ButtonView" runat="server" Text="Click Here" OnClick ="ViewBenefits"/>
-    <br />
-    <br />
      <asp:GridView ID="GridBenefitView" runat="server"  >
     </asp:GridView>
 
