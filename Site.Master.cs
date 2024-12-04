@@ -57,7 +57,8 @@ namespace Telecom_Company_Team_9
             // Add a login/logout link at the end
             if (role == null)
             {
-                navbarHtml += "<li><a href='Login.aspx'>Log In</a></li>";
+                navbarHtml += "<li><a href='LoginCustomer.aspx'>Log In as a Customer</a></li>";
+                navbarHtml += "<li><a href='Login.aspx'>Log In as a Admin</a></li>";
             }
             else
             {
