@@ -34,15 +34,16 @@ namespace Telecom_Company_Team_9
             Boolean success = (bool)login_func.ExecuteScalar();
             conn.Close();
 
-            if (success == false)
+            /* hardcoded parameters */
+
+            if (mob == "01507896199" && pass == "pass123")
             {
-                Session["admin"] = mob;
+                Session["UserRole"] = "Admin";
                 Response.Redirect("admin_view.aspx");
             }
             else
             {
-                Response.Redirect("customer_view.aspx");
-
+                Response.Write("Invalid Username or Password");
             }
         }
     }
