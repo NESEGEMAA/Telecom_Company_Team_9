@@ -70,6 +70,7 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="AllShops.aspx" />
     <Content Include="CashbackCalculator.aspx" />
+    <Content Include="CustomerWallets.aspx" />
     <Content Include="ExtraBalance.aspx" />
     <Content Include="HighestVoucherID.aspx" />
     <Content Include="AllServicePlans.aspx" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="CashbackCalculator.aspx.designer.cs">
       <DependentUpon>CashbackCalculator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerWallets.aspx.cs">
+      <DependentUpon>CustomerWallets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerWallets.aspx.designer.cs">
+      <DependentUpon>CustomerWallets.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExtraBalance.aspx.cs">
       <DependentUpon>ExtraBalance.aspx</DependentUpon>
