@@ -70,6 +70,7 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="AllShops.aspx" />
     <Content Include="CashbackCalculator.aspx" />
+    <Content Include="Content\Master.css" />
     <Content Include="CustomerWallets.aspx" />
     <Content Include="ExtraBalance.aspx" />
     <Content Include="HighestVoucherID.aspx" />

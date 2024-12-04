@@ -1,0 +1,60 @@
+﻿/* Ensure the body and html occupy the full viewport height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent unnecessary scrolling */
+}
+
+/* Flex container for the entire page */
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%; /* Full height of the screen */
+    width: 100%; /* Full width of the screen */
+}
+
+/* Side navbar styling */
+.navbar {
+    background-color: #f1f1f1;
+    min-width: 15%;
+    max-width: 30%;
+    height: 100%; /* Full height of the screen */
+    overflow-y: auto; /* Add scrolling if content overflows */
+}
+
+/* Navbar menu styling */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+    li a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+/* Content area styling */
+.content {
+    flex-grow: 1;
+    padding: 16px;
+    overflow-y: auto; /* Allow content to scroll if needed */
+}
+
+header {
+    text-align: right;
+}
