@@ -45,7 +45,7 @@ namespace Telecom_Company_Team_9
                     using (SqlCommand cmd = new SqlCommand("Unsubscribed_Plans", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@MobileNo", MobileNumber);
+                        cmd.Parameters.AddWithValue("@mobile_num", MobileNumber);
                         using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                         {
                             DataTable dt = new DataTable();
