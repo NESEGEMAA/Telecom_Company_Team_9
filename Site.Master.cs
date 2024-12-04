@@ -45,7 +45,11 @@ namespace Telecom_Company_Team_9
                     <li><a href='CashbackCalculator.aspx'>Cashback Calculator</a></li>
                     <li><a href='LastFiveMonthSubscribedPlans.aspx'>Recent plans</a></li>
                     <li><a href='RechargeBalance.aspx'>Recharge Balance</a></li>
-                    <li><a href='RedeemVoucher.aspx'>Redeem a Voucher</a></li>
+                    <li><a href='MyCashBack.aspx'>View your Cashback transactions!</a></li>
+                    <li><a href='MyConsumption.aspx'>View everyone's consumption of a certain plan ;)</a></li>
+                    <li><a href='MyUsage.aspx'>View your plan usage</a></li>
+                    <li><a href='UnsubscribedServices.aspx'>Checkout our other Plans</a></li>
+                    <li><a href='DashBoard.aspx'>View your plan</a></li>
                     <li><a href='RenewSubscription.aspx'>Renew your Subscription</a></li>";
             }
 
