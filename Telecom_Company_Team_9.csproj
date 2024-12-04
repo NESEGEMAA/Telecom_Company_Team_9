@@ -69,14 +69,19 @@
   <ItemGroup>
     <Content Include="AllShops.aspx" />
     <Content Include="CashbackCalculator.aspx" />
-    <Content Include="CustomerComponent2.aspx" />
+    <Content Include="ExtraBalance.aspx" />
+    <Content Include="HighestVoucherID.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
     <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="RechargeBalance.aspx" />
     <Content Include="RedeemVoucher.aspx" />
+    <Content Include="RemainingBalance.aspx" />
     <Content Include="RenewSubscription.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="Top10Payments.aspx" />
+    <Content Include="ViewAllBenefits.aspx" />
+    <Content Include="ViewNonResolvedTickets.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,12 +106,19 @@
     <Compile Include="CashbackCalculator.aspx.designer.cs">
       <DependentUpon>CashbackCalculator.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerComponent2.aspx.cs">
-      <DependentUpon>CustomerComponent2.aspx</DependentUpon>
+    <Compile Include="ExtraBalance.aspx.cs">
+      <DependentUpon>ExtraBalance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerComponent2.aspx.designer.cs">
-      <DependentUpon>CustomerComponent2.aspx</DependentUpon>
+    <Compile Include="ExtraBalance.aspx.designer.cs">
+      <DependentUpon>ExtraBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HighestVoucherID.aspx.cs">
+      <DependentUpon>HighestVoucherID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HighestVoucherID.aspx.designer.cs">
+      <DependentUpon>HighestVoucherID.aspx</DependentUpon>
     </Compile>
     <Compile Include="LastFiveMonthSubscribedPlans.aspx.cs">
       <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
@@ -137,6 +149,13 @@
     <Compile Include="RedeemVoucher.aspx.designer.cs">
       <DependentUpon>RedeemVoucher.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RemainingBalance.aspx.cs">
+      <DependentUpon>RemainingBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RemainingBalance.aspx.designer.cs">
+      <DependentUpon>RemainingBalance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RenewSubscription.aspx.cs">
       <DependentUpon>RenewSubscription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,6 +176,27 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Top10Payments.aspx.cs">
+      <DependentUpon>Top10Payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Top10Payments.aspx.designer.cs">
+      <DependentUpon>Top10Payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllBenefits.aspx.cs">
+      <DependentUpon>ViewAllBenefits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAllBenefits.aspx.designer.cs">
+      <DependentUpon>ViewAllBenefits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNonResolvedTickets.aspx.cs">
+      <DependentUpon>ViewNonResolvedTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewNonResolvedTickets.aspx.designer.cs">
+      <DependentUpon>ViewNonResolvedTickets.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

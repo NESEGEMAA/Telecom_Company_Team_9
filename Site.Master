@@ -19,6 +19,12 @@
             </div>
             <div class="nav" id="navMenu">
                 <ul>
+                    <li><a href="ViewAllBenefits.aspx">All Active Benefits</a></li>
+                    <li><a href="ViewNonResolvedTickets.aspx">All Non Resolved Tickets</a></li>
+                    <li><a href="HighestVoucherID.aspx">Check your highest voucher</a></li>
+                    <li><a href="RemainingBalance.aspx">Remaining amount to pay for plan</a></li>
+                     <li><a href="ExtraBalance.aspx">Extra amount paid for plan</a></li>
+                    <li><a href="Top10Payments.aspx">Your Top 10 Payments</a></li>
                     <li><a href="AllShops.aspx">All Shops</a></li>
                     <li><a href="CashbackCalculator.aspx">Cashback Calculator</a></li>
                     <li><a href="LastFiveMonthSubscribedPlans.aspx">Recent plans</a></li>
