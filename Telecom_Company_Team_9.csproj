@@ -67,11 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
     <Content Include="AllShops.aspx" />
     <Content Include="CashbackCalculator.aspx" />
     <Content Include="ExtraBalance.aspx" />
     <Content Include="HighestVoucherID.aspx" />
-    <Content Include="DashBoard.aspx" />
+    <Content Include="AllServicePlans.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
     <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
@@ -91,6 +92,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin_view.aspx.cs">
       <DependentUpon>admin_view.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,12 +134,12 @@
     <Compile Include="HighestVoucherID.aspx.designer.cs">
       <DependentUpon>HighestVoucherID.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DashBoard.aspx.cs">
-      <DependentUpon>DashBoard.aspx</DependentUpon>
+    <Compile Include="AllServicePlans.aspx.cs">
+      <DependentUpon>AllServicePlans.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DashBoard.aspx.designer.cs">
-      <DependentUpon>DashBoard.aspx</DependentUpon>
+    <Compile Include="AllServicePlans.aspx.designer.cs">
+      <DependentUpon>AllServicePlans.aspx</DependentUpon>
     </Compile>
     <Compile Include="LastFiveMonthSubscribedPlans.aspx.cs">
       <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
