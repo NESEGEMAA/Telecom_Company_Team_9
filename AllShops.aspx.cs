@@ -9,10 +9,6 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
-
-        protected void ViewAllShops(object sender, EventArgs e)
-        {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
             SqlConnection conn = new SqlConnection(connStr);
