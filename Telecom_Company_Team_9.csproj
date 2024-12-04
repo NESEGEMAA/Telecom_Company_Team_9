@@ -71,7 +71,6 @@
     <Content Include="CashbackCalculator.aspx" />
     <Content Include="ExtraBalance.aspx" />
     <Content Include="HighestVoucherID.aspx" />
-    <Content Include="CustomerComponent2.aspx" />
     <Content Include="DashBoard.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
     <Content Include="admin_view.aspx" />
