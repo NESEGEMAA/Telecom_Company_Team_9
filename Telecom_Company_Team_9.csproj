@@ -81,12 +81,16 @@
     <Content Include="MyCashBack.aspx" />
     <Content Include="MyConsumption.aspx" />
     <Content Include="MyUsage.aspx" />
-    <Content Include="admincomponent2.aspx" />
     <Content Include="RechargeBalance.aspx" />
     <Content Include="RedeemVoucher.aspx" />
     <Content Include="RemainingBalance.aspx" />
     <Content Include="RenewSubscription.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="Top10Payments.aspx" />
+    <Content Include="ViewAllBenefits.aspx" />
+    <Content Include="ViewNonResolvedTickets.aspx" />
+    <Content Include="UnsubscribedServices.aspx" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutUs.aspx.cs">
@@ -187,13 +191,6 @@
     <Compile Include="MyUsage.aspx.designer.cs">
       <DependentUpon>MyUsage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admincomponent2.aspx.cs">
-      <DependentUpon>admincomponent2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admincomponent2.aspx.designer.cs">
-      <DependentUpon>admincomponent2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechargeBalance.aspx.cs">
       <DependentUpon>RechargeBalance.aspx</DependentUpon>
@@ -269,12 +266,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
-    <Content Include="web.config" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
