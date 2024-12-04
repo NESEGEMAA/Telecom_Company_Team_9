@@ -13,6 +13,7 @@ namespace Telecom_Company_Team_9
         protected void Login(object sender, EventArgs e)
         {
             Int64 mobile_num = int.Parse(MobileNumber.Text);
+            //string mobile_num = MobileNumber.Text;
             string password = Password.Text;
 
             string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
