@@ -95,9 +95,6 @@ button, .btn {
 
 
 /* GridView Styles */
-.gridview-edit-row {
-    background-color: #7C6F57;
-}
 
 .gridview-footer {
     background-color: #1C5E55;
@@ -121,30 +118,9 @@ button, .btn {
     background-color: #E3EAEB;
 }
 
-.gridview-selected-row {
-    background-color: #C5BBAF;
-    font-weight: bold;
-    color: #333333;
-}
-
-.gridview-sorted-ascending-cell {
-    background-color: #F8FAFA;
-}
-
-.gridview-sorted-ascending-header {
-    background-color: #246B61;
-}
-
-.gridview-sorted-descending-cell {
-    background-color: #D4DFE1;
-}
-
-.gridview-sorted-descending-header {
-    background-color: #15524A;
-}
 .gridview, .gridview th, .gridview td {
     border: none;
-    padding: 4px; 
+    padding: 4px;
 }
 
 
