@@ -35,9 +35,18 @@ namespace Telecom_Company_Team_9
             else if (role == "Customer")
             {
                 navbarHtml += @"
-                <li><a href='CustomerProfile.aspx'>My Profile</a></li>
-                <li><a href='ViewPlans.aspx'>View Plans</a></li>
-                <li><a href='Recharge.aspx'>Recharge</a></li>";
+                    <li><a href='ViewAllBenefits.aspx'>All Active Benefits</a></li>
+                    <li><a href='ViewNonResolvedTickets.aspx'>All Non Resolved Tickets</a></li>
+                    <li><a href='HighestVoucherID.aspx'>Check your highest voucher</a></li>
+                    <li><a href='RemainingBalance.aspx'>Remaining amount to pay for plan</a></li>
+                    <li><a href='ExtraBalance.aspx'>Extra amount paid for plan</a></li>
+                    <li><a href='Top10Payments.aspx'>Your Top 10 Payments</a></li>
+                    <li><a href='AllShops.aspx'>All Shops</a></li>
+                    <li><a href='CashbackCalculator.aspx'>Cashback Calculator</a></li>
+                    <li><a href='LastFiveMonthSubscribedPlans.aspx'>Recent plans</a></li>
+                    <li><a href='RechargeBalance.aspx'>Recharge Balance</a></li>
+                    <li><a href='RedeemVoucher.aspx'>Redeem a Voucher</a></li>
+                    <li><a href='RenewSubscription.aspx'>Renew your Subscription</a></li>";
             }
 
             // Links for unauthenticated users
