@@ -46,56 +46,5 @@ namespace Telecom_Company_Team_9
                 }
             }
         }
-        protected void MyConsumption(object sender, EventArgs e)
-        {
-
-            try
-            {
-                Response.Redirect("MyConsumption.aspx");
-            }
-            catch (Exception ex)
-            {
-                ConsumeErrorMessage.Text = "An error occurred: " + ex.Message;
-            }
-
-        }
-        protected void UnsubscribedServices(object sender, EventArgs e)
-        {
-
-            try
-            {
-                Response.Redirect("UnsubscribedServices.aspx");
-            }
-            catch (Exception ex)
-            {
-                UnsubscribedErrorMessage.Text = "An error occurred: " + ex.Message;
-            }
-
-        }
-        protected void MyUsageButton(object sender, EventArgs e)
-        {
-            try
-            {
-                Response.Redirect("MyUsage.aspx");
-            }
-            catch (Exception ex)
-            {
-                MyUsageErrorMessage.Text = "An error occurred: " + ex.Message;
-            }
-
-        }
-        protected void MyCashbackTransactions(object sender, EventArgs e)
-        {
-            try
-            {
-                Response.Redirect("MyCashBack.aspx");
-            }
-            catch (Exception ex)
-            {
-                CashbackErrorMessage.Text = "An error occurred: " + ex.Message;
-            }
-
-        }
     }
-
 }

@@ -1,0 +1,110 @@
+﻿/* Reset and Basic Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins as the default font */
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50; /* Modern green tone for branding */
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600; /* Use Montserrat's bold weight */
+    font-family: 'Montserrat', Arial, sans-serif; /* Use Montserrat for branding and headers */
+    letter-spacing: 1px;
+}
+
+/* Flex Container for Layout */
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent unnecessary scrolling */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333; /* Dark background for contrast */
+    color: white;
+    width: 250px;
+    min-width: 200px;
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Scroll if content overflows */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .navbar ul li {
+            border-bottom: 1px solid #444; /* Subtle separation */
+        }
+
+            .navbar ul li a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 12px 20px;
+                font-size: 14px;
+                font-family: 'Poppins', Arial, sans-serif; /* Use Poppins for link text */
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                .navbar ul li a:hover {
+                    background-color: #575757; /* Highlight on hover */
+                    color: #fff;
+                }
+
+                .navbar ul li a.active {
+                    background-color: #4CAF50; /* Highlight the active link */
+                    color: white;
+                }
+
+/* Content Styling */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; /* Allow content scrolling */
+    font-family: 'Poppins', Arial, sans-serif; /* Keep Poppins for content text */
+}
+
+/* Buttons (if needed) */
+button, .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Montserrat', Arial, sans-serif; /* Use Montserrat for buttons */
+}
+
+    button:hover, .btn:hover {
+        background-color: #45a049;
+    }
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    #flex-container {
+        flex-direction: column;
+    }
+
+    .navbar {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}

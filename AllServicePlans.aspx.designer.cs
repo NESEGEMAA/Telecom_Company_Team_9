@@ -11,52 +11,34 @@ namespace Telecom_Company_Team_9
 {
 
 
-    public partial class MyCashBack
+    public partial class DashBoard
     {
 
         /// <summary>
-        /// MyCashback control.
+        /// AllServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MyCashback;
+        protected global::System.Web.UI.WebControls.Button AllServices;
 
         /// <summary>
-        /// NID control.
+        /// ErrorMessageAllServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NID;
+        protected global::System.Web.UI.WebControls.Label ErrorMessageAllServices;
 
         /// <summary>
-        /// EnteredID control.
+        /// GridViewAlLServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EnteredID;
-
-        /// <summary>
-        /// GridViewMyCashBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewMyCashBack;
-
-        /// <summary>
-        /// ErrorMessageMyCashBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorMessageMyCashBack;
+        protected global::System.Web.UI.WebControls.GridView GridViewAlLServices;
     }
 }

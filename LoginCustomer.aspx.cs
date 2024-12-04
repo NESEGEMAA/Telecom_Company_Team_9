@@ -18,7 +18,7 @@ namespace Telecom_Company_Team_9
 
         protected void Login(object sender, EventArgs e)
         {
-            string mobile_num = MobileNumber.Text;
+            Int64 mobile_num = int.Parse(MobileNumber.Text);
             string password = Password.Text;
 
             string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
@@ -38,8 +38,8 @@ namespace Telecom_Company_Team_9
                         bool result = (bool)cmd.ExecuteScalar();
                         if (result)
                         {
-                            Response.Redirect("DashBoard.aspx");
                             Session["UserRole"] = "Customer";
+                            Response.Redirect("AboutUs.aspx");
                         }
                         else
                         {
