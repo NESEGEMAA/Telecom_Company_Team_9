@@ -71,9 +71,15 @@
     <Content Include="CashbackCalculator.aspx" />
     <Content Include="ExtraBalance.aspx" />
     <Content Include="HighestVoucherID.aspx" />
+    <Content Include="CustomerComponent2.aspx" />
+    <Content Include="DashBoard.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
     <Content Include="admin_view.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="LoginCustomer.aspx" />
+    <Content Include="MyCashBack.aspx" />
+    <Content Include="MyConsumption.aspx" />
+    <Content Include="MyUsage.aspx" />
     <Content Include="RechargeBalance.aspx" />
     <Content Include="RedeemVoucher.aspx" />
     <Content Include="RemainingBalance.aspx" />
@@ -82,6 +88,7 @@
     <Content Include="Top10Payments.aspx" />
     <Content Include="ViewAllBenefits.aspx" />
     <Content Include="ViewNonResolvedTickets.aspx" />
+    <Content Include="UnsubscribedServices.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +127,13 @@
     <Compile Include="HighestVoucherID.aspx.designer.cs">
       <DependentUpon>HighestVoucherID.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LastFiveMonthSubscribedPlans.aspx.cs">
       <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +147,34 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginCustomer.aspx.cs">
+      <DependentUpon>LoginCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginCustomer.aspx.designer.cs">
+      <DependentUpon>LoginCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyCashBack.aspx.cs">
+      <DependentUpon>MyCashBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyCashBack.aspx.designer.cs">
+      <DependentUpon>MyCashBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyConsumption.aspx.cs">
+      <DependentUpon>MyConsumption.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyConsumption.aspx.designer.cs">
+      <DependentUpon>MyConsumption.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyUsage.aspx.cs">
+      <DependentUpon>MyUsage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyUsage.aspx.designer.cs">
+      <DependentUpon>MyUsage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechargeBalance.aspx.cs">
@@ -198,6 +240,13 @@
     <Compile Include="ViewNonResolvedTickets.aspx.designer.cs">
       <DependentUpon>ViewNonResolvedTickets.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UnsubscribedServices.aspx.cs">
+      <DependentUpon>UnsubscribedServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnsubscribedServices.aspx.designer.cs">
+      <DependentUpon>UnsubscribedServices.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -208,6 +257,10 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
+    <Folder Include="Customer\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
