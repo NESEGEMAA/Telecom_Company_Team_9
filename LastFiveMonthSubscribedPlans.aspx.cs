@@ -30,7 +30,7 @@ namespace Telecom_Company_Team_9
             string data = "SELECT LastFiveMonthsPlans.* FROM dbo.Subscribed_plans_5_Months (@mobileNo) AS LastFiveMonthsPlans";
 
             // Get the mobile number from the input field
-            Int32 mobileNumber = int.Parse(LastFiveMonthsPlansInputNumber.Text);
+            Int64 mobileNumber = int.Parse(LastFiveMonthsPlansInputNumber.Text);
 
             try
             {

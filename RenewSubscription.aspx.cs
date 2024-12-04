@@ -27,7 +27,7 @@ namespace Telecom_Company_Team_9
                 ", @plan_id = @planID";
 
             // Get the mobile number from the input field
-            Int32 mobileNumber = int.Parse(InputMobileNumber.Text);
+            Int64 mobileNumber = int.Parse(InputMobileNumber.Text);
             Int32 rechargeAmount = int.Parse(InputAmount.Text);
             string paymentMethod = paymentMethodDropDownList.SelectedValue;
             Int32 planID = int.Parse(InputPlanId.Text);

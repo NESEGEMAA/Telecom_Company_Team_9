@@ -27,7 +27,7 @@ namespace Telecom_Company_Team_9
             try
             {
                 // Get the mobile number from the input field
-                Int32 mobileNumber = int.Parse(InputMobileNumber.Text);
+                Int64 mobileNumber = int.Parse(InputMobileNumber.Text);
                 Int32 voucherID = int.Parse(InputVoucherID.Text);
 
                 try
