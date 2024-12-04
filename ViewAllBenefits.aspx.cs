@@ -10,21 +10,21 @@ using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
-    public partial class AllShops : System.Web.UI.Page
+    public partial class ViewAllBenefits : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void ViewAllShops(object sender, EventArgs e)
+        //Part 1 Component 2
+        protected void ViewBenefits(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
 
-            String data = "SELECT * FROM allShops";
+            String data = "SELECT * FROM allBenefits";
             SqlCommand cmd = new SqlCommand(data, conn);
 
             SqlDataAdapter reader = new SqlDataAdapter(cmd);
@@ -33,16 +33,18 @@ namespace Telecom_Company_Team_9
 
             if (dt.Rows.Count > 0)
             {
-                AllShopsGridView.DataSource = dt;
-                AllShopsGridView.DataBind();
-                AllShopsErrorMessage.Visible = false;
+                GridBenefitView.DataSource = dt;
+                GridBenefitView.DataBind();
+
             }
             else
             {
-                AllShopsErrorMessage.Text = "No shops available to display.";
-                AllShopsErrorMessage.Text = dt.ToString();
-                AllShopsErrorMessage.Visible = true;
+                BenefitErrorMessage.Text = "No benefits available to display.";
+
+
             }
+            conn.Close();
+
         }
     }
 }
