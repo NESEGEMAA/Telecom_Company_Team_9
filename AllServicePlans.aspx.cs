@@ -9,10 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
-
-        protected void AllServicePlans(object sender, EventArgs e)
-        {
+          
             string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -39,5 +36,8 @@ namespace Telecom_Company_Team_9
                 }
             }
         }
+    
     }
+
+        
 }
