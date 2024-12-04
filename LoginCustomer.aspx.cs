@@ -39,6 +39,7 @@ namespace Telecom_Company_Team_9
                         if (result)
                         {
                             Response.Redirect("DashBoard.aspx");
+                            Session["UserRole"] = "Customer";
                         }
                         else
                         {
