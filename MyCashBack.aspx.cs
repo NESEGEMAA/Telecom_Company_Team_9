@@ -23,39 +23,51 @@ namespace Telecom_Company_Team_9
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                string NationalId = NID.Text;
 
-                try
+                if (string.IsNullOrEmpty(NationalId))
                 {
-                    string NationalId = NID.Text;
+                    ErrorMessageMyCashBack.Text = "Invalid NationalID";
+                    ErrorMessageMyCashBack.Visible = true;
 
-                    if (string.IsNullOrEmpty(NationalId))
+                    // Removing previously output table
+                    GridViewMyCashBack.DataSource = null;
+                    GridViewMyCashBack.DataBind();
+                }
+                else if (!int.TryParse(NationalId, out int nationalid))
+                {
+                    ErrorMessageMyCashBack.Text = "National ID must be a valid number.";
+                    ErrorMessageMyCashBack.Visible = true;
+
+                    // Removing previously output table
+                    GridViewMyCashBack.DataSource = null;
+                    GridViewMyCashBack.DataBind();
+                }
+                else
+                {
+                    try
                     {
-                        ErrorMessageMyCashBack.Text = "Invalid NationalID";
-                        return;
-                    }
-                    if (!int.TryParse(NationalId, out int nationalid))
-                    {
-                        ErrorMessageMyCashBack.Text = "National ID must be a valid number.";
-                        return;
-                    }
-                    con.Open();
-                    string query = "SELECT * FROM dbo.Cashback_Wallet_Customer(@NationalID)";
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@NationalID", nationalid);
-                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                        con.Open();
+                        string query = "SELECT * FROM dbo.Cashback_Wallet_Customer(@NationalID)";
+                        using (SqlCommand cmd = new SqlCommand(query, con))
                         {
-                            DataTable dt = new DataTable();
-                            sda.Fill(dt);
+                            cmd.Parameters.AddWithValue("@NationalID", nationalid);
+                            using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                            {
+                                DataTable dt = new DataTable();
+                                sda.Fill(dt);
 
-                            GridViewMyCashBack.DataSource = dt;
-                            GridViewMyCashBack.DataBind();
+                                GridViewMyCashBack.DataSource = dt;
+                                GridViewMyCashBack.DataBind();
+                                ErrorMessageMyCashBack.Visible = false;
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    ErrorMessageMyCashBack.Text = "An error occurred: " + ex.Message;
+                    catch (Exception ex)
+                    {
+                        ErrorMessageMyCashBack.Text = "An error occurred: " + ex.Message;
+                        ErrorMessageMyCashBack.Visible = true;
+                    }
                 }
             }
         }
