@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Reflection.Emit;
+using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -22,6 +15,7 @@ namespace Telecom_Company_Team_9
             Calendar2.Visible = true;
             Button10.Visible = true;
         }
+
         protected void ShowTotalUsage(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -73,10 +67,12 @@ namespace Telecom_Company_Team_9
             }
             else
             {
-                Label2.Text = "Invalid Input Format";
+                if (date > DateTime.Today)
+                    Label2.Text = "Invalid Input Date";
+                else
+                    Label2.Text = "Invalid Mobile Number";
                 Label2.Visible = true;
                 GridView7.Visible = false;
-
             }
         }
 

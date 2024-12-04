@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -18,6 +13,7 @@ namespace Telecom_Company_Team_9
             TextBox3.Visible = true;
             Button7.Visible = true;
         }
+
         protected void ExecuteStoredProcedure(String mobile, int PlanID)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -41,7 +37,7 @@ namespace Telecom_Company_Team_9
                             }
                         }
                         if (cmd.ExecuteNonQuery() != 0)
-                            Response.Write("Benefits Deleted Sucessfully!");
+                            Response.Write("Benefits Deleted Successfully!");
                         else
                             Response.Write("No Benefits Found");
                     }
@@ -52,19 +48,20 @@ namespace Telecom_Company_Team_9
                 }
             }
         }
+
         protected void Button7_Click(object sender, EventArgs e)
         {
             try
             {
                 String mobile = TextBox2.Text;
+                int mobileTest = int.Parse(mobile);
                 int planID = int.Parse(TextBox3.Text);
                 ExecuteStoredProcedure(mobile, planID);
             }
             catch (Exception ex)
-            {
+            {  
                 Response.Write("Invalid Plan ID or Mobile Number");
             }
-
         }
     }
 }

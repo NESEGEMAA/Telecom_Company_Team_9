@@ -27,9 +27,14 @@ namespace Telecom_Company_Team_9
             if (role == "Admin")
             {
                 navbarHtml += @"
-                <li><a href='AdminDashboard.aspx'>Admin Dashboard</a></li>
-                <li><a href='ManageUsers.aspx'>Manage Users</a></li>
-                <li><a href='Reports.aspx'>Reports</a></li>";
+                <li><a href='ActiveAccounts.aspx'>View Active Accounts</a></li>
+                <li><a href='AllResolvedTickets.aspx'>View All Resolved Tickets</a></li>
+                <li><a href='PhysicalStoresVouchers.aspx'>View All Redeemed Vouchers & Stores</a></li>
+                <li><a href='SubscribedServicePlans.aspx'>View All Subscribed Plans</a></li>
+                <li><a href='SubscribedInputPlan.aspx'>View Input Subscribed Plans</a></li>
+                <li><a href='TotalPlanUsage.aspx'>View Input Account Total Plan Usage</a></li>
+                <li><a href='RemoveAllBenefits.aspx'>Remove Input Account Benefits</a></li>
+                <li><a href='AllSMSOffers.aspx'>View All Input Account SMS Offers</a></li>";
             }
             else if (role == "Customer")
             {
@@ -61,7 +66,7 @@ namespace Telecom_Company_Team_9
             if (role == null)
             {
                 navbarHtml += "<li><a href='LoginCustomer.aspx'>Log In as a Customer</a></li>";
-                navbarHtml += "<li><a href='Login.aspx'>Log In as a Admin</a></li>";
+                navbarHtml += "<li><a href='LoginAdmin.aspx'>Log In as a Admin</a></li>";
             }
             else
             {

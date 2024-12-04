@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -13,7 +8,6 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Login(object sender, EventArgs e)
@@ -25,10 +19,8 @@ namespace Telecom_Company_Team_9
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-
                 try
                 {
-
                     con.Open();
                     string query = "SELECT dbo.AccountLoginValidation(@MobileNo, @Password)";
                     using (SqlCommand cmd = new SqlCommand(query, con))

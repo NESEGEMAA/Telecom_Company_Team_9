@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Configuration;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
@@ -20,6 +16,7 @@ namespace Telecom_Company_Team_9
 
             Response.Write(Session["admin"]);
         }
+
         protected void Show_Accounts(object sender, EventArgs e)
         {
             GridView1.Visible = true;
@@ -42,6 +39,7 @@ namespace Telecom_Company_Team_9
             GridView6.Visible = false;
             Label1.Visible = false;
         }
+
         protected void Show_Stores(object sender, EventArgs e)
         {
             GridView2.Visible = true;
@@ -65,7 +63,6 @@ namespace Telecom_Company_Team_9
             Label1.Visible = false;
         }
 
-
         protected void Show_Tickets(object sender, EventArgs e)
         {
             GridView3.Visible = true;
@@ -78,7 +75,7 @@ namespace Telecom_Company_Team_9
             TextBox1.Visible = false;
             Button7.Visible = false;
             TextBox2.Visible = false;
-            TextBox3.Visible = false; 
+            TextBox3.Visible = false;
             TextBox5.Visible = false;
             Calendar2.Visible = false;
             Button10.Visible = false;
@@ -87,7 +84,6 @@ namespace Telecom_Company_Team_9
             GridView7.Visible = false;
             GridView6.Visible = false;
             Label1.Visible = false;
-
         }
 
         protected void Show_Plans(object sender, EventArgs e)
@@ -111,7 +107,6 @@ namespace Telecom_Company_Team_9
             GridView7.Visible = false;
             GridView6.Visible = false;
             Label1.Visible = false;
-
         }
 
         protected void OnMyDataSourceSelecting1(object sender, SqlDataSourceSelectingEventArgs e)
@@ -121,8 +116,8 @@ namespace Telecom_Company_Team_9
             e.Command.Parameters["@date"].Value = dateTime;
             e.Command.Parameters["@plan"].Value = planID;
             Response.Write("ha5a");
-
         }
+
         protected void Button5_Click(object sender, EventArgs e)
         {
             GridView4.Visible = false;
@@ -149,8 +144,9 @@ namespace Telecom_Company_Team_9
         {
             SqlDataSource5.SelectCommand = "SELECT Account_Plan_date_1.* FROM dbo.Account_Plan_date(@date,@plan) AS Account_Plan_date_1" + Request.QueryString["@date"] + Request.QueryString["@plan"];
             SqlDataSource5.DataBind();
-            GridView5.Visible=true;
+            GridView5.Visible = true;
         }
+
         protected void ExecuteStoredProcedure(int mobile, int PlanID)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -184,12 +180,10 @@ namespace Telecom_Company_Team_9
 
         protected void Button7_Click(object sender, EventArgs e)
         {
-
             int mobile = int.Parse(TextBox2.Text);
             int planID = int.Parse(TextBox3.Text);
             ExecuteStoredProcedure(mobile, planID);
             Response.Write("Benefits Deleted Sucessfully!");
-
         }
 
         protected void Button8_Click(object sender, EventArgs e)
@@ -230,8 +224,6 @@ namespace Telecom_Company_Team_9
             e.Command.Parameters["@mobile_no"].Value = mobile;
             e.Command.Parameters["@from_date"].Value = date;
             Response.Write("ha5a");
-
-
         }
 
         protected void Button9_Click(object sender, EventArgs e)
@@ -263,7 +255,6 @@ namespace Telecom_Company_Team_9
             Button9.Visible = false;
             GridView7.Visible = false;
             GridView6.Visible = false;
-
         }
 
         protected void Button12_Click(object sender, EventArgs e)
@@ -286,8 +277,8 @@ namespace Telecom_Company_Team_9
             GridView7.Visible = false;
             GridView6.Visible = false;
             Label1.Visible = false;
-
         }
+
         protected void ShowAccountSMSOffers(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -340,9 +331,9 @@ namespace Telecom_Company_Team_9
                 Label1.Text = "Invalid mobile number format";
                 Label1.Visible = true;
                 GridView6.Visible = false;
-
             }
         }
+
         protected void ShowTotalUsage(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -397,7 +388,6 @@ namespace Telecom_Company_Team_9
                 Label2.Text = "Invalid Input Format";
                 Label2.Visible = true;
                 GridView7.Visible = false;
-
             }
         }
     }

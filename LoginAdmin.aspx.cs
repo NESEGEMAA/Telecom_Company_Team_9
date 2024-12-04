@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
 namespace Telecom_Company_Team_9
 {
@@ -14,8 +9,8 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
+
         protected void login(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();

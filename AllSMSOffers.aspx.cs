@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Reflection.Emit;
+using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -20,6 +14,7 @@ namespace Telecom_Company_Team_9
             Button9.Visible = true;
             Label1.Visible = false;
         }
+
         protected void ShowAccountSMSOffers(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -72,9 +67,9 @@ namespace Telecom_Company_Team_9
                 Label1.Text = "Invalid mobile number format";
                 Label1.Visible = true;
                 GridView6.Visible = false;
-
             }
         }
+
         protected void Button9_Click(object sender, EventArgs e)
         {
             ShowAccountSMSOffers(sender, e);

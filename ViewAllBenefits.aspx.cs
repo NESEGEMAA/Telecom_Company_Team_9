@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -14,8 +9,8 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
+
         //Part 1 Component 2
         protected void ViewBenefits(object sender, EventArgs e)
         {
@@ -35,16 +30,12 @@ namespace Telecom_Company_Team_9
             {
                 GridBenefitView.DataSource = dt;
                 GridBenefitView.DataBind();
-
             }
             else
             {
                 BenefitErrorMessage.Text = "No benefits available to display.";
-
-
             }
             conn.Close();
-
         }
     }
 }
