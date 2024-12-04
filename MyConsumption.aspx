@@ -18,7 +18,12 @@
     <asp:Calendar ID="End" runat="server"></asp:Calendar>
     <br />
     <asp:Button ID="ButtonMC" runat="server" Text="Submit" OnClick ="Compute" />
-    <asp:GridView ID="GridViewMyConsumption" runat="server" AutoGenerateColumns="true" HeaderStyle-BackColor="LightGray" BorderWidth="1" />
+    <asp:GridView ID="GridViewMyConsumption" runat="server" CssClass="gridview">
+        <FooterStyle CssClass="gridview-footer" />
+        <HeaderStyle CssClass="gridview-header" />
+        <PagerStyle CssClass="gridview-pager" />
+        <RowStyle CssClass="gridview-row" />
+    </asp:GridView>
     <asp:Label ID="ErrorMessageMyConsumption" runat="server" ForeColor="Red" Text=""></asp:Label>
 </asp:Content>
 

@@ -10,7 +10,12 @@
             <br />
         
              <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" />
-            <asp:GridView ID="GridViewPayment" runat="server"> </asp:GridView>
+            <asp:GridView ID="GridViewPayment" runat="server" CssClass="gridview">
+                <FooterStyle CssClass="gridview-footer" />
+                <HeaderStyle CssClass="gridview-header" />
+                <PagerStyle CssClass="gridview-pager" />
+                <RowStyle CssClass="gridview-row" />
+            </asp:GridView>
             <br />
             <asp:Label ID="LabelPayment" runat="server" ></asp:Label>
             <br />

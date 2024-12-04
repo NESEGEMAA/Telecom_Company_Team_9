@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
-        <asp:GridView ID="GridView4" Visible="False" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView4" Visible="False" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" CssClass="gridview">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="mobileNo" HeaderText="mobileNo" SortExpression="mobileNo" />
@@ -22,16 +22,10 @@
                 <asp:BoundField DataField="data_offered" HeaderText="data_offered" SortExpression="data_offered" />
                 <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
             </Columns>
-            <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
-            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-            <SortedAscendingHeaderStyle BackColor="#246B61" />
-            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-            <SortedDescendingHeaderStyle BackColor="#15524A" />
+            <FooterStyle CssClass="gridview-footer" />
+            <HeaderStyle CssClass="gridview-header" />
+            <PagerStyle CssClass="gridview-pager" />
+            <RowStyle CssClass="gridview-row" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:MyDatabaseConnection %>" SelectCommand="Account_Plan" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     </div>
