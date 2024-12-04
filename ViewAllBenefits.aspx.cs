@@ -9,10 +9,11 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ViewBenefits();
         }
 
         //Part 1 Component 2
-        protected void ViewBenefits(object sender, EventArgs e)
+        protected void ViewBenefits()
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
