@@ -1,11 +1,69 @@
-﻿/* Reset and Basic Styling */
+﻿@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/Content/fonts/Poppins/static/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/Content/fonts/Poppins/static/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/Content/fonts/Poppins/static/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/Content/fonts/Poppins/static/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Reset and Basic Styling */
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh; /* Ensure body and html take full height */
     font-family: 'Poppins', Arial, sans-serif; /* Use Poppins as the default font */
     background-color: #f9f9f9;
     color: #333;
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
 }
 
 /* Header Styling */
@@ -24,50 +82,75 @@ header {
 #flex-container {
     display: flex;
     flex-direction: row;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent unnecessary scrolling */
+    height: calc(100vh - 60px); /* Subtract header height from viewport */
+    overflow: hidden; /* Prevent unnecessary scrolling on the page */
 }
 
 /* Navbar Styling */
 .navbar {
     background-color: #333; /* Dark background for contrast */
     color: white;
-    width: 250px;
-    min-width: 200px;
-    height: 100%; /* Full height */
-    overflow-y: auto; /* Scroll if content overflows */
+    width: 60px; /* Smaller width by default */
+    height: 100%; /* Full height of the flex container */
+    overflow-y: auto; /* Enable scrolling when content overflows */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease; /* Smooth transition for width change */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+    /* On Hover: Expand the Navbar */
+    .navbar:hover {
+        width: 250px; /* Expanded width when hovering */
+    }
+
+    /* Layout of the Navbar List Items */
     .navbar ul {
-        list-style-type: none;
+        list-style-type: none; /* Remove default bullet points */
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
     }
 
         .navbar ul li {
             border-bottom: 1px solid #444; /* Subtle separation */
         }
 
+            /* Make text completely invisible and not take up space initially */
             .navbar ul li a {
                 display: block;
                 color: white;
                 text-decoration: none;
                 padding: 12px 20px;
-                font-size: 14px;
-                font-family: 'Poppins', Arial, sans-serif; /* Use Poppins for link text */
-                transition: background-color 0.3s, color 0.3s;
+                font-size: 14px; /* Normal font size */
+                font-family: 'Poppins', Arial, sans-serif;
+                visibility: hidden; /* Hide text */
+                opacity: 0; /* Make the text invisible */
+                height: 0; /* Remove space occupied by the text */
+                overflow: hidden; /* Prevent any overflow */
+                transition: visibility 0s, opacity 0.3s ease, height 0s 0.3s; /* Smooth transition for visibility and opacity */
             }
 
-                .navbar ul li a:hover {
-                    background-color: #575757; /* Highlight on hover */
-                    color: #fff;
-                }
+    /* On hover: show text */
+    .navbar:hover ul li a {
+        visibility: visible; /* Make text visible */
+        opacity: 1; /* Fade in text */
+        height: auto; /* Allow text to take up space */
+        transition: opacity 0.3s ease, visibility 0s, height 0s; /* Smooth transition */
+    }
 
-                .navbar ul li a.active {
-                    background-color: #4CAF50; /* Highlight the active link */
-                    color: white;
-                }
+    /* Navbar links active and hover styles */
+    .navbar ul li a:hover {
+        background-color: #575757; /* Highlight on hover */
+        color: #fff;
+    }
+
+    .navbar ul li a.active {
+        background-color: #4CAF50; /* Highlight the active link */
+        color: white;
+    }
+
 
 /* Content Styling */
 .content {
@@ -75,7 +158,13 @@ header {
     padding: 20px;
     overflow-y: auto; /* Allow content scrolling */
     font-family: 'Poppins', Arial, sans-serif; /* Keep Poppins for content text */
+    /* Use flexbox to center the content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    /* align-items: center; /* Center vertically */
+    text-align: center; /* Optionally center text inside the elements */
 }
+
 
 /* Buttons (if needed) */
 button, .btn {
@@ -93,9 +182,7 @@ button, .btn {
         background-color: #45a049;
     }
 
-
 /* GridView Styles */
-
 .gridview-footer {
     background-color: #1C5E55;
     font-weight: bold;
@@ -122,7 +209,6 @@ button, .btn {
     border: none;
     padding: 4px;
 }
-
 
 /* Responsive Design for Smaller Screens */
 @media screen and (max-width: 768px) {
