@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AcceptedPaymentTransaction.aspx" />
     <Content Include="ActiveAccounts.aspx" />
     <Content Include="AllResolvedTickets.aspx" />
     <Content Include="AboutUs.aspx" />
@@ -113,6 +114,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcceptedPaymentTransaction.aspx.cs">
+      <DependentUpon>AcceptedPaymentTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcceptedPaymentTransaction.aspx.designer.cs">
+      <DependentUpon>AcceptedPaymentTransaction.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ActiveAccounts.aspx.cs">
       <DependentUpon>ActiveAccounts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
