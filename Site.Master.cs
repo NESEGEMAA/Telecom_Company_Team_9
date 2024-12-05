@@ -45,6 +45,14 @@ namespace Telecom_Company_Team_9
                 <li><a href='SubscribedInputPlan.aspx'>View Input Subscribed Plans</a></li>
                 <li><a href='TotalPlanUsage.aspx'>View Input Account Total Plan Usage</a></li>
                 <li><a href='RemoveAllBenefits.aspx'>Remove Input Account Benefits</a></li>
+                <li><a href='CashBack.aspx'>Number of Cashback per wallet</a></li>
+                <li><a href='Payments_transaction.aspx'>View all payments</a></li>
+                <li><a href='E-shops.aspx'>View all E-shops</a></li>
+                <li><a href='1.aspx'>1</a></li>
+                <li><a href='2.aspx'>2</a></li>
+                <li><a href='3.aspx'>3</a></li>
+                <li><a href='4.aspx'>4</a></li>
+                <li><a href='5.aspx'>5</a></li>
                 <li><a href='AllSMSOffers.aspx'>View All Input Account SMS Offers</a></li>";
             }
             else if (role == "Customer")
