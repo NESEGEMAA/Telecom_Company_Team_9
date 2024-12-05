@@ -15,15 +15,6 @@ namespace Telecom_Company_Team_9
     {
 
         /// <summary>
-        /// ButtonView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonView;
-
-        /// <summary>
         /// GridBenefitView control.
         /// </summary>
         /// <remarks>

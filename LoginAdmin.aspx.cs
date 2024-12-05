@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
 namespace Telecom_Company_Team_9
 {
@@ -14,8 +9,8 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
+
         protected void login(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
@@ -34,15 +29,16 @@ namespace Telecom_Company_Team_9
             Boolean success = (bool)login_func.ExecuteScalar();
             conn.Close();
 
-            if (success == false)
+            /* hardcoded parameters */
+
+            if (mob == "01507896199" && pass == "pass123")
             {
-                Session["admin"] = mob;
-                Response.Redirect("admin_view.aspx");
+                Session["UserRole"] = "Admin";
+                Response.Redirect("Home.aspx");
             }
             else
             {
-                Response.Redirect("customer_view.aspx");
-
+                Response.Write("Invalid Username or Password");
             }
         }
     }

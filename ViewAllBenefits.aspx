@@ -7,10 +7,11 @@
     <h2>View all Active Benefits</h2>
     <br />
     <br />
-    <asp:Button ID="ButtonView" runat="server" Text="Click Here" OnClick ="ViewBenefits"/>
-    <br />
-    <br />
-     <asp:GridView ID="GridBenefitView" runat="server"  >
+     <asp:GridView ID="GridBenefitView" runat="server" CssClass="gridview">
+        <FooterStyle CssClass="gridview-footer" />
+        <HeaderStyle CssClass="gridview-header" />
+        <PagerStyle CssClass="gridview-pager" />
+        <RowStyle CssClass="gridview-row" />
     </asp:GridView>
 
    

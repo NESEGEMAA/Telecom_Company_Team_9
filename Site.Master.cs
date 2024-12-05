@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -12,12 +8,21 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             GenerateNavbar();
-            /*
-            if (!IsPostBack)
+
+            // Check if the user is logged in
+            if (Session["UserRole"] != null)
             {
-                GenerateNavbar();
+                // Show the Logout link
+                LogoutContainer.Visible = true;
+
+                // Attach click event for Logout
+                LogoutLink.ServerClick += LogoutLink_ServerClick;
             }
-            */
+            else
+            {
+                // Hide the Logout link
+                LogoutContainer.Visible = false;
+            }
         }
 
         private void GenerateNavbar()
@@ -26,14 +31,21 @@ namespace Telecom_Company_Team_9
             string role = Session["UserRole"] as string; // e.g., "Admin", "Customer", or null
 
             // Build the navbar HTML
-            string navbarHtml = "<ul>";
+            string navbarHtml = "";
+
+            navbarHtml += "<li><a href='Home.aspx'>Home</a></li>";
 
             if (role == "Admin")
             {
                 navbarHtml += @"
-                <li><a href='AdminDashboard.aspx'>Admin Dashboard</a></li>
-                <li><a href='ManageUsers.aspx'>Manage Users</a></li>
-                <li><a href='Reports.aspx'>Reports</a></li>";
+                <li><a href='ActiveAccounts.aspx'>View Active Accounts</a></li>
+                <li><a href='AllResolvedTickets.aspx'>View All Resolved Tickets</a></li>
+                <li><a href='PhysicalStoresVouchers.aspx'>View All Redeemed Vouchers & Stores</a></li>
+                <li><a href='SubscribedServicePlans.aspx'>View All Subscribed Plans</a></li>
+                <li><a href='SubscribedInputPlan.aspx'>View Input Subscribed Plans</a></li>
+                <li><a href='TotalPlanUsage.aspx'>View Input Account Total Plan Usage</a></li>
+                <li><a href='RemoveAllBenefits.aspx'>Remove Input Account Benefits</a></li>
+                <li><a href='AllSMSOffers.aspx'>View All Input Account SMS Offers</a></li>";
             }
             else if (role == "Customer")
             {
@@ -52,31 +64,39 @@ namespace Telecom_Company_Team_9
                     <li><a href='MyConsumption.aspx'>View everyone's consumption of a certain plan ;)</a></li>
                     <li><a href='MyUsage.aspx'>View your plan usage</a></li>
                     <li><a href='UnsubscribedServices.aspx'>Checkout our other Plans</a></li>
-                    <li><a href='AllServicePlans.aspx'>View your plan</a></li>
+                    <li><a href='AllServicePlans.aspx'>View all our plans</a></li>
                     <li><a href='RenewSubscription.aspx'>Renew your Subscription</a></li>";
             }
 
             // Links for unauthenticated users
-            navbarHtml += @"
-                <li><a href='AboutUs.aspx'>About Us</a></li>
-                <li><a href='Contact.aspx'>Contact</a></li>";
+            navbarHtml += "<li><a href='AboutUs.aspx'>About Us</a></li>";
 
             // Add a login/logout link at the end
             if (role == null)
             {
                 navbarHtml += "<li><a href='LoginCustomer.aspx'>Log In as a Customer</a></li>";
-                navbarHtml += "<li><a href='Login.aspx'>Log In as a Admin</a></li>";
+                navbarHtml += "<li><a href='LoginAdmin.aspx'>Log In as a Admin</a></li>";
             }
-            else
-            {
-                navbarHtml += "<li><a href='Logout.aspx'>Log Out</a></li>";
-            }
-
-            navbarHtml += "</ul>";
 
             // Inject the HTML into the placeholder
             navMenuPlaceholder.Text = navbarHtml;
         }
 
+        // Handle the Logout logic
+        private void LogoutLink_ServerClick(object sender, EventArgs e)
+        {
+            // Clear the session
+            Session.Clear(); // Removes all keys and values
+            Session.Abandon(); // Ends the session
+
+            // Optionally clear cookies
+            if (Request.Cookies["ASP.NET_SessionId"] != null)
+            {
+                Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddDays(-1);
+            }
+
+            // Redirect the user to the login page
+            Response.Redirect("Home.aspx");
+        }
     }
 }

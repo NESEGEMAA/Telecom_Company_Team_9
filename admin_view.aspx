@@ -64,7 +64,7 @@
 
             <asp:TextBox Visible="false" ID="TextBox1" runat="server"></asp:TextBox>
 
-&nbsp;<asp:Button Visible="false" ID="Button6" runat="server" Text="Search" OnClick="Button6_Click" />
+<asp:Button Visible="false" ID="Button6" runat="server" Text="Search" OnClick="Button6_Click" />
             <asp:GridView ID="GridView2" runat="server" Visible="False" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="shopID,voucherID" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" >
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>

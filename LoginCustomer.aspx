@@ -1,27 +1,29 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginCustomer.aspx.cs" Inherits="Telecom_Company_Team_9.LoginCustomer" %>
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginCustomer.aspx.cs" Inherits="Telecom_Company_Team_9.LoginCustomer" MasterPageFile="~/Site.master" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="signin" runat="server">
-        <div>
-            Login page 
-            <br />
-            <br />
-            <asp:Label ID="M1" runat="server" Text="Mobile number: "></asp:Label>
-            <asp:TextBox ID="MobileNumber" runat="server"></asp:TextBox>
-            <br /><br />
-            <asp:Label ID="P1" runat="server" Text="Password: "></asp:Label>
-            <asp:TextBox ID="Password" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="ButtonL" runat="server" Text="Login" OnClick="Login" />
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+    <link href="/Content/Login.css" rel="stylesheet" type="text/css" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <div class="content">
+        <div class="login-container">
+            <h1>Customer Login</h1>
+
+            <div class="form-group">
+                <asp:Label ID="M1" runat="server" Text="Mobile number: " class="form-group label"></asp:Label>
+                <asp:TextBox ID="MobileNumber" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="form-group">
+                <asp:Label ID="P1" runat="server" Text="Password: " class="form-group label"></asp:Label>
+                <asp:TextBox ID="Password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+            </div>
+
+            <div class="form-group">
+                <asp:Button ID="ButtonL" runat="server" Text="Login" CssClass="btn-login" OnClick="Login" />
+            </div>
+
             <asp:Label ID="ErrorMessage" runat="server" ForeColor="Red" Text="" />
         </div>
-    </form>
-</body>
-</html>
-
+    </div>
+</asp:Content>

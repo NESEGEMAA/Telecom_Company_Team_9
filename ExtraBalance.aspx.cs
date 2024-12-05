@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -14,9 +9,9 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
-        //Method to check if input is a number only 
+
+        //Method to check if input is a number only
         public bool AreDigitsOnly(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -28,7 +23,6 @@ namespace Telecom_Company_Team_9
             }
             return true;
         }
-
 
         //Part 5 Component 2
         protected void ViewExtraAmount(object sender, EventArgs e)
@@ -51,14 +45,11 @@ namespace Telecom_Company_Team_9
                 return;
             }
 
-            
             int amount = (int)Check_amount.ExecuteScalar();
-
 
             if (amount > 0)
             {
                 LabelExt.Text = "The extra amount is: " + amount;
-
             }
             else
             {

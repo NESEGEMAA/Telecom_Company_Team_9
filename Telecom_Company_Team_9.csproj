@@ -67,35 +67,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActiveAccounts.aspx" />
+    <Content Include="AllResolvedTickets.aspx" />
     <Content Include="AboutUs.aspx" />
     <Content Include="AllShops.aspx" />
     <Content Include="CashBack.aspx" />
+    <Content Include="AllSMSOffers.aspx" />
     <Content Include="CashbackCalculator.aspx" />
+    <Content Include="Content\Fonts\Montserrat\OFL.txt" />
+    <Content Include="Content\Fonts\Montserrat\README.txt" />
+    <Content Include="Content\Fonts\Poppins\OFL.txt" />
+    <Content Include="Content\Home.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\Master.css" />
     <Content Include="CustomerWallets.aspx" />
     <Content Include="E-Shops.aspx" />
     <Content Include="ExtraBalance.aspx" />
     <Content Include="HighestVoucherID.aspx" />
     <Content Include="AllServicePlans.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
     <Content Include="admin_view.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="LoginAdmin.aspx" />
     <Content Include="LoginCustomer.aspx" />
     <Content Include="MyCashBack.aspx" />
     <Content Include="MyConsumption.aspx" />
     <Content Include="MyUsage.aspx" />
     <Content Include="Payments_transactions.aspx" />
+    <Content Include="PhysicalStoresVouchers.aspx" />
     <Content Include="RechargeBalance.aspx" />
     <Content Include="RedeemVoucher.aspx" />
     <Content Include="RemainingBalance.aspx" />
+    <Content Include="RemoveAllBenefits.aspx" />
     <Content Include="RenewSubscription.aspx" />
+    <Content Include="SubscribedInputPlan.aspx" />
+    <Content Include="SubscribedServicePlans.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="Top10Payments.aspx" />
+    <Content Include="TotalPlanUsage.aspx" />
     <Content Include="ViewAllBenefits.aspx" />
     <Content Include="ViewNonResolvedTickets.aspx" />
     <Content Include="UnsubscribedServices.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveAccounts.aspx.cs">
+      <DependentUpon>ActiveAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActiveAccounts.aspx.designer.cs">
+      <DependentUpon>ActiveAccounts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +134,13 @@
     <Compile Include="admin_view.aspx.designer.cs">
       <DependentUpon>admin_view.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AllResolvedTickets.aspx.cs">
+      <DependentUpon>AllResolvedTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllResolvedTickets.aspx.designer.cs">
+      <DependentUpon>AllResolvedTickets.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AllShops.aspx.cs">
       <DependentUpon>AllShops.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,6 +154,13 @@
     </Compile>
     <Compile Include="CashBack.aspx.designer.cs">
       <DependentUpon>CashBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllSMSOffers.aspx.cs">
+      <DependentUpon>AllSMSOffers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllSMSOffers.aspx.designer.cs">
+      <DependentUpon>AllSMSOffers.aspx</DependentUpon>
     </Compile>
     <Compile Include="CashbackCalculator.aspx.cs">
       <DependentUpon>CashbackCalculator.aspx</DependentUpon>
@@ -166,6 +204,13 @@
     <Compile Include="AllServicePlans.aspx.designer.cs">
       <DependentUpon>AllServicePlans.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LastFiveMonthSubscribedPlans.aspx.cs">
       <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -173,12 +218,12 @@
     <Compile Include="LastFiveMonthSubscribedPlans.aspx.designer.cs">
       <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginCustomer.aspx.cs">
       <DependentUpon>LoginCustomer.aspx</DependentUpon>
@@ -215,6 +260,13 @@
     <Compile Include="Payments_transactions.aspx.designer.cs">
       <DependentUpon>Payments_transactions.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PhysicalStoresVouchers.aspx.cs">
+      <DependentUpon>PhysicalStoresVouchers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhysicalStoresVouchers.aspx.designer.cs">
+      <DependentUpon>PhysicalStoresVouchers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechargeBalance.aspx.cs">
       <DependentUpon>RechargeBalance.aspx</DependentUpon>
@@ -237,6 +289,13 @@
     <Compile Include="RemainingBalance.aspx.designer.cs">
       <DependentUpon>RemainingBalance.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RemoveAllBenefits.aspx.cs">
+      <DependentUpon>RemoveAllBenefits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RemoveAllBenefits.aspx.designer.cs">
+      <DependentUpon>RemoveAllBenefits.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RenewSubscription.aspx.cs">
       <DependentUpon>RenewSubscription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +310,20 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="SubscribedInputPlan.aspx.cs">
+      <DependentUpon>SubscribedInputPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubscribedInputPlan.aspx.designer.cs">
+      <DependentUpon>SubscribedInputPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubscribedServicePlans.aspx.cs">
+      <DependentUpon>SubscribedServicePlans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubscribedServicePlans.aspx.designer.cs">
+      <DependentUpon>SubscribedServicePlans.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -264,6 +337,13 @@
     </Compile>
     <Compile Include="Top10Payments.aspx.designer.cs">
       <DependentUpon>Top10Payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TotalPlanUsage.aspx.cs">
+      <DependentUpon>TotalPlanUsage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TotalPlanUsage.aspx.designer.cs">
+      <DependentUpon>TotalPlanUsage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewAllBenefits.aspx.cs">
       <DependentUpon>ViewAllBenefits.aspx</DependentUpon>
@@ -288,6 +368,44 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Italic-VariableFont_wght.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-VariableFont_wght.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-Black.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-BlackItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-Bold.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-BoldItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-ExtraBold.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-ExtraLight.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-Italic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-Light.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-LightItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-Medium.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-MediumItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-Regular.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-SemiBold.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-Thin.ttf" />
+    <Content Include="Content\Fonts\Montserrat\static\Montserrat-ThinItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-Black.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-Bold.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-Italic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-Light.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-Medium.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-Regular.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-Thin.ttf" />
+    <Content Include="Content\Fonts\Poppins\Poppins-ThinItalic.ttf" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">

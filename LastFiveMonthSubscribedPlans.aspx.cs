@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml.Linq;
 
 namespace Telecom_Company_Team_9
 {
@@ -18,7 +9,6 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void ViewLastFiveMonthsPlans(object sender, EventArgs e)

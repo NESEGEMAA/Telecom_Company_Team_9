@@ -1,0 +1,230 @@
+﻿/* Font Imports */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Content/fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/Content/fonts/Poppins/static/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/Content/fonts/Poppins/static/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Reset and Basic Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', Arial, sans-serif; /* Default font */
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Flex Container for Layout */
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 60px); /* Subtract header height */
+    overflow: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    color: white;
+    width: 60px;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+    position: relative;
+    overflow-x: hidden;
+}
+
+    .navbar:hover {
+        width: 250px; /* Expanded width on hover */
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .navbar ul li {
+            border-bottom: 1px solid #444;
+        }
+
+            .navbar ul li a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 12px 20px;
+                font-size: 14px;
+                font-family: 'Poppins', Arial, sans-serif;
+                visibility: hidden;
+                opacity: 0;
+                height: 0;
+                overflow: hidden;
+                transition: visibility 0s, opacity 0.3s ease, height 0s 0.3s;
+            }
+
+    .navbar:hover ul li a {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        transition: opacity 0.3s ease, visibility 0s, height 0s;
+    }
+
+    .navbar ul li a:hover {
+        background-color: #575757;
+    }
+
+    .navbar ul li a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+/* Content Styling */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Calendar Styling */
+#Start, #End {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Dropdown Styling */
+#PlanList {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styling */
+#ButtonMC {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+    #ButtonMC:hover {
+        background-color: #45a049;
+    }
+
+/* GridView Styling */
+.gridview-footer {
+    background-color: #1C5E55;
+    font-weight: bold;
+    color: white;
+}
+
+.gridview-header {
+    background-color: #4CAF50;
+    font-weight: bold;
+    color: white;
+}
+
+.gridview-pager {
+    background-color: #666666;
+    color: white;
+    text-align: center;
+}
+
+.gridview-row {
+    background-color: #E3EAEB;
+}
+
+.gridview, .gridview th, .gridview td {
+    border: none;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    #flex-container {
+        flex-direction: column;
+    }
+
+    .navbar {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .gridview {
+        width: 100%;
+    }
+}

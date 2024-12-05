@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace Telecom_Company_Team_9
 {
@@ -14,15 +9,14 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
+
         protected void MyUsageTable(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-
                 try
                 {
                     string MobileNumber = Mobileno.Text;
@@ -60,7 +54,5 @@ namespace Telecom_Company_Team_9
                 }
             }
         }
-
     }
-
 }

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -14,10 +9,9 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
-        //Method to check if input is a number only 
+        //Method to check if input is a number only
         public bool AreDigitsOnly(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -29,13 +23,13 @@ namespace Telecom_Company_Team_9
             }
             return true;
         }
+
         //Part 6 Component 2
         protected void PaymentView(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
             String mobile = mob.Text;
-
 
             SqlCommand payment_func = new SqlCommand("Top_Successful_Payments", conn);
             payment_func.CommandType = CommandType.StoredProcedure;
@@ -54,14 +48,11 @@ namespace Telecom_Company_Team_9
             DataTable dt = new DataTable();
             reader.Fill(dt);
 
-
             if (dt.Rows.Count == 0)
             {
                 GridViewPayment.Visible = false;
                 LabelPayment.Visible = true;
                 LabelPayment.Text = "No data found for the given Mobile Number.";
-
-
             }
             else
             {
@@ -69,9 +60,7 @@ namespace Telecom_Company_Team_9
                 GridViewPayment.Visible = true;
                 GridViewPayment.DataSource = dt;
                 GridViewPayment.DataBind();
-
             }
-
         }
     }
 }

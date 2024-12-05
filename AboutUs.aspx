@@ -7,13 +7,9 @@
     </p>
     <br />
     <h2>Team Members:</h2>
-    <h3>Team Leader:</h3>
-    <p>Noureldin Salaheldin</p>
-    <br />
-    <ul>
-        <li>Ahmed Hamdy</li>
-        <li>Abdelrahman Ashry</li>
-        <li>Ahmed Khalid</li>
-        <li>To Be Inserted by them ;)</li>
-    </ul>
+    <p>Noureldin Salaheldin <strong>(Team Leader)</strong></p>
+    <p>Ahmed Hamdy</p>
+    <p>Abdelrahman Ashry</p>
+    <p>Ahmed Khalid</p>
+    <p>Hisham Hani</p>
 </asp:Content>

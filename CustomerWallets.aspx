@@ -2,7 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>View All Customer Wallets</h1>
-    <asp:GridView ID="CustomerWalletView" runat="server"></asp:GridView>
+    <asp:GridView ID="CustomerWalletView" runat="server" CssClass="gridview">
+        <FooterStyle CssClass="gridview-footer" />
+        <HeaderStyle CssClass="gridview-header" />
+        <PagerStyle CssClass="gridview-pager" />
+        <RowStyle CssClass="gridview-row" />
+    </asp:GridView>
     <p>
         <asp:Label ID="Message" runat="server" Text=""></asp:Label>
     </p>

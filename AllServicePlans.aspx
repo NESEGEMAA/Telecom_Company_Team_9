@@ -2,8 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <asp:Button ID="AllServices" runat="server" Text="All Service Plans" OnClick ="AllServicePlans" />
         <asp:Label ID="ErrorMessageAllServices" runat="server" ForeColor="Red" Text=""></asp:Label>
-        <asp:GridView ID="GridViewAlLServices" runat="server" AutoGenerateColumns="true" HeaderStyle-BackColor="LightGray" BorderWidth="1" />
+        <asp:GridView ID="GridViewAlLServices" runat="server" AutoGenerateColumns="true"  BorderWidth="1" CssClass="gridview" 
+            FooterStyle-CssClass="gridview-footer" 
+            HeaderStyle-CssClass="gridview-header" 
+            PagerStyle-CssClass="gridview-pager" 
+            RowStyle-CssClass="gridview-row" />
     </div>
 </asp:Content>

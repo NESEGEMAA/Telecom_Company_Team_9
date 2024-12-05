@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Configuration;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
@@ -84,7 +80,6 @@ namespace Telecom_Company_Team_9
                 Label1.Text = "Invalid mobile number format";
                 Label1.Visible = true;
                 GridView1.Visible = false;
-
             }
         }
     }
