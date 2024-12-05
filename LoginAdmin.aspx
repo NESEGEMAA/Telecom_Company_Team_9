@@ -1,24 +1,25 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAdmin.aspx.cs" Inherits="Telecom_Company_Team_9.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAdmin.aspx.cs" Inherits="Telecom_Company_Team_9.Login" MasterPageFile="~/Site.master" %>
 
-<!DOCTYPE html>
+<asp:Content runat="server" ID="Content2" ContentPlaceHolderID="HeadContent">
+    <!-- Page-specific CSS -->
+    <link href="/Content/Login.css" rel="stylesheet" type="text/css" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>
-    </title>
-</head>
-<body>
-    <h1>
-    LOGIN PAGE
-    </h1>
-    <form id="form1" runat="server">
-        <div>
-            Mobile Num:<br />
-            <asp:TextBox ID="mobile" runat="server"></asp:TextBox> <br />
-            Password:<br />
-            <asp:TextBox ID="password" runat="server"></asp:TextBox> <br />
-            <asp:Button ID="login_button" runat="server" OnClick="login" Text="Log In" />
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="server">
+    <div class="content">
+        <div class="login-container">
+            <h1>Admin Login</h1>
+            <div class="form-group">
+                <label for="mobile">Mobile Num:</label>
+                <asp:TextBox ID="mobile" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Button ID="login_button" runat="server" OnClick="login" Text="Log In" CssClass="btn-login" />
+            </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>

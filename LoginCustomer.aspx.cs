@@ -32,7 +32,7 @@ namespace Telecom_Company_Team_9
                         if (result)
                         {
                             Session["UserRole"] = "Customer";
-                            Response.Redirect("AboutUs.aspx");
+                            Response.Redirect("Home.aspx");
                         }
                         else
                         {

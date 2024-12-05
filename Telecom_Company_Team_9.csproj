@@ -79,6 +79,7 @@
     <Content Include="Content\Home.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Login.css" />
     <Content Include="Content\Master.css" />
     <Content Include="CustomerWallets.aspx" />
     <Content Include="ExtraBalance.aspx" />

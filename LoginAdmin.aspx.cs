@@ -34,7 +34,7 @@ namespace Telecom_Company_Team_9
             if (mob == "01507896199" && pass == "pass123")
             {
                 Session["UserRole"] = "Admin";
-                Response.Redirect("admin_view.aspx");
+                Response.Redirect("Home.aspx");
             }
             else
             {

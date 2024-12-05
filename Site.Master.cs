@@ -64,7 +64,7 @@ namespace Telecom_Company_Team_9
                     <li><a href='MyConsumption.aspx'>View everyone's consumption of a certain plan ;)</a></li>
                     <li><a href='MyUsage.aspx'>View your plan usage</a></li>
                     <li><a href='UnsubscribedServices.aspx'>Checkout our other Plans</a></li>
-                    <li><a href='AllServicePlans.aspx'>View your plan</a></li>
+                    <li><a href='AllServicePlans.aspx'>View all our plans</a></li>
                     <li><a href='RenewSubscription.aspx'>Renew your Subscription</a></li>";
             }
 
