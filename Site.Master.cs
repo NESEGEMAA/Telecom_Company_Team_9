@@ -33,6 +33,8 @@ namespace Telecom_Company_Team_9
             // Build the navbar HTML
             string navbarHtml = "";
 
+            navbarHtml += "<li><a href='Home.aspx'>Home</a></li>";
+
             if (role == "Admin")
             {
                 navbarHtml += @"
@@ -67,9 +69,7 @@ namespace Telecom_Company_Team_9
             }
 
             // Links for unauthenticated users
-            navbarHtml += @"
-                <li><a href='AboutUs.aspx'>About Us</a></li>
-                <li><a href='Contact.aspx'>Contact</a></li>";
+            navbarHtml += "<li><a href='AboutUs.aspx'>About Us</a></li>";
 
             // Add a login/logout link at the end
             if (role == null)
@@ -96,7 +96,7 @@ namespace Telecom_Company_Team_9
             }
 
             // Redirect the user to the login page
-            Response.Redirect("AboutUs.aspx");
+            Response.Redirect("Home.aspx");
         }
     }
 }
