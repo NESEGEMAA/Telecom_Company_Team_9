@@ -69,8 +69,10 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="AllShops.aspx" />
+    <Content Include="CashBack.aspx" />
     <Content Include="CashbackCalculator.aspx" />
     <Content Include="CustomerWallets.aspx" />
+    <Content Include="E-Shops.aspx" />
     <Content Include="ExtraBalance.aspx" />
     <Content Include="HighestVoucherID.aspx" />
     <Content Include="AllServicePlans.aspx" />
@@ -81,6 +83,7 @@
     <Content Include="MyCashBack.aspx" />
     <Content Include="MyConsumption.aspx" />
     <Content Include="MyUsage.aspx" />
+    <Content Include="Payments_transactions.aspx" />
     <Content Include="RechargeBalance.aspx" />
     <Content Include="RedeemVoucher.aspx" />
     <Content Include="RemainingBalance.aspx" />
@@ -114,6 +117,13 @@
     <Compile Include="AllShops.aspx.designer.cs">
       <DependentUpon>AllShops.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CashBack.aspx.cs">
+      <DependentUpon>CashBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CashBack.aspx.designer.cs">
+      <DependentUpon>CashBack.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CashbackCalculator.aspx.cs">
       <DependentUpon>CashbackCalculator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +137,13 @@
     </Compile>
     <Compile Include="CustomerWallets.aspx.designer.cs">
       <DependentUpon>CustomerWallets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="E-Shops.aspx.cs">
+      <DependentUpon>E-Shops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="E-Shops.aspx.designer.cs">
+      <DependentUpon>E-Shops.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExtraBalance.aspx.cs">
       <DependentUpon>ExtraBalance.aspx</DependentUpon>
@@ -190,6 +207,13 @@
     </Compile>
     <Compile Include="MyUsage.aspx.designer.cs">
       <DependentUpon>MyUsage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payments_transactions.aspx.cs">
+      <DependentUpon>Payments_transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payments_transactions.aspx.designer.cs">
+      <DependentUpon>Payments_transactions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RechargeBalance.aspx.cs">
