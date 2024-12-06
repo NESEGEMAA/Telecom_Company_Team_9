@@ -1,9 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AcceptedPaymentTransaction.aspx.cs" Inherits="Telecom_Company_Team_9.AcceptedPaymentTransaction" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" Runat="Server">
-</asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
     <h1>Accepted Payment Transactions</h1>
 
@@ -18,11 +16,11 @@
                     OnClick="RetrievePaymentsButton_Click" CssClass="btn-style" />
     <br />
     <br />
-    <asp:Label ID="PaymentsNumLabel" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="PaymentsNumLabel" runat="server" CssClass="label2"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="SumOfPointsLabel" runat="server" Text="" CssClass="label"></asp:Label>
+    <asp:Label ID="SumOfPointsLabel" runat="server" Text="" CssClass="label2"></asp:Label>
     <br />
     <!-- Message Label -->
-        <asp:Label ID="Message" runat="server" Text="" CssStyle="label"></asp:Label>
+       <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
 </asp:Content>

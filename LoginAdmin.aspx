@@ -6,19 +6,17 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="server">
-    <div class="login-container">
         <h1>Admin Login</h1>
-        <div class="form-group">
-            <asp:Label ID="M1" runat="server" Text="Mobile number: " class="form-group label"></asp:Label>
+            <h3>
+            Mobile number: </h3>
             <asp:TextBox ID="mobile" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <asp:Label ID="P1" runat="server" Text="Password: " class="form-group label"></asp:Label>
+       
+            <h3>
+                Password: 
+            </h3>
             <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <asp:Button ID="login_button" runat="server" OnClick="login" Text="Login" CssClass="btn-style" />
-        </div>
+           <asp:Button ID="login_button" runat="server" OnClick="login" Text="Login" CssClass="btn-style" />
+        <br />
+        <br />
         <asp:Label ID="ErrorMessage" runat="server" CssClass="label" />
-    </div>
 </asp:Content>

@@ -56,40 +56,43 @@
 
 /* Form Styles */
 .form-group {
-    margin-bottom: 20px; /* Add some space between form elements */
+    margin-bottom: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-    /* Label Styles */
     .form-group label {
-        font-size: 14px; /* Consistent font size */
-        font-weight: bold; /* Consistent font weight */
+        font-size: 14px;
+        font-weight: bold;
         margin-bottom: 5px;
-        color: #333;
-        display: block; /* Ensures the label behaves like a block-level element */
-        width: 100%; /* Ensure the label doesn't exceed the container width */
-        word-wrap: break-word; /* Breaks long words to fit within the container */
-        white-space: normal; /* Allow text to wrap within the container */
-        text-align: left; /* Align label text to the left */
+        color: #2d3748; /* Darker gray for better contrast */
+        display: block;
+        width: 100%;
+        word-wrap: break-word;
+        white-space: normal;
+        text-align: left;
     }
 
 /* Textbox Styles */
 .form-control {
     padding: 10px;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid #cbd5e0; /* Soft gray border */
     border-radius: 5px;
-    font-size: 14px; /* Ensure a consistent font size across all inputs */
+    font-size: 14px;
     margin-bottom: 15px;
-    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
-    max-width: 350px; /* Ensure both fields and buttons have the same max-width */
+    box-sizing: border-box;
+    max-width: 350px;
 }
 
 h2 {
-    font-size:20px;
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 15px;
 }
 
 /* Reset and Basic Styling */
@@ -98,8 +101,8 @@ body, html {
     padding: 0;
     height: 100vh;
     font-family: 'Poppins', Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #edf2f7; /* Light gray background */
+    color: #2d3748; /* Darker text for better readability */
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -107,7 +110,7 @@ body, html {
 
 /* Header Styling */
 header {
-    background-color: #4CAF50;
+    background-color: #38a169; /* Green color */
     color: white;
     padding: 15px 20px;
     text-align: left;
@@ -122,14 +125,14 @@ header {
 #flex-container {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 60px); /* Subtract header height */
+    height: calc(100vh - 60px);
     overflow: hidden;
     position: relative;
 }
 
 /* Navbar Styling */
 .navbar {
-    background-color: #333;
+    background-color: #2d3748; /* Dark gray */
     color: white;
     width: 60px;
     height: 100%;
@@ -137,7 +140,7 @@ header {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: width 0.3s ease;
     position: absolute;
-    z-index: 1; /* Overlay on top of content */
+    z-index: 1;
     top: 0;
     left: 0;
     bottom: 0;
@@ -145,10 +148,9 @@ header {
 }
 
     .navbar:hover {
-        width: 250px; /* Expanded width on hover */
+        width: 250px;
     }
 
-    /* Navbar List and Links */
     .navbar ul {
         list-style-type: none;
         margin: 0;
@@ -183,40 +185,39 @@ header {
     }
 
     .navbar ul li a:hover {
-        background-color: #575757;
+        background-color: #4A5568; /* Lighter gray on hover */
     }
 
     .navbar ul li a.active {
-        background-color: #4CAF50;
+        background-color: #38A169; /* Matching green for active link */
         color: white;
     }
 
 /* GridView Wrapper Styling */
 .gridview-wrapper {
-    backdrop-filter:drop-shadow(5px);
+    backdrop-filter: drop-shadow(5px);
     display: block;
-    margin: 0 auto; /* Center the table wrapper */
+    margin: 0 auto;
     position: relative;
-    z-index: 0; /* Ensure the content is under the navbar */
-    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+    z-index: 0;
+    overflow-x: auto;
 }
 
 /* Table Styling */
-
 .gridview {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     backdrop-filter: drop-shadow(5px);
-    width: auto; /* Set width based on content */
-    min-width: 600px; /* Set a minimum width for the table */
-    margin: 0 auto; /* Center the table within the container */
-    border-collapse: collapse; /* Remove spacing between table cells */
+    width: auto;
+    min-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
     transition: all 0.3s ease-in-out;
-    table-layout: auto; /* Table width depends on content */
+    table-layout: auto;
 }
 
 /* Header Styles */
 .gridview-header {
-    background-color: #4CAF50;
+    background-color: #38A169; /* Matching header with navbar */
     color: white;
     font-weight: bold;
     text-transform: uppercase;
@@ -233,18 +234,17 @@ header {
     transition: background-color 0.3s ease;
 }
 
-/* Alternate Stripes for Rows */
 .gridview tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f1f5f9; /* Lighter gray for even rows */
 }
 
 .gridview tr:hover:not(.gridview-header) {
-    background-color: #f1f1f1;
+    background-color: #e2e8f0; /* Slightly darker hover effect */
 }
 
 /* Pager and Footer Styles */
 .gridview-footer, .gridview-pager {
-    background-color: #1C5E55;
+    background-color: #2d3748; /* Dark gray for footer */
     color: white;
     font-weight: bold;
     padding: 12px 15px;
@@ -264,151 +264,17 @@ header {
 .content {
     flex-grow: 1;
     padding: 20px;
-    padding-left: 80px; /* Add padding for navbar */
+    padding-left: 80px;
     overflow-y: auto;
     display: flex;
     justify-content: center;
     text-align: center;
-    z-index: 0; /* Ensure content remains under navbar */
-}
-
-/* General Styles for the Calendar */
-#MainContent_Calendar1 {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: 1px solid #388E3C; /* Darker green border */
-    border-radius: 5px; /* Rounded corners */
-    font-family: Verdana, sans-serif;
-    font-size: 8pt;
-    margin: 0 auto; /* Center the calendar */
-    padding: 10px;
-    width: 220px; /* Optional: control the width of the calendar */
-}
-
-    /* Header Row (Day of the Week) */
-    #MainContent_Calendar1 th {
-        background-color: #388E3C; /* Darker green for header */
-        color: white; /* White text */
-        font-weight: bold;
-        font-size: 10pt;
-        padding: 5px;
-    }
-
-    /* Style for the individual calendar days */
-    #MainContent_Calendar1 td {
-        color: black; /* Black text for days */
-        text-align: center;
-        width: 14%; /* Ensures cells are evenly spaced */
-        padding: 5px;
-        height: 30px; /* Adjust the height of each cell */
-    }
-
-    /* Alternating Row Colors (Even and Odd) */
-    #MainContent_Calendar1 tr:nth-child(odd) td {
-        background-color: #4CAF50; /* Green for odd rows */
-    }
-
-    #MainContent_Calendar1 tr:nth-child(even) td {
-        background-color: white; /* Dark gray for even rows */
-        color: white; /* White text on dark gray rows */
-    }
-
-    /* Style for the currently selected day */
-    #MainContent_Calendar1 td.selected {
-        background-color: #388E3C; /* Dark green for selected day */
-        color: white; /* White text for selected day */
-    }
-
-    /* Links (day numbers) inside the calendar */
-    #MainContent_Calendar1 a {
-        color: white; /* Make the links white */
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-        #MainContent_Calendar1 a:hover {
-            color: #FFEB3B; /* Highlight links with yellow on hover */
-        }
-
-    /* Style for the days when no events are present (faded out) */
-    #MainContent_Calendar1 td.disabled {
-        background-color: #A5D6A7; /* Lighter green for disabled dates */
-        color: #757575; /* Faded text */
-    }
-
-/* General Styles for the Calendar */
-#MainContent_Calendar2 {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: 1px solid #388E3C; /* Darker green border */
-    border-radius: 5px; /* Rounded corners */
-    font-family: Verdana, sans-serif;
-    font-size: 8pt;
-    margin: 0 auto; /* Center the calendar */
-    padding: 10px;
-    width: 220px; /* Optional: control the width of the calendar */
-}
-
-    /* Header Row (Day of the Week) */
-    #MainContent_Calendar2 th {
-        background-color: #388E3C; /* Darker green for header */
-        color: white; /* White text */
-        font-weight: bold;
-        font-size: 10pt;
-        padding: 5px;
-    }
-
-    /* Style for the individual calendar days */
-    #MainContent_Calendar2 td {
-        color: black; /* Black text for days */
-        text-align: center;
-        width: 14%; /* Ensures cells are evenly spaced */
-        padding: 5px;
-        height: 30px; /* Adjust the height of each cell */
-    }
-
-    /* Alternating Row Colors (Even and Odd) */
-    #MainContent_Calendar2 tr:nth-child(odd) td {
-        background-color: #4CAF50; /* Green for odd rows */
-    }
-
-    #MainContent_Calendar2 tr:nth-child(even) td {
-        background-color: white; /* Dark gray for even rows */
-        color: white; /* White text on dark gray rows */
-    }
-
-    /* Style for the currently selected day */
-    #MainContent_Calendar2 td.selected {
-        background-color: #388E3C; /* Dark green for selected day */
-        color: white; /* White text for selected day */
-    }
-
-    /* Links (day numbers) inside the calendar */
-    #MainContent_Calendar2 a {
-        color: white; /* Make the links white */
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-        #MainContent_Calendar2 a:hover {
-            color: #FFEB3B; /* Highlight links with yellow on hover */
-        }
-
-    /* Style for the days when no events are present (faded out) */
-    #MainContent_Calendar2 td.disabled {
-        background-color: #A5D6A7; /* Lighter green for disabled dates */
-        color: #757575; /* Faded text */
-    }
-
-/* Optional: Add spacing or padding for consistency */
-.calendar-container {
-    text-align: center;
-    margin: 20px auto; /* Center the calendar container */
+    z-index: 0;
 }
 
 /* Button Styles */
 .btn-style {
-    background-color: #4CAF50;
+    background-color: #38A169; /* Matching green for buttons */
     color: white;
     padding: 12px 20px;
     border: none;
@@ -416,73 +282,231 @@ header {
     cursor: pointer;
     font-size: 16px;
     width: 100%;
-    max-width: 350px; /* Limit the width of the button */
+    max-width: 350px;
     transition: background-color 0.3s ease;
 }
 
     .btn-style:hover {
-        background-color: #45a049; /* Darker green on hover */
+        background-color: #2f855a; /* Slightly darker green for hover */
     }
-
-footer {
-    background-color: #333; /* Dark background */
-    color: white; /* White text */
-    text-align: center; /* Center the text */
-    font-size: 10px;
-    padding: 5px; /* Add padding around the footer content */
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .gridview-wrapper {
-        max-height: 300px; /* Smaller max height on mobile */
+        max-height: 300px;
     }
 
     .gridview {
-        font-size: 12px; /* Smaller font on mobile */
-        width: 100%; /* Use full width on smaller screens */
+        font-size: 12px;
+        width: 100%;
     }
 
     .gridview-header, .gridview-footer, .gridview-pager {
-        padding: 8px; /* Less padding on mobile */
+        padding: 8px;
     }
 
     .gridview td, .gridview th {
-        padding: 8px; /* Smaller padding on mobile */
+        padding: 8px;
     }
 
     .navbar {
-        position: relative; /* Make navbar behave as relative on mobile */
-        z-index: 0; /* Ensure it's not overlaying the content */
+        position: relative;
+        z-index: 0;
     }
 
     .content {
-        padding-left: 0; /* Remove left padding for mobile */
+        padding-left: 0;
     }
 }
+
+/* Label Styles */
 .label {
     display: inline-block;
-    font-size: 0.875rem; /* Maintain smaller text for precision */
-    font-weight: 700; /* Bolder for emphasis */
-    color: #ffffff; /* White text for high contrast */
-    background-color: #d32f2f; /* Dark red for a more aggressive tone */
-    padding: 0.5em 1em; /* Slightly larger padding for presence */
-    border-radius: 0.25em; /* Less rounded corners for a sharper look */
-    text-transform: uppercase; /* Keep uniformity */
-    letter-spacing: 0.1em; /* More spacing for boldness */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
-    user-select: none; /* Prevent accidental text selection */
-    border: 2px solid #b71c1c; /* Add a darker red border for definition */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Add subtle shadow for a more menacing effect */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effects for interaction */
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #e53e3e; /* Red for error or important messages */
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 
-    .btn-style:hover {
-        transform: scale(1.05); /* Slightly enlarge on hover */
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Intensify shadow on hover */
-        background-color: #35a203; /* Darker red on hover for intensity */
-        transition: 0.3s ease-in-out;
+.label2 {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #2d3748; /* Dark gray for normal information */
+    background-color: #e2e8f0; /* Light gray background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+/* Calendar Styling */
+#MainContent_Calendar1 {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+    /* Table Header (Days of the week) */
+    #MainContent_Calendar1 th {
+        background-color: #38a169; /* Green for header */
+        color: white;
+        padding: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* Odd rows */
+    #MainContent_Calendar1 tr:nth-child(odd) td {
+        background-color: #4CAF50; /* Green for odd rows */
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    /* Even rows */
+    #MainContent_Calendar1 tr:nth-child(even) td {
+        background-color: #ffffff; /* White for even rows */
+        color: #4a5568; /* Dark gray text */
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    /* Selected day */
+    #MainContent_Calendar1 td.selected {
+        background-color: #2f855a; /* Darker green for selected */
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Disabled day */
+    #MainContent_Calendar1 td.disabled {
+        background-color: #A5D6A7; /* Light green for disabled */
+        color: #757575; /* Gray text */
+    }
+
+    /* Links (day numbers) */
+    #MainContent_Calendar1 a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        /* Links on hover */
+        #MainContent_Calendar1 a:hover {
+            color: #FFEB3B; /* Yellow for hover */
+        }
+
+    /* Today’s date */
+    #MainContent_Calendar1 td.today {
+        background-color: #38a169; /* Green for today */
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Date hover effect */
+    #MainContent_Calendar1 td:hover {
+        background-color: #e2e8f0; /* Light gray for hover */
+        cursor: pointer;
+    }
+
+    /* General cell styling */
+    #MainContent_Calendar1 td {
+        padding: 15px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+/* Calendar Styling */
+#MainContent_Calendar2 {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+    /* Table Header (Days of the week) */
+    #MainContent_Calendar2 th {
+        background-color: #38a169; /* Green for header */
+        color: white;
+        padding: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* Odd rows */
+    #MainContent_Calendar2 tr:nth-child(odd) td {
+        background-color: #4CAF50; /* Green for odd rows */
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    /* Even rows */
+    #MainContent_Calendar2 tr:nth-child(even) td {
+        background-color: #ffffff; /* White for even rows */
+        color: #4a5568; /* Dark gray text */
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    /* Selected day */
+    #MainContent_Calendar2 td.selected {
+        background-color: #2f855a; /* Darker green for selected */
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Disabled day */
+    #MainContent_Calendar2 td.disabled {
+        background-color: #A5D6A7; /* Light green for disabled */
+        color: #757575; /* Gray text */
+    }
+
+    /* Links (day numbers) */
+    #MainContent_Calendar2 a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        /* Links on hover */
+        #MainContent_Calendar2 a:hover {
+            color: #FFEB3B; /* Yellow for hover */
+        }
+
+    /* Today’s date */
+    #MainContent_Calendar2 td.today {
+        background-color: #38a169; /* Green for today */
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Date hover effect */
+    #MainContent_Calendar2 td:hover {
+        background-color: #e2e8f0; /* Light gray for hover */
+        cursor: pointer;
+    }
+
+    /* General cell styling */
+    #MainContent_Calendar2 td {
+        padding: 15px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
     }
