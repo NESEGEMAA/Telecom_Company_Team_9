@@ -14,6 +14,13 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
+
+            // Set default Mobile Number and load usage data
+            if (!IsPostBack)
+            {
+                Mobileno.Text = Session["Mobile"] as string;
+                UnsubscribedTable(null, null); // Trigger the method to load usage data for the default mobile number
+            }
         }
 
         protected void UnsubscribedTable(object sender, EventArgs e)

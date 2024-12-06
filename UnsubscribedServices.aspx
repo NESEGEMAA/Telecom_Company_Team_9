@@ -13,3 +13,7 @@
     </asp:GridView>
     <asp:Label ID="ErrorMessageUnsubscribtion" runat="server" Text="" CssClass="label"></asp:Label>
 </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">
+    <p style="color: red">The output displayed on loading the page is the output for the current logged in customer; However, the ability to fetch other's data is kept for means of testing</p>
+</asp:Content>

@@ -13,3 +13,7 @@
     <br />
     <asp:Button ID="Calculatebutton" runat="server" Text="Calculate!" OnClick="Calculate" CssClass="btn-style"/>
 </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">
+    <p style="color: red">The number displayed in the text box on loading the page is the current logged in customer's number; However, the ability to overwrite it is kept for means of testing</p>
+</asp:Content>

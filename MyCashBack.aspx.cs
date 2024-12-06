@@ -14,6 +14,13 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
+
+            // Set default National ID and load cashback data
+            if (!IsPostBack)
+            {
+                NID.Text = Session["NID"] as string;
+                MyCashBackTable(null, null); // Trigger the method to load cashback data for the default National ID
+            }
         }
 
         protected void MyCashBackTable(object sender, EventArgs e)
@@ -24,6 +31,7 @@ namespace Telecom_Company_Team_9
             {
                 string NationalId = NID.Text;
 
+                // Validation for National ID input
                 if (string.IsNullOrEmpty(NationalId))
                 {
                     ErrorMessageMyCashBack.Text = "Invalid NationalID";
