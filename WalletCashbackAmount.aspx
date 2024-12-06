@@ -8,16 +8,16 @@
     <h2>Input WalletID:
     </h2>
 
-    <asp:TextBox ID="InputNumber" runat="server" CssClass="input-textbox"></asp:TextBox>
+    <asp:TextBox ID="InputNumber" runat="server" CssClass="form-control"></asp:TextBox>
 
     <h2>Input PlanID:
     </h2>
 
-    <asp:TextBox ID="InputNumber2" runat="server" CssClass="input-textbox"></asp:TextBox>
+    <asp:TextBox ID="InputNumber2" runat="server" CssClass="form-control"></asp:TextBox>
 
     <!-- Button Section -->
     <asp:Button ID="RetrieveAverageTransactionsAmountButton" runat="server" Text="Retrieve Data"
-        OnClick="RetrieveAverageTransactionsAmountButton_Click" CssClass="action-button" />
+        OnClick="RetrieveAverageTransactionsAmountButton_Click" CssClass="btn-style" />
 
     <!-- GridView Section -->
     <div class="gridview-container">
