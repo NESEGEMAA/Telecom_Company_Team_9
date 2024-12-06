@@ -24,12 +24,12 @@ namespace Telecom_Company_Team_9
             string data = "EXEC Payment_wallet_cashback @mobile_num = @mobileNo, @payment_id = @paymentID, @benefit_id = @benefitID";
 
             // Get the mobile number from the input field
-            Int64 mobileNumber = int.Parse(InputMobileNumber.Text);
-            Int32 paymentID = int.Parse(InputPaymentID.Text);
-            Int32 benefitID = int.Parse(InputBenefitID.Text);
 
             try
             {
+                Int64 mobileNumber = int.Parse(InputMobileNumber.Text);
+                Int32 paymentID = int.Parse(InputPaymentID.Text);
+                Int32 benefitID = int.Parse(InputBenefitID.Text);
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     using (SqlCommand cmd = new SqlCommand(data, conn))

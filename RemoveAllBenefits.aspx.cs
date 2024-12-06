@@ -32,16 +32,8 @@ namespace Telecom_Company_Team_9
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@MobileNo", mobile);
-                        cmd.Parameters.AddWithValue("@PlanID", PlanID);
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Console.WriteLine($"ID: {reader["Id"]}, Name: {reader["Name"]}");
-                            }
-                        }
+                        cmd.Parameters.AddWithValue("@mobile_num", mobile);
+                        cmd.Parameters.AddWithValue("@plan_id", PlanID);
                         if (cmd.ExecuteNonQuery() != 0)
                             Response.Write("Benefits Deleted Successfully!");
                         else

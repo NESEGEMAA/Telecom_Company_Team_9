@@ -81,7 +81,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">Subscribed Service Plans</h1>
+    <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">All Subscribed Service Plans</h1>
 
     <!-- GridView container with borders -->
     <div class="gridview-wrapper">

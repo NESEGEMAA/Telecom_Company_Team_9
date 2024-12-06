@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 class="page-heading">Cashback</h1>
+    <h1 class="page-heading">All Wallet Cashback Transaction Amounts</h1>
 
     <!-- GridView container -->
     <div class="gridview-wrapper">

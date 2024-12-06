@@ -1,7 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AllResolvedTickets.aspx.cs" Inherits="Telecom_Company_Team_9.AllResolvedTickets" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <h1>
+        All Resolved Tickets
+    </h1>
     <div>
         <asp:GridView ID="GridView3" runat="server" Visible="false" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ticketID,mobileNo" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" CssClass="gridview">
             <AlternatingRowStyle BackColor="White" />

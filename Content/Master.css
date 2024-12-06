@@ -99,7 +99,7 @@ header {
 
 /* GridView Styling */
 .gridview-wrapper {
-    width: 100%; /* Full width for responsiveness */
+    width: auto; /* Full width for responsiveness */
     max-height: 500px; /* Set the maximum height for the table container */
     display: block;
     margin: 0 auto; /* Center the table wrapper */
