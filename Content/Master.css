@@ -175,6 +175,24 @@ header {
     z-index: 0; /* Ensure content remains under navbar */
 }
 
+/* Button Styles */
+.btn-style {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px; /* Limit the width of the button */
+    transition: background-color 0.3s ease;
+}
+
+    .btn-style:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .gridview-wrapper {
