@@ -50,10 +50,10 @@ namespace Telecom_Company_Team_9
                 <li><a href='AllSMSOffers.aspx'>View All Input Account SMS Offers</a></li>
                 <li><a href='RemoveAllBenefits.aspx'>Remove Input Account Benefits</a></li>
                 <li><a href='CashBack.aspx'>View All Wallet Cashback Transaction Amounts</a></li>
-                <li><a href='2.aspx'>2</a></li>
-                <li><a href='3.aspx'>3</a></li>
-                <li><a href='4.aspx'>4</a></li>
-                <li><a href='5.aspx'>5</a></li>";
+                <li><a href='AverageSentTransactionsAmounts.aspx'>View Input Average Wallet Transactions</a></li>
+                <li><a href='LinkedWallet.aspx'>View Input Mobile Number Wallet</a></li>
+                <li><a href='WalletCashbackAmount.aspx'>View Returned Cashback on Input Wallet</a></li>
+                <li><a href='UpdateTotalPoints.aspx'>Update Input Mobile Number Points</a></li>";
             }
             else if (role == "Customer")
             {
