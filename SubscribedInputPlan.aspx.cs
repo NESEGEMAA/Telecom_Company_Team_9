@@ -30,7 +30,7 @@ namespace Telecom_Company_Team_9
             }
             catch (Exception ex)
             {
-                Response.Write("Invalid Plan ID");
+                Label3.Text= "Invalid Plan ID";
             }
         }
 

@@ -35,14 +35,14 @@ namespace Telecom_Company_Team_9
                         cmd.Parameters.AddWithValue("@mobile_num", mobile);
                         cmd.Parameters.AddWithValue("@plan_id", PlanID);
                         if (cmd.ExecuteNonQuery() != 0)
-                            Response.Write("Benefits Deleted Successfully!");
+                            Message.Text = "Benefits Deleted Successfully!";
                         else
-                            Response.Write("No Benefits Found");
+                            Message.Text = ("No Benefits Found");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Response.Write($"Error: {ex.Message}");
+                    Message.Text = ($"Error: {ex.Message}");
                 }
             }
         }
@@ -58,7 +58,7 @@ namespace Telecom_Company_Team_9
             }
             catch (Exception ex)
             {  
-                Response.Write("Invalid Plan ID or Mobile Number");
+                Message.Text = ("Invalid Plan ID or Mobile Number");
             }
         }
     }

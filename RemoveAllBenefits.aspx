@@ -14,6 +14,9 @@
         <br />
         <br />
         <asp:Button Visible="false" ID="Button7" runat="server" CssClass="btn-style" Text="Delete" OnClick="Button7_Click" />
+        <br />
+        <br />
+        <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
     </div>
 </asp:Content>
 
