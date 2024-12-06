@@ -58,22 +58,22 @@ namespace Telecom_Company_Team_9
             else if (role == "Customer")
             {
                 navbarHtml += @"
-                    <li><a href='ViewAllBenefits.aspx'>All Active Benefits</a></li>
-                    <li><a href='ViewNonResolvedTickets.aspx'>All Non Resolved Tickets</a></li>
-                    <li><a href='HighestVoucherID.aspx'>Check your highest voucher</a></li>
-                    <li><a href='RemainingBalance.aspx'>Remaining amount to pay for plan</a></li>
-                    <li><a href='ExtraBalance.aspx'>Extra amount paid for plan</a></li>
-                    <li><a href='Top10Payments.aspx'>Your Top 10 Payments</a></li>
-                    <li><a href='AllShops.aspx'>All Shops</a></li>
-                    <li><a href='CashbackCalculator.aspx'>Cashback Calculator</a></li>
-                    <li><a href='LastFiveMonthSubscribedPlans.aspx'>Recent plans</a></li>
+                    <li><a href='ViewAllBenefits.aspx'>View All Benefits</a></li>
+                    <li><a href='AllShops.aspx'>View All Shops</a></li>
+                    <li><a href='AllServicePlans.aspx'>View All plans</a></li>
+                    <li><a href='ViewNonResolvedTickets.aspx'>View Input Non-resolved Tickets</a></li>
+                    <li><a href='HighestVoucherID.aspx'>View Input Highest Voucher</a></li>
+                    <li><a href='RemainingBalance.aspx'>View Remaining Amount To Pay For Plan</a></li>
+                    <li><a href='ExtraBalance.aspx'>View Extra Amount Paid For Plan</a></li>
+                    <li><a href='Top10Payments.aspx'>View Input Top 10 Payments</a></li>
+                    <li><a href='LastFiveMonthSubscribedPlans.aspx'>View Recent Plans</a></li>
+                    <li><a href='MyCashBack.aspx'>View Cashback transactions</a></li>
+                    <li><a href='MyConsumption.aspx'>View Everyone's Plan Consumption ;)</a></li>
+                    <li><a href='MyUsage.aspx'>View Plan Usage</a></li>
+                    <li><a href='UnsubscribedServices.aspx'>View Unsubscribed Plans</a></li>
+                    <li><a href='CashbackCalculator.aspx'>Calculate Cashback</a></li>
                     <li><a href='RechargeBalance.aspx'>Recharge Balance</a></li>
-                    <li><a href='MyCashBack.aspx'>View your Cashback transactions!</a></li>
-                    <li><a href='MyConsumption.aspx'>View everyone's consumption of a certain plan ;)</a></li>
-                    <li><a href='MyUsage.aspx'>View your plan usage</a></li>
-                    <li><a href='UnsubscribedServices.aspx'>Checkout our other Plans</a></li>
-                    <li><a href='AllServicePlans.aspx'>View all our plans</a></li>
-                    <li><a href='RenewSubscription.aspx'>Renew your Subscription</a></li>";
+                    <li><a href='RenewSubscription.aspx'>Renew Subscription</a></li>";
             }
 
             // Links for unauthenticated users

@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!--Part 5-->
-    <h1>Check Here for the Extra Balance on the account</h1>
+    <h1>Extra Balance Paid For Plan</h1>
     <br />
     <h2>Mobile Number:</h2>
     <asp:TextBox ID="mobileNumE" runat="server" CssClass="form-control"></asp:TextBox>
@@ -10,13 +10,13 @@
     <asp:TextBox ID="plannameE" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
     <br />
-    <asp:Button ID="ButtonExtAmount" runat="server" Text="Check" OnClick ="ViewExtraAmount" CssClass="btn-style"/>
+    <asp:Button ID="ButtonExtAmount" runat="server" Text="Check" OnClick="ViewExtraAmount" CssClass="btn-style" />
     <br />
     <br />
     <asp:Label ID="LabelExt" runat="server" CssClass="label2"></asp:Label>
     <br />
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" runat="Server">
     <p style="color: red">The number displayed in the text box on loading the page is the current logged in customer's number; However, the ability to overwrite it is kept for means of testing</p>
 </asp:Content>

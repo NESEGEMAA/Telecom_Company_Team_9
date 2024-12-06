@@ -9,8 +9,8 @@
     <asp:TextBox ID="mob" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
     <br />
-        
-    <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" CssClass="btn-style"/>
+
+    <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" CssClass="btn-style" />
     <asp:GridView ID="GridViewPayment" runat="server" CssClass="gridview">
         <FooterStyle CssClass="gridview-footer" />
         <HeaderStyle CssClass="gridview-header" />
@@ -22,6 +22,6 @@
     <asp:Label ID="LabelPayment2" runat="server" CssClass="label2"></asp:Label>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" runat="Server">
     <p style="color: red">The number displayed in the text box on loading the page is the current logged in customer's number; However, the ability to overwrite it is kept for means of testing</p>
 </asp:Content>

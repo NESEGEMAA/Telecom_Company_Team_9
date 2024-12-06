@@ -9,7 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ErrorMessage.Visible =false;
+            ErrorMessage.Visible = false;
         }
 
         protected void Login(object sender, EventArgs e)
@@ -52,13 +52,14 @@ namespace Telecom_Company_Team_9
                         else
                         {
                             ErrorMessage.Text = "Invalid mobile number or password. Please try again.";
+                            ErrorMessage.Visible = true;
                         }
                     }
                 }
                 catch (Exception ex)
                 {
                     ErrorMessage.Text = "An error occurred: " + ex.Message;
-                    ErrorMessage.Visible=true;
+                    ErrorMessage.Visible = true;
                 }
             }
         }

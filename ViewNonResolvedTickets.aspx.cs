@@ -28,6 +28,7 @@ namespace Telecom_Company_Team_9
                 catch
                 {
                     lblTicketCount.Text = "Customer NID in database is invalid for some reason :(";
+                    lblTicketCount.Visible = true;
                 }
             }
         }
@@ -92,6 +93,8 @@ namespace Telecom_Company_Team_9
             {
                 lblTicketCount2.Text = "No data found for the given National ID.";
             }
+
+            lblTicketCount.Visible = true;
 
             conn.Close();
         }

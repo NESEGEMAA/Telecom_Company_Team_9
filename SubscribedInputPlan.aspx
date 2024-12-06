@@ -13,12 +13,10 @@
         <br />
 
 
-        <h2>
-            Input a Date:
+        <h2>Input a Date:
         </h2>
         <asp:Calendar ID="Calendar1" Visible="False" runat="server" SelectedDate="12/04/2024 17:05:51"></asp:Calendar>
-        <h2>
-            Input the Plan ID:
+        <h2>Input the Plan ID:
         </h2>
         <asp:TextBox Visible="false" CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
 
