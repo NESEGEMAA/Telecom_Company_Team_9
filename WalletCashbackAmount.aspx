@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1>View Input Cashback Amount</h1>
+    <h1>Check Input Cashback Amount</h1>
 
     <!-- Input Mobile Number Section -->
     <h2>Input WalletID:
@@ -32,5 +32,6 @@
     <!-- Message Label -->
     <p>
         <asp:Label ID="Message" runat="server" Text="" CssClass="label" class="message-label"></asp:Label>
+        <asp:Label ID="Message2" runat="server" Text="" CssClass="label2" class="message-label"></asp:Label>
     </p>
 </asp:Content>

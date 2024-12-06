@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Part 4-->
-    <h1>Check Here for Remaining balance on the account </h1>
+    <h1>Remaining Balance On The Account </h1>
     <br />
     <h2>Mobile Number:</h2>
     <asp:TextBox ID="mobileNumR" runat="server" CssClass="form-control"></asp:TextBox>
@@ -15,7 +15,7 @@
     <asp:Button ID="ButtonRemAmount" runat="server" Text="Check" OnClick="ViewRemainingAmount" CssClass="btn-style" />
     <br />
     <br />
-    <asp:Label ID="LabelRem" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="LabelRem" runat="server" CssClass="label2"></asp:Label>
     <br />
     <br />
 

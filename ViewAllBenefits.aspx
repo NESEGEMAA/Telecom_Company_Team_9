@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- Part 1-->
-    <h1>View all Active Benefits</h1>
+    <h1>All Active Benefits</h1>
     <br />
     <br />
     <asp:GridView ID="GridBenefitView" runat="server" CssClass="gridview">
@@ -15,7 +15,7 @@
 
     <br />
     <br />
-    <asp:Label ID="BenefitErrorMessage" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="BenefitErrorMessage" runat="server" CssClass="label2"></asp:Label>
     <br />
 
 </asp:Content>

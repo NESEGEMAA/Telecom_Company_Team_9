@@ -10,6 +10,7 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             lblTicketCount.Visible = false;
+            lblTicketCount2.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
@@ -27,6 +28,7 @@ namespace Telecom_Company_Team_9
                 catch
                 {
                     lblTicketCount.Text = "Customer NID in database is invalid for some reason :(";
+                    lblTicketCount.Visible = true;
                 }
             }
         }
@@ -54,7 +56,7 @@ namespace Telecom_Company_Team_9
             }
             catch
             {
-                lblTicketCount.Text = "Please insert a valid National ID";
+                lblTicketCount2.Text = "Please insert a valid National ID";
                 return;
             }
 
@@ -89,8 +91,10 @@ namespace Telecom_Company_Team_9
             }
             else
             {
-                lblTicketCount.Text = "No data found for the given National ID.";
+                lblTicketCount2.Text = "No data found for the given National ID.";
             }
+
+            lblTicketCount.Visible = true;
 
             conn.Close();
         }

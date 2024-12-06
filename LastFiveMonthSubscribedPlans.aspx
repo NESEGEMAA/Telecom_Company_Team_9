@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="LastFiveMonthSubscribedPlans.aspx.cs" Inherits="Telecom_Company_Team_9.LastFiveMonthSubscribedPlans" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Service plans you subscribed to in the past 5 months:</h1>
+    <h1>Service Plans You Subscribed To In The Past 5 Months</h1>
 
     <asp:TextBox ID="LastFiveMonthsPlansInputNumber" runat="server" placeholder="Enter your mobile number" CssClass="form-control"></asp:TextBox><br />
 

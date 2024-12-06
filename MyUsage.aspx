@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h1>Your plan usage</h1>
+        <h1>Your Plan Usage</h1>
         <h2>Mobile no:</h2>
         <asp:TextBox ID="Mobileno" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:Button ID="EnteredNumber" runat="server" Text="Enter" OnClick="MyUsageTable" CssClass="btn-style" />

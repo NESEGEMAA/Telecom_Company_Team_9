@@ -19,6 +19,7 @@ namespace Telecom_Company_Team_9
             TextBox4.Visible = true;
             Button9.Visible = true;
             Label1.Visible = false;
+            Label2.Visible = false;
         }
 
         protected void ShowAccountSMSOffers(object sender, EventArgs e)
@@ -56,11 +57,12 @@ namespace Telecom_Company_Team_9
                             GridView6.DataBind();
                             GridView6.Visible = true;
                             Label1.Visible = false;
+                            Label2.Visible = false;
                         }
                         else
                         {
-                            Label1.Text = "No plans available to display.";
-                            Label1.Visible = true;
+                            Label2.Text = "No plans available to display.";
+                            Label2.Visible = true;
                             GridView6.Visible = false;
                         }
 

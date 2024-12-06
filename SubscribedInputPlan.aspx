@@ -20,21 +20,22 @@
         </h2>
         <asp:TextBox Visible="false" CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
 
-        <asp:Button Visible="false" ID="Button6" runat="server" CssClass="btn-style" Text="Search" OnClick="Button6_Click" />
-        <br />
-        <br />
-        <asp:GridView ID="GridView5" Visible="False" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource5" CssClass="gridview">
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-            <Columns>
-                <asp:BoundField DataField="mobileNo" HeaderText="mobileNo" SortExpression="mobileNo" />
-                <asp:BoundField DataField="planID" HeaderText="planID" SortExpression="planID" />
-                <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-            </Columns>
-            <FooterStyle CssClass="gridview-footer" />
-            <HeaderStyle CssClass="gridview-header" />
-            <PagerStyle CssClass="gridview-pager" />
-            <RowStyle CssClass="gridview-row" />
-        </asp:GridView>
-        <asp:Label ID="Label3" runat="server" CssClass="label" Text="Label"></asp:Label>
-    </div>
+    <asp:Button Visible="false" ID="Button6" runat="server" CssClass="btn-style" Text="Search" OnClick="Button6_Click" />
+    <br />
+    <br />
+    <asp:GridView ID="GridView5" Visible="False" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource5" CssClass="gridview">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <Columns>
+            <asp:BoundField DataField="mobileNo" HeaderText="mobileNo" SortExpression="mobileNo" />
+            <asp:BoundField DataField="planID" HeaderText="planID" SortExpression="planID" />
+            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+        </Columns>
+        <FooterStyle CssClass="gridview-footer" />
+        <HeaderStyle CssClass="gridview-header" />
+        <PagerStyle CssClass="gridview-pager" />
+        <RowStyle CssClass="gridview-row" />
+    </asp:GridView>
+    <asp:Label ID="Label3" runat="server" CssClass="label" Text="Label"></asp:Label>
+    <asp:Label ID="Label4" runat="server" CssClass="label2" Text="Label"></asp:Label>
+        </div>
 </asp:Content>

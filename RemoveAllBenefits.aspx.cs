@@ -15,6 +15,7 @@ namespace Telecom_Company_Team_9
                 Response.Redirect("~/LoginAdmin.aspx");
             }
             Message.Visible = false;
+            Message2.Visible = false;
             TextBox2.Visible = true;
             TextBox3.Visible = true;
             Button7.Visible = true;
@@ -35,14 +36,16 @@ namespace Telecom_Company_Team_9
                         cmd.Parameters.AddWithValue("@mobile_num", mobile);
                         cmd.Parameters.AddWithValue("@plan_id", PlanID);
                         if (cmd.ExecuteNonQuery() != 0)
-                            Message.Text = "Benefits Deleted Successfully!";
+                            Message2.Text = "Benefits Deleted Successfully!";
                         else
-                            Message.Text = ("No Benefits Found");
+                            Message2.Text = ("No Benefits Found");
+                        Message2.Visible = false;   
                     }
                 }
                 catch (Exception ex)
                 {
                     Message.Text = ($"Error: {ex.Message}");
+                    Message.Visible=true;
                 }
             }
         }

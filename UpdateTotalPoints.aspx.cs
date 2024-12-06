@@ -15,7 +15,8 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             Message.Visible=false;
-           if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
+            Message2.Visible = false;
+            if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
                 // Redirect to login or access denied page if the user is not an admin
                 Response.Redirect("~/LoginAdmin.aspx");
@@ -49,7 +50,7 @@ namespace Telecom_Company_Team_9
 
                         if (cmd.ExecuteNonQuery() != 0)
                         {
-                            Message.Text = "Wallet points updated";
+                            Message2.Text = "Wallet points updated";
                             Message.Visible = true;
                         }
                         else

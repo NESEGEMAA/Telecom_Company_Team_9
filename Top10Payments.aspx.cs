@@ -10,6 +10,7 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             LabelPayment.Visible = false;
+            LabelPayment2.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
@@ -59,12 +60,13 @@ namespace Telecom_Company_Team_9
             if (dt.Rows.Count == 0)
             {
                 GridViewPayment.Visible = false;
-                LabelPayment.Visible = true;
-                LabelPayment.Text = "No data found for the given Mobile Number.";
+                LabelPayment2.Visible = true;
+                LabelPayment2.Text = "No data found for the given Mobile Number.";
             }
             else
             {
                 LabelPayment.Visible = false;
+                LabelPayment2.Visible = false;
                 GridViewPayment.Visible = true;
                 GridViewPayment.DataSource = dt;
                 GridViewPayment.DataBind();
