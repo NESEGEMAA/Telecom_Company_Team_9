@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using System.Web.Services.Description;
 
 namespace Telecom_Company_Team_9
 {
@@ -8,13 +9,18 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message.Visible = false;
+            Message2.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
 
-            InputMobileNumber.Text = Session["Mobile"] as string;
+            if (!IsPostBack)
+            {
+                InputMobileNumber.Text = Session["Mobile"] as string;
+            }
         }
 
         protected void Renew(object sender, EventArgs e)
@@ -50,14 +56,14 @@ namespace Telecom_Company_Team_9
                         // Execute the stored procedure
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            Message.Text = "Transaction completed";
+                            Message2.Text = "Transaction completed";
                         }
                         else
                         {
                             Message.Text = "Transaction failed";
                         }
-
                         Message.Visible = true;
+                        Message2.Visible = true;
                     }
                 }
             }

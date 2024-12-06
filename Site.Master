@@ -89,7 +89,7 @@
         <!-- Main Content -->
         <div class="content">
             <form id="form1" runat="server">
-                <asp:ContentPlaceHolder id="MainContent" runat="server" />
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </form>
         </div>
     </div>
@@ -97,7 +97,7 @@
     <!-- Footer Section -->
     <footer>
         <p>PO27Y &copy; 2024. All rights reserved.</p>
-        <asp:ContentPlaceHolder id="FooterContent" runat="server" />
+        <asp:ContentPlaceHolder ID="FooterContent" runat="server" />
     </footer>
 </body>
 </html>

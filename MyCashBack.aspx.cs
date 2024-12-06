@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ErrorMessageMyCashBack.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
@@ -63,10 +64,20 @@ namespace Telecom_Company_Team_9
                             {
                                 DataTable dt = new DataTable();
                                 sda.Fill(dt);
-
-                                GridViewMyCashBack.DataSource = dt;
-                                GridViewMyCashBack.DataBind();
-                                ErrorMessageMyCashBack.Visible = false;
+                                if (dt.Rows.Count > 0)
+                                {
+                                    GridViewMyCashBack.DataSource = dt;
+                                    GridViewMyCashBack.DataBind();
+                                    GridViewMyCashBack.Visible = true;
+                                    ErrorMessageMyCashBack.Visible = false;
+                                    ErrorMessageMyCashBack2.Visible = false;
+                                }
+                                else
+                                {
+                                    GridViewMyCashBack.Visible = false;
+                                    ErrorMessageMyCashBack2.Text = "No Data Found";
+                                    ErrorMessageMyCashBack2.Visible = true;
+                                }
                             }
                         }
                     }

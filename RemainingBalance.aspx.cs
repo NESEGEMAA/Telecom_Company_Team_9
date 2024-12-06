@@ -9,13 +9,18 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LabelRem2.Visible = false;
+            LabelRem.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
 
-            mobileNumR.Text = Session["Mobile"] as string;
+            if (!IsPostBack)
+            {
+                mobileNumR.Text = Session["Mobile"] as string;
+            }
         }
 
         //Method to check if input is a number only
@@ -46,9 +51,11 @@ namespace Telecom_Company_Team_9
             Check_amount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
 
             conn.Open();
-            if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
+            if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob) || !AreDigitsOnly(plan_name))
             {
                 LabelRem.Text = "Please insert a valid mobile number and plan name";
+                LabelRem.Visible = true;
+
                 return;
             }
             Check_amount.ExecuteNonQuery();
@@ -56,11 +63,14 @@ namespace Telecom_Company_Team_9
 
             if (amount > 0)
             {
-                LabelRem.Text = "The remaining amount is: " + amount;
+                LabelRem2.Text = "The remaining amount is: " + amount;
+                LabelRem2.Visible = true;
             }
             else
             {
-                LabelRem.Text = "There is no remaining balance for this account";
+                LabelRem2.Text = "There is no remaining balance for this account";
+                LabelRem2.Visible = true;
+
             }
             conn.Close();
         }

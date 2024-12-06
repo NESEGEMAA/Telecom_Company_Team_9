@@ -12,10 +12,11 @@
         <asp:Label ID="voucherIDLabel" runat="server" Text="Input the voucher ID you want to redeem"></asp:Label>
     </section>
     <section>
-        <asp:TextBox ID="InputVoucherID" runat="server"></asp:TextBox>
+        <asp:TextBox ID="InputVoucherID" runat="server" CssClass="form-control"></asp:TextBox>
     </section>
     <section>
         <asp:Label ID="Message" runat="server" Text=""></asp:Label>
+        <asp:Label ID="Message2" runat="server" Text=""></asp:Label>
     </section>
     <asp:Button ID="redeemButton" runat="server" Text="Redeem!" OnClick="Redeem" />
 </asp:Content>

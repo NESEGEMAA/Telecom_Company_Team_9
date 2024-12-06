@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ErrorMessageMyUsage.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
@@ -64,6 +65,7 @@ namespace Telecom_Company_Team_9
                 catch (Exception ex)
                 {
                     ErrorMessageMyUsage.Text = "An error occurred: " + ex.Message;
+                    ErrorMessageMyUsage.Visible = true;
                 }
             }
         }

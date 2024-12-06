@@ -8,13 +8,16 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message.Visible = false;
+            Message2.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
 
-            InputAmount.Text = Session["Mobile"] as string;
+            if (!IsPostBack)
+                InputMobileNumber.Text = Session["Mobile"] as string;
         }
 
         protected void Recharge(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace Telecom_Company_Team_9
                             // Execute the stored procedure
                             if (cmd.ExecuteNonQuery() > 0)
                             {
-                                Message.Text = "Transaction completed";
+                                Message2.Text = "Transaction completed";
                             }
                             else
                             {
@@ -57,6 +60,7 @@ namespace Telecom_Company_Team_9
                             }
 
                             Message.Visible = true;
+                            Message2.Visible = true;
                         }
                     }
                 }

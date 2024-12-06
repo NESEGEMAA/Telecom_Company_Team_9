@@ -18,5 +18,6 @@
     <!-- Message Display -->
     <p>
         <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
+        <asp:Label ID="Message2" runat="server" Text="" CssClass="label2"></asp:Label>
     </p>
 </asp:Content>

@@ -1,17 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ActiveAccounts.aspx.cs" Inherits="Telecom_Company_Team_9.ActiveAccounts" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>
-        All Active Accounts
+    <h1>All Active Accounts
     </h1>
     <div>
         <div class="gridview-wrapper">
-            <asp:GridView ID="GridView1" runat="server" 
-                          DataSourceID="SqlDataSource1" 
-                          AutoGenerateColumns="False" 
-                          Visible="True" 
-                          DataKeyNames="nationalID,mobileNo" 
-                          CssClass="gridview">
+            <asp:GridView ID="GridView1" runat="server"
+                DataSourceID="SqlDataSource1"
+                AutoGenerateColumns="False"
+                Visible="True"
+                DataKeyNames="nationalID,mobileNo"
+                CssClass="gridview">
                 <Columns>
                     <asp:BoundField DataField="nationalID" HeaderText="National ID" SortExpression="nationalID" />
                     <asp:BoundField DataField="first_name" HeaderText="First Name" SortExpression="first_name" />
@@ -34,12 +33,11 @@
                 <AlternatingRowStyle BackColor="White" />
             </asp:GridView>
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                          ConnectionString="<%$ ConnectionStrings:MyDatabaseConnection %>" 
-                          SelectCommand="SELECT * FROM [allCustomerAccounts]">
-        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+            ConnectionString="<%$ ConnectionStrings:MyDatabaseConnection %>"
+            SelectCommand="SELECT * FROM [allCustomerAccounts]"></asp:SqlDataSource>
 
-                <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
+                <asp:Label ID="Message" runat="server" Text="" CssClass="label2"></asp:Label>
 
     </div>
 </asp:Content>

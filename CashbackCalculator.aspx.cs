@@ -8,13 +8,17 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
 
-            InputMobileNumber.Text = Session["Mobile"] as string;
+            if (!IsPostBack)
+            {
+                InputMobileNumber.Text = Session["Mobile"] as string;
+            }
         }
 
         protected void Calculate(object sender, EventArgs e)

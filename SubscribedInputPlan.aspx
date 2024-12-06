@@ -13,12 +13,10 @@
         <br />
 
 
-        <h2>
-            Input a Date:
+        <h2>Input a Date:
         </h2>
         <asp:Calendar ID="Calendar1" Visible="False" runat="server" SelectedDate="12/04/2024 17:05:51"></asp:Calendar>
-        <h2>
-            Input the Plan ID:
+        <h2>Input the Plan ID:
         </h2>
         <asp:TextBox Visible="false" CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
 
@@ -38,5 +36,6 @@
         <RowStyle CssClass="gridview-row" />
     </asp:GridView>
     <asp:Label ID="Label3" runat="server" CssClass="label" Text="Label"></asp:Label>
+    <asp:Label ID="Label4" runat="server" CssClass="label2" Text="Label"></asp:Label>
         </div>
 </asp:Content>
