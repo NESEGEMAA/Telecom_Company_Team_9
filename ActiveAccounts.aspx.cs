@@ -17,7 +17,7 @@ namespace Telecom_Company_Team_9
                     GridView1.Visible = true;
                 else
                 {
-
+                    
                 }
             }
         }
