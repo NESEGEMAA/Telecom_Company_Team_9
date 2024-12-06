@@ -56,7 +56,8 @@ namespace Telecom_Company_Team_9
             }
             catch
             {
-                lblTicketCount2.Text = "Please insert a valid National ID";
+                lblTicketCount.Text = "Please insert a valid National ID";
+                lblTicketCount.Visible = true;
                 return;
             }
 
@@ -82,19 +83,20 @@ namespace Telecom_Company_Team_9
             {
                 if (ticketcount > 0)
                 {
-                    lblTicketCount.Text = "Number of Unresolved Tickets:  " + ticketcount;
+                    lblTicketCount2.Text = "Number of Unresolved Tickets:  " + ticketcount;
                 }
                 else
                 {
-                    lblTicketCount.Text = "No unresolved tickets found for the given National ID.";
+                    lblTicketCount2.Text = "No unresolved tickets found for the given National ID.";
                 }
+                lblTicketCount2.Visible = true;
+                lblTicketCount.Visible = false;
             }
             else
             {
-                lblTicketCount2.Text = "No data found for the given National ID.";
+                lblTicketCount.Text = "No data found for the given National ID.";
+                lblTicketCount.Visible = true;
             }
-
-            lblTicketCount.Visible = true;
 
             conn.Close();
         }

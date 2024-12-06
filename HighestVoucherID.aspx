@@ -16,6 +16,8 @@
     <br />
 
     <asp:Label ID="LabelVoucher" runat="server" Visible="false" CssClass="label"></asp:Label>
+    <asp:Label ID="LabelVoucher2" runat="server" Visible="false" CssClass="label2"></asp:Label>
+
     <br />
     <br />
 

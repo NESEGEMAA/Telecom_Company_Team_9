@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LabelVoucher2.Visible = false;
             LabelVoucher.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
@@ -61,13 +62,13 @@ namespace Telecom_Company_Team_9
 
                     if (reader.Read())
                     {
-                        LabelVoucher.Visible = true;
-                        LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
+                        LabelVoucher2.Visible = true;
+                        LabelVoucher2.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
                     }
                     else
                     {
-                        LabelVoucher.Visible = true;
-                        LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
+                        LabelVoucher2.Visible = true;
+                        LabelVoucher2.Text = "There are no Vouchers for this Mobile Number";
                     }
                 }
                 catch (Exception ex)

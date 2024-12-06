@@ -15,6 +15,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message2.Visible = false;
             Message.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
@@ -46,13 +47,13 @@ namespace Telecom_Company_Team_9
 
                 if (success == true)
                 {
-                    Message.Text = "There is a wallet associated to this mobile number";
-                    Message.Visible = true;
+                    Message2.Text = "There is a wallet associated to this mobile number";
+                    Message2.Visible = true;
                 }
                 else
                 {
-                    Message.Text = "There is no wallet associated to this mobile number";
-                    Message.Visible = true;  // Show the error message
+                    Message2.Text = "There is no wallet associated to this mobile number";
+                    Message2.Visible = true;  // Show the error message
                 }
             }
             catch (Exception ex)

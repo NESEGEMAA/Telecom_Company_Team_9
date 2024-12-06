@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Everyone's Plan Consumption For Some Reason .,.</h1>
     <h2>Select the plan name here:</h2>
-    <asp:DropDownList ID="PlanList" runat="server">
+    <asp:DropDownList ID="PlanList" CssClass="form-control" runat="server">
         <asp:ListItem Text="Basic" Value="Basic"></asp:ListItem>
         <asp:ListItem Text="Premium" Value="Premium"></asp:ListItem>
         <asp:ListItem Text="Ultimate" Value="Ultimate"></asp:ListItem>

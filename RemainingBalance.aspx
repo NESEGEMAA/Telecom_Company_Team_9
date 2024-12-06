@@ -15,7 +15,9 @@
     <asp:Button ID="ButtonRemAmount" runat="server" Text="Check" OnClick="ViewRemainingAmount" CssClass="btn-style" />
     <br />
     <br />
-    <asp:Label ID="LabelRem" runat="server" CssClass="label2"></asp:Label>
+    <asp:Label ID="LabelRem" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="LabelRem2" runat="server" CssClass="label2"></asp:Label>
+
     <br />
     <br />
 

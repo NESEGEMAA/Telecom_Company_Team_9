@@ -13,6 +13,8 @@
             <RowStyle CssClass="gridview-row" />
         </asp:GridView>
         <asp:Label ID="ErrorMessageMyCashBack" runat="server" Text="" CssClass="label"></asp:Label>
+        <asp:Label ID="ErrorMessageMyCashBack2" runat="server" Text="" CssClass="label2"></asp:Label>
+
     </div>
 </asp:Content>
 

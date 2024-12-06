@@ -39,13 +39,13 @@ namespace Telecom_Company_Team_9
                             Message2.Text = "Benefits Deleted Successfully!";
                         else
                             Message2.Text = ("No Benefits Found");
-                        Message2.Visible = false;   
+                        Message2.Visible = true;
                     }
                 }
                 catch (Exception ex)
                 {
                     Message.Text = ($"Error: {ex.Message}");
-                    Message.Visible=true;
+                    Message.Visible = true;
                 }
             }
         }
@@ -60,8 +60,9 @@ namespace Telecom_Company_Team_9
                 ExecuteStoredProcedure(mobileTest, planID);
             }
             catch (Exception ex)
-            {  
+            {
                 Message.Text = ("Invalid Plan ID or Mobile Number");
+                Message.Visible = true;
             }
         }
     }

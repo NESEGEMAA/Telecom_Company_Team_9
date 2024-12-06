@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LastFiveMonthsPlansErrorMessage2.Visible = false;
             LastFiveMonthsPlansErrorMessage.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
@@ -61,8 +62,8 @@ namespace Telecom_Company_Team_9
                         }
                         else
                         {
-                            LastFiveMonthsPlansErrorMessage.Text = "No plans available to display for this number.";
-                            LastFiveMonthsPlansErrorMessage.Visible = true;
+                            LastFiveMonthsPlansErrorMessage2.Text = "No plans available to display for this number.";
+                            LastFiveMonthsPlansErrorMessage2.Visible = true;
                             LastFiveMonthsPlans.DataSource = null;
                             LastFiveMonthsPlans.DataBind();
                         }

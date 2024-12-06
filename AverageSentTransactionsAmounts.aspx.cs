@@ -55,19 +55,18 @@ namespace Telecom_Company_Team_9
                     if (average >= 0)
                     {
                         Message2.Text = "Average sent transaction amounts: " + average;
-                        Message.Visible = true;
                     }
                     else
                     {
                         Message2.Text = "No Transaction Amounts available to display.";
-                        Message.Visible = true;
                     }
                 }
                 else
                 {
                     Message2.Text = "No Transaction Amounts available to display.";
-                    Message.Visible = true;
                 }
+                Message2.Visible = true;
+                Message.Visible = false;
             }
             catch (Exception ex)
             {

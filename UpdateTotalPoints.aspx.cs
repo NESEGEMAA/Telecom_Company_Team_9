@@ -51,7 +51,7 @@ namespace Telecom_Company_Team_9
                         if (cmd.ExecuteNonQuery() != 0)
                         {
                             Message2.Text = "Wallet points updated";
-                            Message.Visible = true;
+                            Message2.Visible = true;
                         }
                         else
                         {
