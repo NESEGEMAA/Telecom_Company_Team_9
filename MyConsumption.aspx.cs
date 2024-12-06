@@ -19,8 +19,8 @@ namespace Telecom_Company_Team_9
         protected void Compute(object sender, EventArgs e)
         {
             string planName = PlanList.Text;
-            DateTime StartDate = Start.SelectedDate;
-            DateTime EndDate = End.SelectedDate;
+            DateTime StartDate = Calendar1.SelectedDate;
+            DateTime EndDate = Calendar2.SelectedDate;
             string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
