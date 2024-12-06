@@ -38,7 +38,8 @@ namespace Telecom_Company_Team_9
             }
             else
             {
-                Response.Write("Invalid Username or Password");
+                ErrorMessage.Text = "Invalid input. Please try again.";
+                ErrorMessage.Visible = true;  // Show the error message
             }
         }
     }

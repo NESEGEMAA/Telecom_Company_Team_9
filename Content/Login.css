@@ -1,4 +1,4 @@
-﻿/* General Body and HTML Styles */
+﻿/* General Body and HTML Styles for Login Page */
 html, body {
     margin: 0;
     padding: 0;
@@ -10,10 +10,12 @@ html, body {
 
 /* Login Header */
 h1 {
-    font-size: 24px;
+    font-size: 24px; /* Set a fixed font size for all h1 elements */
     font-weight: bold;
     margin-bottom: 20px;
     color: #333;
+    width: 100%; /* Ensure the header doesn't stretch or overflow */
+    text-align: center; /* Center align the header text */
 }
 
 /* Container for the login form */
@@ -23,17 +25,17 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    width: 100%; /* Ensure the container doesn't stretch */
-    max-width: 400px; /* Limit the max width to make both forms similar */
+    width: 300px; /* Fixed width for the login container */
     text-align: center;
     margin: 0 auto;
+    word-wrap: break-word; /* Ensures long words break onto the next line */
+    overflow-wrap: break-word; /* Forces word-breaking if it's too long */
 }
 
 /* Form Styles */
 .form-group {
     margin-bottom: 20px; /* Add some space between form elements */
     width: 100%;
-    max-width: 400px; /* Limit the max width of the form */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,22 +43,27 @@ h1 {
 
     /* Label Styles */
     .form-group label {
-        font-size: 14px;
-        font-weight: bold;
+        font-size: 14px; /* Consistent font size */
+        font-weight: bold; /* Consistent font weight */
         margin-bottom: 5px;
         color: #333;
+        display: block; /* Ensures the label behaves like a block-level element */
+        width: 100%; /* Ensure the label doesn't exceed the container width */
+        word-wrap: break-word; /* Breaks long words to fit within the container */
+        white-space: normal; /* Allow text to wrap within the container */
+        text-align: left; /* Align label text to the left */
     }
 
 /* Textbox Styles */
 .form-control {
     padding: 10px;
     width: 100%;
-    max-width: 350px; /* Ensure both fields have the same max-width */
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 14px; /* Ensure a consistent font size across all inputs */
     margin-bottom: 15px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
+    max-width: 350px; /* Ensure both fields and buttons have the same max-width */
 }
 
 /* Button Styles */
@@ -73,7 +80,16 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-
     .btn-login:hover {
         background-color: #45a049; /* Darker green on hover */
     }
+
+/* Error Message Styling */
+#ErrorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center; /* Ensure the error message is centered */
+    word-wrap: break-word; /* Prevent long words from breaking the layout */
+    white-space: normal; /* Allow the error message text to wrap */
+}

@@ -46,7 +46,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100vh;
-    font-family: 'Poppins', Arial, sans-serif; /* Default font */
+    font-family: 'Poppins', Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
     display: flex;
@@ -140,91 +140,4 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-/* Calendar Styling */
-#Start, #End {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: 'Poppins', Arial, sans-serif;
-}
-
-/* Dropdown Styling */
-#PlanList {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* Button Styling */
-#ButtonMC {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s;
-}
-
-    #ButtonMC:hover {
-        background-color: #45a049;
-    }
-
-/* GridView Styling */
-.gridview-footer {
-    background-color: #1C5E55;
-    font-weight: bold;
-    color: white;
-}
-
-.gridview-header {
-    background-color: #4CAF50;
-    font-weight: bold;
-    color: white;
-}
-
-.gridview-pager {
-    background-color: #666666;
-    color: white;
-    text-align: center;
-}
-
-.gridview-row {
-    background-color: #E3EAEB;
-}
-
-.gridview, .gridview th, .gridview td {
-    border: none;
-    padding: 12px;
-    text-align: center;
-}
-
-/* Responsiveness */
-@media screen and (max-width: 768px) {
-    #flex-container {
-        flex-direction: column;
-    }
-
-    .navbar {
-        width: 100%;
-        height: auto;
-    }
-
-    .content {
-        padding: 10px;
-    }
-
-    .gridview {
-        width: 100%;
-    }
 }
