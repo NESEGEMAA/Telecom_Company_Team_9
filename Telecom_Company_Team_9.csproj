@@ -90,7 +90,6 @@
     <Content Include="AllServicePlans.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
-    <Content Include="admin_view.aspx" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="LoginCustomer.aspx" />
     <Content Include="MyCashBack.aspx" />
@@ -105,7 +104,6 @@
     <Content Include="RenewSubscription.aspx" />
     <Content Include="SubscribedInputPlan.aspx" />
     <Content Include="SubscribedServicePlans.aspx" />
-    <Content Include="Test.aspx" />
     <Content Include="Top10Payments.aspx" />
     <Content Include="TotalPlanUsage.aspx" />
     <Content Include="ViewAllBenefits.aspx" />
@@ -134,13 +132,6 @@
     </Compile>
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin_view.aspx.cs">
-      <DependentUpon>admin_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin_view.aspx.designer.cs">
-      <DependentUpon>admin_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllResolvedTickets.aspx.cs">
       <DependentUpon>AllResolvedTickets.aspx</DependentUpon>
@@ -331,13 +322,6 @@
     </Compile>
     <Compile Include="SubscribedServicePlans.aspx.designer.cs">
       <DependentUpon>SubscribedServicePlans.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Top10Payments.aspx.cs">
       <DependentUpon>Top10Payments.aspx</DependentUpon>

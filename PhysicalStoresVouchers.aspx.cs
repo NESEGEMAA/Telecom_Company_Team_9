@@ -8,6 +8,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message.Visible = false;
             GridView2.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
@@ -19,7 +20,11 @@ namespace Telecom_Company_Team_9
                 if (GridView2.Rows.Count != 0)
                     GridView2.Visible = true;
                 else
+                {
                     Message.Text = "No Data Found";
+                    Message.Visible = true;
+                }
+
             }
         }
     }

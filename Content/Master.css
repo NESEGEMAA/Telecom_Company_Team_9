@@ -354,3 +354,16 @@ header {
         padding-left: 0; /* Remove left padding for mobile */
     }
 }
+.label {
+    display: inline-block;
+    font-size: 0.875rem; /* Slightly smaller than standard text */
+    font-weight: 600; /* Semi-bold for emphasis */
+    color: #ffffff; /* White text for contrast */
+    background-color: #4CAF50; /* A pleasant green */
+    padding: 0.4em 0.8em; /* Balanced padding for good spacing */
+    border-radius: 0.3em; /* Slightly rounded corners */
+    text-transform: uppercase; /* Optional: Make text uppercase for uniformity */
+    letter-spacing: 0.05em; /* Slight spacing for readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    user-select: none; /* Prevent accidental text selection */
+}

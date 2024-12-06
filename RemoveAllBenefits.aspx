@@ -1,6 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="RemoveAllBenefits.aspx.cs" Inherits="Telecom_Company_Team_9.RemoveAllBenefits" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>
+        Remove Input Account Benefits
+    </h1>
     <div>
         <br />
         Input your Mobile Number:

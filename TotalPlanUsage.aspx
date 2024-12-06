@@ -2,18 +2,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h1>
-            Input Account Total Plan Usage
+        <h1>Input Account Total Plan Usage
         </h1>
-        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
         <br />
-        Input a date:
+        <h2>
+            Input a date:
+        </h2>
             <div class="calendar-container">
                 <asp:Calendar ID="Calendar2" runat="server" CssClass="calendar-table" />
             </div>
         <br />
-        Input your Mobile Number:
-            <br />
+        <h2>
+            Input your Mobile Number:
+        </h2>
         <asp:TextBox ID="TextBox5" Visible="false" runat="server"></asp:TextBox>
         <asp:Button ID="Button10" Visible="false" runat="server" Text="Search" OnClick="Button10_Click" />
         <br />
@@ -24,5 +25,6 @@
             <PagerStyle CssClass="gridview-pager" />
             <RowStyle CssClass="gridview-row" />
         </asp:GridView>
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </div>
 </asp:Content>
