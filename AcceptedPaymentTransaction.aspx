@@ -143,7 +143,7 @@
     <asp:Label ID="PaymentsNumLabel" runat="server" Text=""></asp:Label>
     <br />
     <asp:Label ID="SumOfPointsLabel" runat="server" Text=""></asp:Label>
-
+    <br />
     <!-- Message Label -->
     <p>
         <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
