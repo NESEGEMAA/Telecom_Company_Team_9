@@ -17,6 +17,7 @@ namespace Telecom_Company_Team_9
             Calendar1.Visible = true;
             Button6.Visible = true;
             Label3.Visible = false;
+            Label4.Visible = false;
         }
 
         protected void OnMyDataSourceSelecting1(object sender, SqlDataSourceSelectingEventArgs e)
@@ -40,8 +41,8 @@ namespace Telecom_Company_Team_9
             SqlDataSource5.DataBind();
             if (GridView5.Rows.Count == 0)
             {
-                Label3.Text = "No Data Found";
-                Label3.Visible = true;
+                Label4.Text = "No Data Found";
+                Label4.Visible = true;
             }
             GridView5.Visible = true;
         }

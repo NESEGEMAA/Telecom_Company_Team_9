@@ -13,7 +13,7 @@
     <asp:Button ID="ButtonExtAmount" runat="server" Text="Check" OnClick ="ViewExtraAmount" CssClass="btn-style"/>
     <br />
     <br />
-    <asp:Label ID="LabelExt" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="LabelExt" runat="server" CssClass="label2"></asp:Label>
     <br />
 </asp:Content>
 

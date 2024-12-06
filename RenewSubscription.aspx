@@ -17,6 +17,7 @@
     <asp:TextBox ID="InputPlanId" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
     <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
+    <asp:Label ID="Message2" runat="server" Text="" CssClass="label2"></asp:Label>
     <asp:Button ID="renewButton" runat="server" Text="Renew" OnClick="Renew" CssClass="btn-style"/>
 </asp:Content>
 

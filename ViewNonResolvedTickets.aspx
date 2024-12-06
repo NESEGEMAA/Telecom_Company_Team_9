@@ -15,7 +15,7 @@
         <br />
         <br />
         <asp:Label ID="lblTicketCount" runat="server" CssClass="label"></asp:Label>
-
+        <asp:Label ID="lblTicketCount2" runat="server" CssClass="label2"></asp:Label>
         </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">

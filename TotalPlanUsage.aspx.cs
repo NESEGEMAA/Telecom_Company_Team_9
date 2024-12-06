@@ -18,6 +18,7 @@ namespace Telecom_Company_Team_9
 
             TextBox5.Visible = true;
             Label2.Visible = false;
+            Label3.Visible = false;
             Calendar2.Visible = true;
             Button10.Visible = true;
         }
@@ -59,11 +60,12 @@ namespace Telecom_Company_Team_9
                             GridView7.DataBind();
                             GridView7.Visible = true;
                             Label2.Visible = false;
+                            Label3.Visible = false;
                         }
                         else
                         {
-                            Label2.Text = "No plans available to display.";
-                            Label2.Visible = true;
+                            Label3.Text = "No plans available to display.";
+                            Label3.Visible = true;
                             GridView7.Visible = false;
                         }
 

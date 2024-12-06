@@ -16,6 +16,7 @@
     </section>
     <section>
         <asp:Label ID="Message" runat="server" Text=""></asp:Label>
+        <asp:Label ID="Message2" runat="server" Text=""></asp:Label>
     </section>
     <asp:Button ID="redeemButton" runat="server" Text="Redeem!" OnClick="Redeem" />
 </asp:Content>

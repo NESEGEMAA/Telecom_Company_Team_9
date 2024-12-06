@@ -17,7 +17,7 @@
    
     <br />
     <br />
-    <asp:Label ID="BenefitErrorMessage" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="BenefitErrorMessage" runat="server" CssClass="label2"></asp:Label>
     <br />
      
         

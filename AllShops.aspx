@@ -9,5 +9,5 @@
                 <PagerStyle CssClass="gridview-pager" />
                 <RowStyle CssClass="gridview-row" />
     </asp:GridView>
-    <asp:Label ID="AllShopsErrorMessage" runat="server" Text="" CssClass="label"></asp:Label>
+    <asp:Label ID="AllShopsErrorMessage" runat="server" Text="" CssClass="label2"></asp:Label>
 </asp:Content>

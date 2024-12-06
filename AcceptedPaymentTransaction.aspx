@@ -18,10 +18,10 @@
                     OnClick="RetrievePaymentsButton_Click" CssClass="btn-style" />
     <br />
     <br />
-    <asp:Label ID="PaymentsNumLabel" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="PaymentsNumLabel" runat="server" CssClass="label2"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="SumOfPointsLabel" runat="server" Text="" CssClass="label"></asp:Label>
+    <asp:Label ID="SumOfPointsLabel" runat="server" Text="" CssClass="label2"></asp:Label>
     <br />
     <!-- Message Label -->
         <asp:Label ID="Message" runat="server" Text="" CssStyle="label"></asp:Label>

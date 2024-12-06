@@ -8,6 +8,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message2.Visible = false;
             Message.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
@@ -46,14 +47,14 @@ namespace Telecom_Company_Team_9
                             // Execute the stored procedure
                             if (cmd.ExecuteNonQuery() > 0)
                             {
-                                Message.Text = "Voucher redeemed successfully!";
+                                Message2.Text = "Voucher redeemed successfully!";
                             }
                             else
                             {
-                                Message.Text = "Not enough points or redemption failed";
+                                Message2.Text = "Not enough points or redemption failed";
                             }
 
-                            Message.Visible = true;
+                            Message2.Visible = true;
                         }
                     }
                 }

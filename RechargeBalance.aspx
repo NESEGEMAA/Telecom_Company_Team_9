@@ -15,6 +15,7 @@
     </section>
     <section>
         <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
+        <asp:Label ID="Message2" runat="server" Text="" CssClass="label2"></asp:Label>
     </section>
     <asp:Button ID="rechargeButton" runat="server" Text="Recharge!" OnClick="Recharge" CssClass="btn-style"/>
 </asp:Content>

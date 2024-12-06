@@ -154,5 +154,6 @@
     <!-- Message Label -->
     <p>
         <asp:Label ID="Message" runat="server" Text="" CssClass="label" class="message-label"></asp:Label>
+        <asp:Label ID="Message2" runat="server" Text="" CssClass="label2" class="message-label"></asp:Label>
     </p>
 </asp:Content>
