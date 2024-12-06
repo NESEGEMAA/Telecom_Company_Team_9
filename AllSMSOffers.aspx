@@ -18,6 +18,6 @@
                 <RowStyle CssClass="gridview-row" />
             </asp:GridView>
 
-            <asp:Label ID="Label1" Visible="false" runat="server" CssClass="message-label" Text="Label"></asp:Label>
+            <asp:Label ID="Label1" Visible="false" runat="server" CssClass="label" Text="Label"></asp:Label>
         </div>
 </asp:Content>

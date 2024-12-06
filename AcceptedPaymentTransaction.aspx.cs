@@ -30,6 +30,9 @@ namespace Telecom_Company_Team_9
 
         protected void RetrievePaymentsButton_Click(object sender, EventArgs e)
         {
+            PaymentsNumLabel.Text = "Number of Payments: ";
+            SumOfPointsLabel.Text = "Sum of points over payments: ";
+
             // Get the connection string from Web.config
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
@@ -60,8 +63,8 @@ namespace Telecom_Company_Team_9
                                 string totalPoints = reader[1].ToString();   // Second column - sum of pointsAmount
 
                                 // Display the values manually (using Labels or any other control)
-                                PaymentsNumLabel.Text = paymentCount;
-                                SumOfPointsLabel.Text = totalPoints;
+                                PaymentsNumLabel.Text += paymentCount;
+                                SumOfPointsLabel.Text += totalPoints;
                             }
 
                             Message.Visible = false;

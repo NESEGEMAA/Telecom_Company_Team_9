@@ -22,6 +22,6 @@
             <asp:Button ID="ButtonL" runat="server" Text="Login" CssClass="btn-style" OnClick="Login" />
         </div>
 
-        <asp:Label ID="ErrorMessage" runat="server" ForeColor="Red" Text="" />
+        <asp:Label ID="ErrorMessage" runat="server" CssClass="label" />
     </div>
 </asp:Content>

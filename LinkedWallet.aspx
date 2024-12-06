@@ -123,18 +123,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 class="page-heading">Linked Wallets&nbsp;</h1>
+    <h1>View Account Wallet</h1>
 
     <!-- Input Mobile Number Section -->
-    <div class="input-section">
-      <asp:Label ID="InputNumberLabel" runat="server" Text="Input Mobile Number:" class="label-text"></asp:Label>
-      <asp:TextBox ID="InputNumber" runat="server" CssClass="input-textbox"></asp:TextBox>
-  </div>
+      <h2>
+          Input Mobile Number:
+      </h2>
+      <asp:TextBox ID="InputNumber" runat="server" CssClass="form-control"></asp:TextBox>
     <!-- Button Section -->
-    <div class="button-section">
-        <asp:Button ID="RetrieveValidityButton" runat="server" Text="Check" 
-                    OnClick="RetrieveCashbackButton_Click" CssClass="action-button" />
-    </div>
+        <asp:Button ID="RetrieveValidityButton" runat="server" Text="Retrieve Data" 
+                    OnClick="RetrieveCashbackButton_Click" CssClass="btn-style" />
 
     <!-- GridView Section -->
     <div class="gridview-container">
@@ -147,8 +145,6 @@
     </div>
 
     <!-- Message Label -->
-    <p>
-        <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
-    </p>
+        <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
 </asp:Content>
 
