@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LabelRem.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
