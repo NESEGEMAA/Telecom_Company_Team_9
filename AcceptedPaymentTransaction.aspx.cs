@@ -18,6 +18,8 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             Message.Visible = false;
+            PaymentsNumLabel.Visible = false;
+            SumOfPointsLabel.Visible = false;
 
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
