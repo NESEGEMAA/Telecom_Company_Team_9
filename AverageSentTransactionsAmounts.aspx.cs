@@ -15,6 +15,7 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             Message.Visible = false;
+            Message2.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
                 // Redirect to login or access denied page if the user is not an admin
@@ -53,18 +54,18 @@ namespace Telecom_Company_Team_9
 
                     if (average >= 0)
                     {
-                        Message.Text = "Average sent transaction amounts: " + average;
+                        Message2.Text = "Average sent transaction amounts: " + average;
                         Message.Visible = true;
                     }
                     else
                     {
-                        Message.Text = "No Transaction Amounts available to display.";
+                        Message2.Text = "No Transaction Amounts available to display.";
                         Message.Visible = true;
                     }
                 }
                 else
                 {
-                    Message.Text = "No Transaction Amounts available to display.";
+                    Message2.Text = "No Transaction Amounts available to display.";
                     Message.Visible = true;
                 }
             }

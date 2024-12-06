@@ -12,11 +12,11 @@
     <br />
     <asp:Button ID="ButtonTickets" runat="server" Text="Check" OnClick="ViewTickets" CssClass="btn-style" />
 
-    <br />
-    <br />
-    <asp:Label ID="lblTicketCount" runat="server" CssClass="label"></asp:Label>
-
-</asp:Content>
+        <br />
+        <br />
+        <asp:Label ID="lblTicketCount" runat="server" CssClass="label"></asp:Label>
+        <asp:Label ID="lblTicketCount2" runat="server" CssClass="label2"></asp:Label>
+        </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" runat="Server">
     <p style="color: red">The output displayed on loading the page is the output for the current logged in customer; However, the ability to fetch other's data is kept for means of testing</p>

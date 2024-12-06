@@ -23,5 +23,6 @@
             <RowStyle CssClass="gridview-row" />
         </asp:GridView>
         <asp:Label ID="Label2" runat="server" CssClass="label" Text="Label"></asp:Label>
+        <asp:Label ID="Label3" runat="server" CssClass="label" Text="Label2"></asp:Label>
     </div>
 </asp:Content>

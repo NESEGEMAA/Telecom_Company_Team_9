@@ -16,6 +16,7 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             Message.Visible = false;
+            Message2.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
                 // Redirect to login or access denied page if the user is not an admin
@@ -46,11 +47,12 @@ namespace Telecom_Company_Team_9
                             CashbackView.DataSource = dt;
                             CashbackView.DataBind();
                             Message.Visible = false;
+                            Message2.Visible = false;
                         }
                         else
                         {
-                            Message.Text = "No Cashback available to display.";
-                            Message.Visible = true;
+                            Message2.Text = "No Cashback available to display.";
+                            Message2.Visible = true;
                         }
                     }
                 }

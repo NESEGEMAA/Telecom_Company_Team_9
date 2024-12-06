@@ -16,5 +16,6 @@
         </asp:GridView>
 
         <asp:Label ID="Label1" Visible="false" runat="server" CssClass="label" Text="Label"></asp:Label>
+        <asp:Label ID="Label2" Visible="false" runat="server" CssClass="label" Text="Label2"></asp:Label>
     </div>
 </asp:Content>

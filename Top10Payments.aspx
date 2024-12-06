@@ -19,6 +19,7 @@
     </asp:GridView>
     <br />
     <asp:Label ID="LabelPayment" runat="server" CssClass="label"></asp:Label>
+    <asp:Label ID="LabelPayment2" runat="server" CssClass="label2"></asp:Label>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" runat="Server">
