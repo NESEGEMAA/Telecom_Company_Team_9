@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">View All Payments</h1>
+    <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">All Payments</h1>
 
     <!-- GridView container with borders -->
     <div class="gridview-wrapper">

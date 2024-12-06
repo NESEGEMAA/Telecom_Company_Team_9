@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>
-        View All Active Accounts
+        All Active Accounts
     </h1>
     <div>
         <div class="gridview-wrapper">
