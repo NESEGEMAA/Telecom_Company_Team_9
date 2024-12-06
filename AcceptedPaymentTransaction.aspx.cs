@@ -16,11 +16,18 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+
+        protected void RetrievePaymentsButton_Click(object sender, EventArgs e)
+        {
             // Get the connection string from Web.config
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
             // SQL query to get data from the function
             string data = "Exec Account_Payment_Points @mobile_num = @mobileNo";
+
+            string mobileNo = InputNumber.Text;
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
@@ -28,12 +35,13 @@ namespace Telecom_Company_Team_9
                     using (SqlCommand cmd = new SqlCommand(data, conn))
                     {
                         cmd.Parameters.AddWithValue("@mobileNo", mobileNo);
+
                         // Open the connection
                         conn.Open();
 
-                        SqlDataAdapter reader = new SqlDataAdapter(cmd);
+                        SqlDataReader reader = cmd.ExecuteReader();
                         DataTable dt = new DataTable();
-                        reader.Fill(dt);
+                        dt.Load(reader);
 
                         if (dt.Rows.Count > 0)
                         {
@@ -43,7 +51,7 @@ namespace Telecom_Company_Team_9
                         }
                         else
                         {
-                            Message.Text = "No Cashback available to display.";
+                            Message.Text = "No payments available to display.";
                             Message.Visible = true;
                         }
                     }

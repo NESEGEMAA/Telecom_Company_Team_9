@@ -140,31 +140,52 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Calendar Styling */
-#Start, #End {
-    display: inline-block;
+/* Page Heading */
+.page-heading {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input Section Styling */
+.input-section {
     width: 100%;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: 'Poppins', Arial, sans-serif;
+    max-width: 600px;
 }
 
-/* Dropdown Styling */
-#PlanList {
+.label-text {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-textbox {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* Button Styling */
-#ButtonMC {
+/* Button Section Styling */
+.button-section {
+    width: 100%;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.action-button {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -176,11 +197,17 @@ header {
     transition: background-color 0.3s;
 }
 
-    #ButtonMC:hover {
+    .action-button:hover {
         background-color: #45a049;
     }
 
 /* GridView Styling */
+.gridview-container {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
 .gridview-footer {
     background-color: #1C5E55;
     font-weight: bold;
@@ -209,6 +236,14 @@ header {
     text-align: center;
 }
 
+/* Message Label */
+.message-label {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #333;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 /* Responsiveness */
 @media screen and (max-width: 768px) {
     #flex-container {
@@ -224,7 +259,24 @@ header {
         padding: 10px;
     }
 
-    .gridview {
+    .input-section, .button-section, .gridview-container {
         width: 100%;
+        margin: 10px 0;
+    }
+
+    .page-heading {
+        font-size: 18px;
+    }
+
+    .label-text {
+        font-size: 14px;
+    }
+
+    .input-textbox, .action-button {
+        font-size: 14px;
+    }
+
+    .gridview th, .gridview td {
+        font-size: 12px;
     }
 }

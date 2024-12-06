@@ -15,6 +15,33 @@ namespace Telecom_Company_Team_9
     {
 
         /// <summary>
+        /// InputNumberLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InputNumberLabel;
+
+        /// <summary>
+        /// InputNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InputNumber;
+
+        /// <summary>
+        /// RetrievePaymentsButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RetrievePaymentsButton;
+
+        /// <summary>
         /// AcceptedPaymentTransactionView control.
         /// </summary>
         /// <remarks>
