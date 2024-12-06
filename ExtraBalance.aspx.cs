@@ -17,7 +17,10 @@ namespace Telecom_Company_Team_9
                 Response.Redirect("~/LoginCustomer.aspx");
             }
 
-            mobileNumE.Text = Session["Mobile"] as string;
+            if (!IsPostBack)
+            {
+                mobileNumE.Text = Session["Mobile"] as string;
+            }
         }
 
         //Method to check if input is a number only
