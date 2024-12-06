@@ -46,15 +46,14 @@ namespace Telecom_Company_Team_9
                         DataTable dt = new DataTable();
                         dt.Load(reader);
 
-                        if (dt.Rows.Count > 0)
+                        if (cmd.ExecuteNonQuery() != 0)
                         {
-                            UpdateTotalpPointsView.DataSource = dt;
-                            UpdateTotalpPointsView.DataBind();
-                            Message.Visible = false;
+                            Message.Text = "Wallet points updated";
+                            Message.Visible = true;
                         }
                         else
                         {
-                            Message.Text = "Wallet points updated";
+                            Message.Text = "Mobile Number Not Found";
                             Message.Visible = true;
                         }
                     }

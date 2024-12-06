@@ -124,18 +124,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 class="page-heading">Update Total Earned Points&nbsp;</h1>
+    <h1>Update Total Earned Points</h1>
 
     <!-- Input Mobile Number Section -->
-    <div class="input-section">
-      <asp:Label ID="InputNumberLabel" runat="server" Text="Input Mobile Number:" class="label-text"></asp:Label>
-      <asp:TextBox ID="InputNumber" runat="server" CssClass="input-textbox"></asp:TextBox>
-  </div>
+      <h2>
+          Input Mobile Number:
+      </h2>
+      <asp:TextBox ID="InputNumber" runat="server" CssClass="form-control"></asp:TextBox>
     <!-- Button Section -->
-    <div class="button-section">
         <asp:Button ID="UpdateTotalPointsButton" runat="server" Text="Update Points" 
-                    OnClick="UpdateTotalPointsButton_Click" CssClass="action-button" />
-    </div>
+                    OnClick="UpdateTotalPointsButton_Click" CssClass="btn-style" />
 
     <!-- GridView Section -->
     <div class="gridview-container">

@@ -27,31 +27,26 @@ namespace Telecom_Company_Team_9
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
             // SQL query to get data from the function
-            string data = "Exec Wallet_Cashback_Amount @planID = @plan_ID, @walletID = @wallet_ID";
-            Int32 wallet_ID = int.Parse(InputNumber.Text);
-            Int32 plan_ID = int.Parse(InputNumber2.Text);
+            string data = "SELECT Wallet_Cashback_Amount_1.* FROM dbo.Wallet_Cashback_Amount(@walletID,@planID) AS Wallet_Cashback_Amount_1";
 
             try
             {
+                Int32 wallet_ID = int.Parse(InputNumber.Text);
+                Int32 plan_ID = int.Parse(InputNumber2.Text);
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     using (SqlCommand cmd = new SqlCommand(data, conn))
                     {
-                        cmd.Parameters.AddWithValue("@plan_ID", plan_ID);
-                        cmd.Parameters.AddWithValue("@wallet_ID", wallet_ID);
+                        cmd.Parameters.AddWithValue("@planID", plan_ID);
+                        cmd.Parameters.AddWithValue("@walletID", wallet_ID);
 
                         // Open the connection
                         conn.Open();
-
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        DataTable dt = new DataTable();
-                        dt.Load(reader);
-
-                        if (dt.Rows.Count > 0)
+                        int cashback = (Int32)cmd.ExecuteScalar();
+                        if (cashback > 0)
                         {
-                            AverageTransactionsAmountsView.DataSource = dt;
-                            AverageTransactionsAmountsView.DataBind();
-                            Message.Visible = false;
+                            Message.Text = "Your Cashback is: "  + cashback;
+                            Message.Visible = true;
                         }
                         else
                         {

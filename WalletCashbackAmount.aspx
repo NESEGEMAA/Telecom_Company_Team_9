@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="WalletCashbackAmount.aspx.cs" Inherits="Telecom_Company_Team_9.WalletCashbackAmount" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="Server">
     <style>
         /* General Body and HTML Styles */
         html, body {
@@ -71,9 +71,9 @@
             transition: background-color 0.3s ease;
         }
 
-        .action-button:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
+            .action-button:hover {
+                background-color: #45a049; /* Darker green on hover */
+            }
 
         /* GridView Section */
         .gridview-container {
@@ -124,24 +124,22 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 class="page-heading">Wallet Cashback &nbsp;</h1>
+    <h1>View Input Cashback Amount</h1>
 
     <!-- Input Mobile Number Section -->
-    <div class="input-section">
-        <asp:Label ID="InputNumberLabel" runat="server" Text="Input WalletID:" class="label-text"></asp:Label>
-        <asp:TextBox ID="InputNumber" runat="server" CssClass="input-textbox"></asp:TextBox>
-    </div>
+        <h2>Input WalletID:
+        </h2>
 
-     <div class="input-section">
-        <asp:Label ID="Label1" runat="server" Text="Input PlanID:" class="label-text"></asp:Label>
+        <asp:TextBox ID="InputNumber" runat="server" CssClass="input-textbox"></asp:TextBox>
+
+        <h2>Input PlanID:
+        </h2>
+
         <asp:TextBox ID="InputNumber2" runat="server" CssClass="input-textbox"></asp:TextBox>
-    </div>
 
     <!-- Button Section -->
-    <div class="button-section">
-        <asp:Button ID="RetrieveAverageTransactionsAmountButton" runat="server" Text="Retrieve Data!" 
-                    OnClick="RetrieveAverageTransactionsAmountButton_Click" CssClass="action-button" />
-    </div>
+        <asp:Button ID="RetrieveAverageTransactionsAmountButton" runat="server" Text="Retrieve Data"
+            OnClick="RetrieveAverageTransactionsAmountButton_Click" CssClass="action-button" />
 
     <!-- GridView Section -->
     <div class="gridview-container">
