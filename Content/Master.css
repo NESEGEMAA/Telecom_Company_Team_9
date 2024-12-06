@@ -510,3 +510,14 @@ header {
         font-size: 16px;
         font-weight: 400;
     }
+
+footer {
+    background-color: #2d3748; /* Same green as the navbar */
+    color: white; /* White text */
+    text-align: center; /* Center the text */
+    font-size: 10px;
+    padding: 5px; /* Add padding around the footer content */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

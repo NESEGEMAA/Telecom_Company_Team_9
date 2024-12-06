@@ -9,17 +9,17 @@
     <h2>Choose the payment method</h2>
     <section>
         <asp:DropDownList ID="paymentMethodDropDownList" runat="server">
-        <asp:ListItem>cash</asp:ListItem>
-        <asp:ListItem>credit</asp:ListItem>
+            <asp:ListItem>cash</asp:ListItem>
+            <asp:ListItem>credit</asp:ListItem>
         </asp:DropDownList>
     </section>
     <h2>Input the plan ID you would like to renew</h2>
     <asp:TextBox ID="InputPlanId" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
     <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
-    <asp:Button ID="renewButton" runat="server" Text="Renew" OnClick="Renew" CssClass="btn-style"/>
+    <asp:Button ID="renewButton" runat="server" Text="Renew" OnClick="Renew" CssClass="btn-style" />
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" runat="Server">
     <p style="color: red">The number displayed in the text box on loading the page is the current logged in customer's number; However, the ability to overwrite it is kept for means of testing</p>
 </asp:Content>

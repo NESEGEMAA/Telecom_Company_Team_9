@@ -5,7 +5,7 @@
         <h1>Your plan usage</h1>
         <h2>Mobile no:</h2>
         <asp:TextBox ID="Mobileno" runat="server" CssClass="form-control"></asp:TextBox>
-        <asp:Button ID="EnteredNumber" runat="server" Text="Enter" OnClick ="MyUsageTable" CssClass="btn-style"/>
+        <asp:Button ID="EnteredNumber" runat="server" Text="Enter" OnClick="MyUsageTable" CssClass="btn-style" />
         <asp:GridView ID="GridViewMyUsage" runat="server" AutoGenerateColumns="true" CssClass="gridview">
             <FooterStyle CssClass="gridview-footer" />
             <HeaderStyle CssClass="gridview-header" />
@@ -16,6 +16,6 @@
     </div>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" runat="Server">
     <p style="color: red">The output displayed on loading the page is the output for the current logged in customer; However, the ability to fetch other's data is kept for means of testing</p>
 </asp:Content>
