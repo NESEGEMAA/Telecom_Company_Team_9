@@ -19,7 +19,7 @@
         </div>
 
         <div class="form-group">
-            <asp:Button ID="ButtonL" runat="server" Text="Login" CssClass="btn-login" OnClick="Login" />
+            <asp:Button ID="ButtonL" runat="server" Text="Login" CssClass="btn-style" OnClick="Login" />
         </div>
 
         <asp:Label ID="ErrorMessage" runat="server" ForeColor="Red" Text="" />

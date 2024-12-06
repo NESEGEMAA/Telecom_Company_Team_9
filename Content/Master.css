@@ -1,4 +1,4 @@
-﻿﻿@font-face {
+﻿@font-face {
     font-family: 'Montserrat';
     src: url('/Content/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
     font-weight: 400;
@@ -52,6 +52,44 @@
     src: url('/Content/fonts/Poppins/static/Poppins-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px; /* Add some space between form elements */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* Label Styles */
+    .form-group label {
+        font-size: 14px; /* Consistent font size */
+        font-weight: bold; /* Consistent font weight */
+        margin-bottom: 5px;
+        color: #333;
+        display: block; /* Ensures the label behaves like a block-level element */
+        width: 100%; /* Ensure the label doesn't exceed the container width */
+        word-wrap: break-word; /* Breaks long words to fit within the container */
+        white-space: normal; /* Allow text to wrap within the container */
+        text-align: left; /* Align label text to the left */
+    }
+
+/* Textbox Styles */
+.form-control {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px; /* Ensure a consistent font size across all inputs */
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
+    max-width: 350px; /* Ensure both fields and buttons have the same max-width */
+}
+
+h2 {
+    font-size:20px;
 }
 
 /* Reset and Basic Styling */

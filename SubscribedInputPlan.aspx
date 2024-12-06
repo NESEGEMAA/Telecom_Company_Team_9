@@ -13,17 +13,16 @@
         <br />
 
 
-
-        <asp:Label ID="Label1" runat="server" Text="Input a Date:"></asp:Label>
+        <h2>
+            Input a Date:
+        </h2>
         <asp:Calendar ID="Calendar1" Visible="False" runat="server" SelectedDate="12/04/2024 17:05:51"></asp:Calendar>
-        <br />
+        <h2>
+            Input the Plan ID:
+        </h2>
+        <asp:TextBox Visible="false" CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
 
-        <asp:Label ID="Label2" runat="server" Text="Input the Plan ID:"></asp:Label>
-        <br />
-        <br />
-        <asp:TextBox Visible="false" ID="TextBox1" runat="server"></asp:TextBox>
-
-    <asp:Button Visible="false" ID="Button6" runat="server" Text="Search" OnClick="Button6_Click" />
+    <asp:Button Visible="false" ID="Button6" runat="server" CssClass="btn-style" Text="Search" OnClick="Button6_Click" />
     <br />
     <br />
     <asp:GridView ID="GridView5" Visible="False" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource5" CssClass="gridview">
@@ -38,6 +37,6 @@
         <PagerStyle CssClass="gridview-pager" />
         <RowStyle CssClass="gridview-row" />
     </asp:GridView>
-    <br />
     <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+        </div>
 </asp:Content>
