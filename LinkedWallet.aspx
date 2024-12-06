@@ -133,7 +133,7 @@
     <!-- Button Section -->
     <div class="button-section">
         <asp:Button ID="RetrieveValidityButton" runat="server" Text="Retrieve Data!" 
-                    OnClick="RetrieveValidityButton_Click" CssClass="action-button" />
+                    OnClick="RetrieveCashbackButton_Click" CssClass="action-button" />
     </div>
 
     <!-- GridView Section -->
