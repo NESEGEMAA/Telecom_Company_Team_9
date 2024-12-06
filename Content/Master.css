@@ -326,6 +326,17 @@ header {
         background-color: #45a049; /* Darker green on hover */
     }
 
+footer {
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    text-align: center; /* Center the text */
+    font-size: 10px;
+    padding: 5px; /* Add padding around the footer content */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .gridview-wrapper {
