@@ -48,7 +48,7 @@ namespace Telecom_Company_Team_9
                 <li><a href='CashBack.aspx'>Number of Cashback per wallet</a></li>
                 <li><a href='Payments_transaction.aspx'>View all payments</a></li>
                 <li><a href='E-shops.aspx'>View all E-shops</a></li>
-                <li><a href='1.aspx'>1</a></li>
+                <li><a href='AcceptedPaymentTransaction.aspx'>Accepted Payment Transaction</a></li>
                 <li><a href='2.aspx'>2</a></li>
                 <li><a href='3.aspx'>3</a></li>
                 <li><a href='4.aspx'>4</a></li>
