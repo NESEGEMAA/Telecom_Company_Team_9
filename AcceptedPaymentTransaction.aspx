@@ -135,7 +135,8 @@
     <!-- Button Section -->
         <asp:Button ID="RetrievePaymentsButton" runat="server" Text="Retrieve Data!" 
                     OnClick="RetrievePaymentsButton_Click" CssClass="btn-style" />
-
+    <br />
+    <br />
     <asp:Label ID="PaymentsNumLabel" runat="server"></asp:Label>
     <br />
     <asp:Label ID="SumOfPointsLabel" runat="server" Text=""></asp:Label>
