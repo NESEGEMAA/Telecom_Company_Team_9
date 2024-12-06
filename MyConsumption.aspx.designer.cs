@@ -15,15 +15,6 @@ namespace Telecom_Company_Team_9
     {
 
         /// <summary>
-        /// Plan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Plan;
-
-        /// <summary>
         /// PlanList control.
         /// </summary>
         /// <remarks>
@@ -33,15 +24,6 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.DropDownList PlanList;
 
         /// <summary>
-        /// Startdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Startdate;
-
-        /// <summary>
         /// Calendar1 control.
         /// </summary>
         /// <remarks>
@@ -49,15 +31,6 @@ namespace Telecom_Company_Team_9
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
-
-        /// <summary>
-        /// Enddate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Enddate;
 
         /// <summary>
         /// Calendar2 control.

@@ -42,13 +42,13 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.Label Startdate;
 
         /// <summary>
-        /// Start control.
+        /// Calendar1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Start;
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
 
         /// <summary>
         /// Enddate control.
@@ -60,13 +60,13 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.Label Enddate;
 
         /// <summary>
-        /// End control.
+        /// Calendar2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar End;
+        protected global::System.Web.UI.WebControls.Calendar Calendar2;
 
         /// <summary>
         /// RetrievePaymentsButton control.

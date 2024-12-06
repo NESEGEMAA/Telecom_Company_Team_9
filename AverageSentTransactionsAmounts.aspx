@@ -136,12 +136,15 @@
         <br />
         <asp:Label ID="Startdate" runat="server" Text="Choose the start date"></asp:Label>
         <br />
-        <asp:Calendar ID="Start" runat="server"></asp:Calendar>
-        <br />
+        <div class="calendar-container">
+            <asp:Calendar ID="Calendar1" runat="server" CssClass="calendar-table" />
+        </div>
         <br />
         <asp:Label ID="Enddate" runat="server" Text="Choose the end date"></asp:Label>
         <br />
-        <asp:Calendar ID="End" runat="server"></asp:Calendar>
+        <div class="calendar-container">
+            <asp:Calendar ID="Calendar2" runat="server" CssClass="calendar-table" />
+        </div>
         <br />
     <!-- Button Section -->
     <div class="button-section">

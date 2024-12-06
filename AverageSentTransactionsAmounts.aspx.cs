@@ -29,8 +29,8 @@ namespace Telecom_Company_Team_9
             // SQL query to get data from the function
             string data = "Exec Wallet_Transfer_Amount @start_date = @StartDate,@end_date = @EndDate, @walletID = @wallet_ID";
             Int32 wallet_ID = int.Parse(InputWallet.Text);
-            DateTime StartDate = Start.SelectedDate;
-            DateTime EndDate = End.SelectedDate;
+            DateTime StartDate = Calendar1.SelectedDate;
+            DateTime EndDate = Calendar2.SelectedDate;
 
             try
             {

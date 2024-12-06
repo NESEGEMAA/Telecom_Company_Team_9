@@ -3,20 +3,18 @@
         <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
         <!-- Part 2-->
-          <h2>Check for Unresolved Tickets Here </h2>
+        <h1>Check for Unresolved Tickets Here </h1>
         <br />
-        <p1> Enter National ID:</p1>
-    
-         <br />
-         <asp:TextBox ID="NID" runat="server" Placeholder="Enter National ID"></asp:TextBox>
-         <br />
-    
+        <h2> Enter National ID:</h2>
         <br />
-        <asp:Button ID="ButtonTickets" runat="server" Text="Check" OnClick="ViewTickets" />
+        <asp:TextBox ID="NID" runat="server" Placeholder="Enter National ID"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="ButtonTickets" runat="server" Text="Check" OnClick="ViewTickets" CssClass="btn-style"/>
 
         <br />
         <br />
-        <asp:Label ID="lblTicketCount" runat="server" ></asp:Label>
+        <asp:Label ID="lblTicketCount" runat="server" CssClass="label"></asp:Label>
 
         </asp:Content>
 

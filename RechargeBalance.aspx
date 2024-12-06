@@ -2,19 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Recharge your balance here:</h1>
-    <section>
-        <asp:Label ID="mobileNumberLabel" runat="server" Text="Input your Mobile Number"></asp:Label>
-    </section>
-    <section>
-        <asp:TextBox ID="InputMobileNumber" runat="server"></asp:TextBox>
-    </section>
-    <section>
-        <asp:Label ID="rechargeAmountLabel" runat="server" Text="Input the amount you want to recharge with"></asp:Label>
-    </section>
-    <section>
-        <asp:TextBox ID="InputAmount" runat="server"></asp:TextBox>
-    </section>
-        <asp:Label ID="paymentMethodLabel" runat="server" Text="Choose the payment method"></asp:Label>
+    <h2>Input your Mobile Number:</h2>
+    <asp:TextBox ID="InputMobileNumber" runat="server"></asp:TextBox>
+    <h2>Input the amount you want to recharge with:</h2>
+    <asp:TextBox ID="InputAmount" runat="server"></asp:TextBox>
+    <h2>Choose the payment method</h2>
     <section>
         <asp:DropDownList ID="paymentMethodDropDownList" runat="server">
         <asp:ListItem>cash</asp:ListItem>
@@ -22,7 +14,7 @@
         </asp:DropDownList>
     </section>
     <section>
-        <asp:Label ID="Message" runat="server" Text=""></asp:Label>
+        <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
     </section>
-    <asp:Button ID="rechargeButton" runat="server" Text="Recharge!" OnClick="Recharge" />
+    <asp:Button ID="rechargeButton" runat="server" Text="Recharge!" OnClick="Recharge" CssClass="btn-style"/>
 </asp:Content>
