@@ -15,15 +15,6 @@ namespace Telecom_Company_Team_9
     {
 
         /// <summary>
-        /// Unsubscribed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Unsubscribed;
-
-        /// <summary>
         /// Mobileno control.
         /// </summary>
         /// <remarks>

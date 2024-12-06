@@ -3,20 +3,19 @@
 
         <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
          <!-- Part 4-->
-         <h2> Check Here for Remaining balance on the account </h2>
+         <h1> Check Here for Remaining balance on the account </h1>
          <br />
-         <br />
-         Mobile Number:<br />
+         <h2>Mobile Number:</h2>
          <asp:TextBox ID="mobileNumR" runat="server"></asp:TextBox>
          <br />
-         Plan name:<br />
+         <h2>Plan name:</h2>
          <asp:TextBox ID="plannameR" runat="server"></asp:TextBox>
          <br />
          <br />
-         <asp:Button ID="ButtonRemAmount" runat="server" Text="Check" OnClick ="ViewRemainingAmount" />
+         <asp:Button ID="ButtonRemAmount" runat="server" Text="Check" OnClick ="ViewRemainingAmount" CssClass="btn-style"/>
          <br />
          <br />
-         <asp:Label ID="LabelRem" runat="server" ></asp:Label>
+         <asp:Label ID="LabelRem" runat="server" CssClass="label"></asp:Label>
          <br />
          <br />
      

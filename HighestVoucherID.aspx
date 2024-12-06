@@ -3,20 +3,19 @@
 
             <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
             <!-- Part 3-->
-            <h2>Checking Highest Voucher ID</h2>
+            <h1>Checking Highest Voucher ID</h1>
 
-            <br />
-            Mobile Number:<br />
-             <asp:TextBox ID="mobi" runat="server"></asp:TextBox>
-             <br />
-            <br />
-
-
-            <asp:Button ID="ButtonVocuher" runat="server" Text="Check" OnClick="ViewVoucher" />
+            <h2>Mobile Number:</h2>
+            <asp:TextBox ID="mobi" runat="server"></asp:TextBox>
             <br />
             <br />
 
-            <asp:Label ID="LabelVoucher" runat="server" Visible="false" ></asp:Label>
+
+            <asp:Button ID="ButtonVocuher" runat="server" Text="Check" OnClick="ViewVoucher" CssClass="btn-style"/>
+            <br />
+            <br />
+
+            <asp:Label ID="LabelVoucher" runat="server" Visible="false" CssClass="label"></asp:Label>
             <br />
             <br />
 

@@ -4,18 +4,17 @@
 
         <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <!--Part 5-->
-        <h2>Check Here for the Extra Balance on the account</h2>
+        <h1>Check Here for the Extra Balance on the account</h1>
         <br />
-        Mobile Number:<br />
+        <h2>Mobile Number:</h2>
         <asp:TextBox ID="mobileNumE" runat="server"></asp:TextBox>
-        <br />
-        Plan name:<br />
+        <h2>Plan name:</h2>
         <asp:TextBox ID="plannameE" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="ButtonExtAmount" runat="server" Text="Check" OnClick ="ViewExtraAmount" />
+        <asp:Button ID="ButtonExtAmount" runat="server" Text="Check" OnClick ="ViewExtraAmount" CssClass="btn-style"/>
         <br />
         <br />
-        <asp:Label ID="LabelExt" runat="server" ></asp:Label>
+        <asp:Label ID="LabelExt" runat="server" CssClass="label"></asp:Label>
         <br />
         </asp:Content>

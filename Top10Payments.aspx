@@ -3,13 +3,14 @@
 
             <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
             <!-- Part 6-->
-            <h2>Check Top 10 Successful Payments on the account</h2><br />
-            Mobile Number:<br />
+            <h1>Check Top 10 Successful Payments on the account</h1>
+            <br />
+            <h2>Mobile Number:</h2>
             <asp:TextBox ID="mob" runat="server"></asp:TextBox>
             <br />
             <br />
         
-             <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" />
+             <asp:Button ID="ButtonPayment" runat="server" Text="View Payments" OnClick="PaymentView" CssClass="btn-style"/>
             <asp:GridView ID="GridViewPayment" runat="server" CssClass="gridview">
                 <FooterStyle CssClass="gridview-footer" />
                 <HeaderStyle CssClass="gridview-header" />
@@ -17,10 +18,6 @@
                 <RowStyle CssClass="gridview-row" />
             </asp:GridView>
             <br />
-            <asp:Label ID="LabelPayment" runat="server" ></asp:Label>
-            <br />
-            <br />
-            <br />
-            <br />
+            <asp:Label ID="LabelPayment" runat="server" CssClass="label"></asp:Label>
         
             </asp:Content>

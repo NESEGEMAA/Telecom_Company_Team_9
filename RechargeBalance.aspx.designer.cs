@@ -15,15 +15,6 @@ namespace Telecom_Company_Team_9
     {
 
         /// <summary>
-        /// mobileNumberLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mobileNumberLabel;
-
-        /// <summary>
         /// InputMobileNumber control.
         /// </summary>
         /// <remarks>
@@ -33,15 +24,6 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.TextBox InputMobileNumber;
 
         /// <summary>
-        /// rechargeAmountLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label rechargeAmountLabel;
-
-        /// <summary>
         /// InputAmount control.
         /// </summary>
         /// <remarks>
@@ -49,15 +31,6 @@ namespace Telecom_Company_Team_9
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox InputAmount;
-
-        /// <summary>
-        /// paymentMethodLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label paymentMethodLabel;
 
         /// <summary>
         /// paymentMethodDropDownList control.
