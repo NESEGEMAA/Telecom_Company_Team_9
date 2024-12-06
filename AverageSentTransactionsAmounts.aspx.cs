@@ -23,37 +23,28 @@ namespace Telecom_Company_Team_9
 
         protected void RetrievePaymentsButton_Click(object sender, EventArgs e)
         {
-            // Get the connection string from Web.config
-            string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-
-            // SQL query to get data from the function
-            string data = "Exec Wallet_Transfer_Amount @start_date = @StartDate,@end_date = @EndDate, @walletID = @wallet_ID";
-            Int32 wallet_ID = int.Parse(InputWallet.Text);
-            DateTime StartDate = Calendar1.SelectedDate;
-            DateTime EndDate = Calendar2.SelectedDate;
-
             try
             {
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    using (SqlCommand cmd = new SqlCommand(data, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@wallet_ID", wallet_ID);
-                        cmd.Parameters.AddWithValue("@StartDate", StartDate);
-                        cmd.Parameters.AddWithValue("@EndDate", EndDate);
+                // Get the connection string from Web.config
+                string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
+                SqlConnection conn = new SqlConnection(connStr);
+                SqlCommand login_func = new SqlCommand("Wallet_MobileNo", conn);
+                Int32 wallet_ID = int.Parse(InputWallet.Text);
+                DateTime StartDate = Calendar1.SelectedDate;
+                DateTime EndDate = Calendar2.SelectedDate;
+                login_func.CommandText = "SELECT dbo.Wallet_Transfer_Amount(@walletID, @start_date,@end_date)";
+                login_func.CommandType = CommandType.Text;
+                login_func.Parameters.Add(new SqlParameter("@walletID", wallet_ID));
+                login_func.Parameters.Add(new SqlParameter("@start_date", StartDate));
+                login_func.Parameters.Add(new SqlParameter("@end_date", EndDate));
+                conn.Open();
+                login_func.ExecuteNonQuery();
+                int average = (int)login_func.ExecuteScalar();
 
-                        // Open the connection
-                        conn.Open();
-
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        DataTable dt = new DataTable();
-                        dt.Load(reader);
-
-                        if (dt.Rows.Count > 0)
+                if (average >= 0)
                         {
-                            LinkedWalletsView.DataSource = dt;
-                            LinkedWalletsView.DataBind();
-                            Message.Visible = false;
+                            Message.Text = "Average sent transaction amounts : " + average;
+                            Message.Visible = true;
                         }
                         else
                         {
@@ -61,8 +52,6 @@ namespace Telecom_Company_Team_9
                             Message.Visible = true;
                         }
                     }
-                }
-            }
             catch (Exception ex)
             {
                 Message.Text = "An error occurred: " + ex.Message;
