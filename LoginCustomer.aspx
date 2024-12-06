@@ -1,9 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginCustomer.aspx.cs" Inherits="Telecom_Company_Team_9.LoginCustomer" MasterPageFile="~/Site.master" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <link href="/Content/Login.css?v=1.0" rel="stylesheet" type="text/css" />
-</asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <h1>Customer Login</h1>
 
