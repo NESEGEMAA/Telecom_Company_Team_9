@@ -42,13 +42,22 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.Button RetrievePaymentsButton;
 
         /// <summary>
-        /// AcceptedPaymentTransactionView control.
+        /// PaymentsNumLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AcceptedPaymentTransactionView;
+        protected global::System.Web.UI.WebControls.Label PaymentsNumLabel;
+
+        /// <summary>
+        /// SumOfPointsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SumOfPointsLabel;
 
         /// <summary>
         /// Message control.
