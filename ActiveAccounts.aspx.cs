@@ -13,7 +13,12 @@ namespace Telecom_Company_Team_9
             }
             else
             {
-                GridView1.Visible = true;
+                if (GridView1.Rows.Count != 0)
+                    GridView1.Visible = true;
+                else
+                {
+
+                }
             }
         }
     }

@@ -48,6 +48,7 @@ namespace Telecom_Company_Team_9
                         SqlDataReader reader = cmd.ExecuteReader();
                         DataTable dt = new DataTable();
                         dt.Load(reader);
+                        dt.Rows.ToString().Trim();
 
                         if (dt.Rows.Count > 0)
                         {
