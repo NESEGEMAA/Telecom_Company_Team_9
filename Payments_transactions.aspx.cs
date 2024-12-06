@@ -15,43 +15,51 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Get the connection string from Web.config
-            string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-
-            // SQL query to get data from the function
-            string data = "SELECT * FROM dbo.AccountPayments";
-
-            try
+            if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
-                using (SqlConnection conn = new SqlConnection(connStr))
+                // Redirect to login or access denied page if the user is not an admin
+                Response.Redirect("~/LoginAdmin.aspx");
+            }
+            else
+            {
+                // Get the connection string from Web.config
+                string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
+
+                // SQL query to get data from the function
+                string data = "SELECT * FROM dbo.AccountPayments";
+
+                try
                 {
-                    using (SqlCommand cmd = new SqlCommand(data, conn))
+                    using (SqlConnection conn = new SqlConnection(connStr))
                     {
-                        // Open the connection
-                        conn.Open();
-
-                        SqlDataAdapter reader = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        reader.Fill(dt);
-
-                        if (dt.Rows.Count > 0)
+                        using (SqlCommand cmd = new SqlCommand(data, conn))
                         {
-                            Payments_transactionView.DataSource = dt;
-                            Payments_transactionView.DataBind();
-                            Message.Visible = false;
-                        }
-                        else
-                        {
-                            Message.Text = "No payments available to display.";
-                            Message.Visible = true;
+                            // Open the connection
+                            conn.Open();
+
+                            SqlDataAdapter reader = new SqlDataAdapter(cmd);
+                            DataTable dt = new DataTable();
+                            reader.Fill(dt);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                Payments_transactionView.DataSource = dt;
+                                Payments_transactionView.DataBind();
+                                Message.Visible = false;
+                            }
+                            else
+                            {
+                                Message.Text = "No payments available to display.";
+                                Message.Visible = true;
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Message.Text = "An error occurred: " + ex.Message;
-                Message.Visible = true;
+                catch (Exception ex)
+                {
+                    Message.Text = "An error occurred: " + ex.Message;
+                    Message.Visible = true;
+                }
             }
         }
     }

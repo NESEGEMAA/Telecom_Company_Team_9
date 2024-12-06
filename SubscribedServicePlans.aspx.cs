@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 
 namespace Telecom_Company_Team_9
 {
@@ -6,7 +7,28 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView4.Visible = true;
+            if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
+            {
+                // Redirect to login or access denied page if the user is not an admin
+                Response.Redirect("~/LoginAdmin.aspx");
+            }
+            else
+            {
+                GridView4.Visible = true;
+            }
+        }
+
+        protected void GridView4_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                // Loop through all cells in the row
+                for (int i = 0; i < e.Row.Cells.Count; i++)
+                {
+                    // Add a custom attribute (data-label) to each cell
+                    e.Row.Cells[i].Attributes["data-label"] = e.Row.Cells[i].Text;
+                }
+            }
         }
 
     }

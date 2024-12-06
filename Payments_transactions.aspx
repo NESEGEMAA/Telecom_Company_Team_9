@@ -5,12 +5,13 @@
     <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">View All Payments</h1>
 
     <!-- GridView container with borders -->
-    <div class="gridview-container">
-        <asp:GridView ID="Payments_transactionView" runat="server" CssClass="gridview-with-borders">
+    <div class="gridview-wrapper">
+        <asp:GridView ID="Payments_transactionView" runat="server" CssClass="gridview">
             <FooterStyle CssClass="gridview-footer" />
             <HeaderStyle CssClass="gridview-header" />
             <PagerStyle CssClass="gridview-pager" />
             <RowStyle CssClass="gridview-row" />
+            <AlternatingRowStyle BackColor="#f2f2f2" />
         </asp:GridView>
     </div>
 

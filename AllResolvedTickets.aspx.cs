@@ -6,7 +6,15 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView3.Visible = true;
+            if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
+            {
+                // Redirect to login or access denied page if the user is not an admin
+                Response.Redirect("~/LoginAdmin.aspx");
+            }
+            else
+            {
+                GridView3.Visible = true;
+            }
         }
     }
 }

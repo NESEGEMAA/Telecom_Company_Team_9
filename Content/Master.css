@@ -1,47 +1,4 @@
-﻿/* Font Imports */
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/Content/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/Content/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/Content/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/Content/fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('/Content/fonts/Poppins/static/Poppins-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('/Content/fonts/Poppins/static/Poppins-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* Reset and Basic Styling */
+﻿/* Reset and Basic Styling */
 body, html {
     margin: 0;
     padding: 0;
@@ -51,6 +8,7 @@ body, html {
     color: #333;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 /* Header Styling */
@@ -63,6 +21,7 @@ header {
     font-weight: 600;
     font-family: 'Montserrat', Arial, sans-serif;
     letter-spacing: 1px;
+    z-index: 10;
 }
 
 /* Flex Container for Layout */
@@ -71,6 +30,7 @@ header {
     flex-direction: row;
     height: calc(100vh - 60px); /* Subtract header height */
     overflow: hidden;
+    position: relative;
 }
 
 /* Navbar Styling */
@@ -82,7 +42,11 @@ header {
     overflow-y: auto;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: width 0.3s ease;
-    position: relative;
+    position: absolute;
+    z-index: 1; /* Overlay on top of content */
+    top: 0;
+    left: 0;
+    bottom: 0;
     overflow-x: hidden;
 }
 
@@ -90,6 +54,7 @@ header {
         width: 250px; /* Expanded width on hover */
     }
 
+    /* Navbar List and Links */
     .navbar ul {
         list-style-type: none;
         margin: 0;
@@ -132,12 +97,109 @@ header {
         color: white;
     }
 
+/* GridView Styling */
+.gridview-wrapper {
+    width: 100%; /* Full width for responsiveness */
+    max-height: 500px; /* Set the maximum height for the table container */
+    display: block;
+    margin: 0 auto; /* Center the table wrapper */
+    position: relative;
+    z-index: 0; /* Ensure the content is under the navbar */
+}
+
+/* Table Styling */
+.gridview {
+    width: 100%;
+    display: block; /* Ensures the table behaves as a block-level element */
+    border-collapse: collapse;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header Styles */
+.gridview-header {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Row Styles */
+.gridview-row {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+/* Alternate Stripes for Rows */
+.gridview tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.gridview tr:hover:not(.gridview-header) {
+    background-color: #f1f1f1;
+}
+
+/* Pager and Footer Styles */
+.gridview-footer, .gridview-pager {
+    background-color: #1C5E55;
+    color: white;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+/* Cell Styles */
+.gridview th, .gridview td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
 /* Content Styling */
 .content {
     flex-grow: 1;
     padding: 20px;
+    padding-left: 80px; /* Add padding for navbar */
     overflow-y: auto;
     display: flex;
     justify-content: center;
     text-align: center;
+    z-index: 0; /* Ensure content remains under navbar */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .gridview-wrapper {
+        max-height: 300px; /* Smaller max height on mobile */
+    }
+
+    .gridview {
+        font-size: 12px; /* Smaller font on mobile */
+        padding: 8px;
+    }
+
+    .gridview-header, .gridview-footer, .gridview-pager {
+        padding: 8px; /* Less padding on mobile */
+    }
+
+    .gridview td, .gridview th {
+        padding: 8px; /* Smaller padding on mobile */
+    }
+
+    .navbar {
+        position: relative; /* Make navbar behave as relative on mobile */
+        z-index: 0; /* Ensure it's not overlaying the content */
+    }
+
+    .content {
+        padding-left: 0; /* Remove left padding for mobile */
+    }
 }

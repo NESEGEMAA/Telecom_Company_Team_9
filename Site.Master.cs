@@ -46,7 +46,7 @@ namespace Telecom_Company_Team_9
                 <li><a href='TotalPlanUsage.aspx'>View Input Account Total Plan Usage</a></li>
                 <li><a href='RemoveAllBenefits.aspx'>Remove Input Account Benefits</a></li>
                 <li><a href='CashBack.aspx'>Number of Cashback per wallet</a></li>
-                <li><a href='Payments_transaction.aspx'>View all payments</a></li>
+                <li><a href='Payments_transactions.aspx'>View all payments</a></li>
                 <li><a href='E-shops.aspx'>View all E-shops</a></li>
                 <li><a href='AcceptedPaymentTransaction.aspx'>Accepted Payment Transaction</a></li>
                 <li><a href='2.aspx'>2</a></li>

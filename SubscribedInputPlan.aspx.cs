@@ -7,6 +7,12 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
+            {
+                // Redirect to login or access denied page if the user is not an admin
+                Response.Redirect("~/LoginAdmin.aspx");
+            }
+
             TextBox1.Visible = true;
             Calendar1.Visible = true;
             Button6.Visible = true;
