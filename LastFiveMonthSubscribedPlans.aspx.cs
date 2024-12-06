@@ -14,6 +14,13 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
+
+            // Set default mobile number and load the data
+            if (!IsPostBack)
+            {
+                LastFiveMonthsPlansInputNumber.Text = Session["Mobile"] as string; // Set default number in the input field
+                ViewLastFiveMonthsPlans(null, null); // Trigger the method to load data for the default mobile number
+            }
         }
 
         protected void ViewLastFiveMonthsPlans(object sender, EventArgs e)
@@ -24,10 +31,10 @@ namespace Telecom_Company_Team_9
             // SQL query to get data from the function
             string data = "SELECT LastFiveMonthsPlans.* FROM dbo.Subscribed_plans_5_Months (@mobileNo) AS LastFiveMonthsPlans";
 
-            // Get the mobile number from the input field
             try
             {
-                Int64 mobileNumber = int.Parse(LastFiveMonthsPlansInputNumber.Text);
+                // Get the mobile number from the input field
+                Int64 mobileNumber = Int64.Parse(LastFiveMonthsPlansInputNumber.Text);
 
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {

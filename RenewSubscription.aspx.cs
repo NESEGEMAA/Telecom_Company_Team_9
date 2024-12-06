@@ -13,6 +13,8 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
+
+            InputMobileNumber.Text = Session["Mobile"] as string;
         }
 
         protected void Renew(object sender, EventArgs e)

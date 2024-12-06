@@ -93,7 +93,6 @@
     <Content Include="AllServicePlans.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
-    <Content Include="admin_view.aspx" />
     <Content Include="AverageSentTransactionsAmounts.aspx" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="LoginCustomer.aspx" />
