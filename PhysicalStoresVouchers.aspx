@@ -1,9 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="PhysicalStoresVouchers.aspx.cs" Inherits="Telecom_Company_Team_9.PhysicalStoresVouchers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-   <h1>
-       All Redeemed Vouchers & Stores
-   </h1>
+    <h1>All Redeemed Vouchers & Stores
+    </h1>
     <div>
         <asp:GridView ID="GridView2" runat="server" Visible="False" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="shopID,voucherID" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" CssClass="gridview">
             <AlternatingRowStyle BackColor="White" />
@@ -20,6 +19,6 @@
             <RowStyle CssClass="gridview-row" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MyDatabaseConnection %>" SelectCommand="SELECT * FROM [PhysicalStoreVouchers]"></asp:SqlDataSource>
-
+        <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
     </div>
 </asp:Content>
