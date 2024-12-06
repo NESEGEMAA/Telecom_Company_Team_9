@@ -1,0 +1,166 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AverageSentTransactionsAmounts.aspx.cs" Inherits="Telecom_Company_Team_9.AverageSentTransactionsAmounts" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" Runat="Server">
+    <style>
+        /* General Body and HTML Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure body and html take up the full height */
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4f4f4; /* Background color for the page */
+            overflow: hidden; /* Prevent unnecessary scrolling */
+        }
+
+        /* Page Heading */
+        .page-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            margin-left: 40px;
+        }
+
+        /* Input Section */
+        .input-section {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px; /* Similar max-width for inputs */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+
+        .label-text {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        /* Textbox Styles */
+        .input-textbox {
+            padding: 10px;
+            width: 100%;
+            max-width: 350px; /* Matching the max-width as in the login page */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Button Section */
+        .button-section {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .action-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            max-width: 350px; /* Matching max-width for buttons */
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* GridView Section */
+        .gridview-container {
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* GridView Styling */
+        .gridview-footer {
+            background-color: #1C5E55;
+            font-weight: bold;
+            color: white;
+        }
+
+        .gridview-header {
+            background-color: #4CAF50;
+            font-weight: bold;
+            color: white;
+        }
+
+        .gridview-pager {
+            background-color: #666666;
+            color: white;
+            text-align: center;
+        }
+
+        .gridview-row {
+            background-color: #E3EAEB;
+        }
+
+        .gridview, .gridview th, .gridview td {
+            border: none;
+            padding: 12px;
+            text-align: center;
+        }
+
+        /* Message Label */
+        .message-label {
+            font-size: 16px;
+            color: #333;
+            font-family: 'Poppins', Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <!-- Page Heading -->
+    <h1 class="page-heading">Average Transaction Amounts</h1>
+
+    <!-- Input Mobile Number Section -->
+    <div class="input-section">
+        <asp:Label ID="InputWalletLabel" runat="server" Text="Input WalletID:" class="label-text"></asp:Label>
+        <asp:TextBox ID="InputWallet" runat="server" CssClass="input-textbox"></asp:TextBox>
+    </div>
+    
+        <br />
+        <asp:Label ID="Startdate" runat="server" Text="Choose the start date"></asp:Label>
+        <br />
+        <asp:Calendar ID="Start" runat="server"></asp:Calendar>
+        <br />
+        <br />
+        <asp:Label ID="Enddate" runat="server" Text="Choose the end date"></asp:Label>
+        <br />
+        <asp:Calendar ID="End" runat="server"></asp:Calendar>
+        <br />
+    <!-- Button Section -->
+    <div class="button-section">
+        <asp:Button ID="RetrievePaymentsButton" runat="server" Text="Retrieve Data!" 
+                    OnClick="RetrievePaymentsButton_Click" CssClass="action-button" />
+    </div>
+
+    <!-- GridView Section -->
+    <div class="gridview-container">
+        <asp:GridView ID="LinkedWalletsView" runat="server" CssClass="gridview">
+            <FooterStyle CssClass="gridview-footer" />
+            <HeaderStyle CssClass="gridview-header" />
+            <PagerStyle CssClass="gridview-pager" />
+            <RowStyle CssClass="gridview-row" />
+        </asp:GridView>
+    </div>
+
+    <!-- Message Label -->
+    <p>
+        <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
+    </p>
+</asp:Content>
