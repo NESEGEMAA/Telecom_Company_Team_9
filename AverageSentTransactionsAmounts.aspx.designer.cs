@@ -11,70 +11,88 @@ namespace Telecom_Company_Team_9
 {
 
 
-    public partial class SiteMaster
+    public partial class AverageSentTransactionsAmounts
     {
 
         /// <summary>
-        /// HeadContent control.
+        /// InputWalletLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label InputWalletLabel;
 
         /// <summary>
-        /// navMenuPlaceholder control.
+        /// InputWallet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal navMenuPlaceholder;
+        protected global::System.Web.UI.WebControls.TextBox InputWallet;
 
         /// <summary>
-        /// LogoutContainer control.
+        /// Startdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogoutContainer;
+        protected global::System.Web.UI.WebControls.Label Startdate;
 
         /// <summary>
-        /// LogoutLink control.
+        /// Start control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor LogoutLink;
+        protected global::System.Web.UI.WebControls.Calendar Start;
 
         /// <summary>
-        /// form1 control.
+        /// Enddate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label Enddate;
 
         /// <summary>
-        /// MainContent control.
+        /// End control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Calendar End;
 
         /// <summary>
-        /// FooterContent control.
+        /// RetrievePaymentsButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder FooterContent;
+        protected global::System.Web.UI.WebControls.Button RetrievePaymentsButton;
+
+        /// <summary>
+        /// LinkedWalletsView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView LinkedWalletsView;
+
+        /// <summary>
+        /// Message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Message;
     }
 }

@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Configuration;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Telecom_Company_Team_9
+{
+    public partial class WalletCashbackAmount : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
+            {
+                // Redirect to login or access denied page if the user is not an admin
+                Response.Redirect("~/LoginAdmin.aspx");
+            }
+        }
+
+        protected void RetrieveAverageTransactionsAmountButton_Click(object sender, EventArgs e)
+        {
+            // Get the connection string from Web.config
+            string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
+
+            // SQL query to get data from the function
+            string data = "Exec Wallet_Cashback_Amount @planID = @plan_ID, @walletID = @wallet_ID";
+            Int32 wallet_ID = int.Parse(InputNumber.Text);
+            Int32 plan_ID = int.Parse(InputNumber2.Text);
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    using (SqlCommand cmd = new SqlCommand(data, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@plan_ID", plan_ID);
+                        cmd.Parameters.AddWithValue("@wallet_ID", wallet_ID);
+
+                        // Open the connection
+                        conn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        DataTable dt = new DataTable();
+                        dt.Load(reader);
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            AverageTransactionsAmountsView.DataSource = dt;
+                            AverageTransactionsAmountsView.DataBind();
+                            Message.Visible = false;
+                        }
+                        else
+                        {
+                            Message.Text = "No Cashback Amounts available to display.";
+                            Message.Visible = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Message.Text = "An error occurred: " + ex.Message;
+                Message.Visible = true;
+            }
+        }
+    }
+}

@@ -11,70 +11,52 @@ namespace Telecom_Company_Team_9
 {
 
 
-    public partial class SiteMaster
+    public partial class LinkedWallet
     {
 
         /// <summary>
-        /// HeadContent control.
+        /// InputNumberLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label InputNumberLabel;
 
         /// <summary>
-        /// navMenuPlaceholder control.
+        /// InputNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal navMenuPlaceholder;
+        protected global::System.Web.UI.WebControls.TextBox InputNumber;
 
         /// <summary>
-        /// LogoutContainer control.
+        /// RetrieveValidityButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogoutContainer;
+        protected global::System.Web.UI.WebControls.Button RetrieveValidityButton;
 
         /// <summary>
-        /// LogoutLink control.
+        /// LinkedWalletView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor LogoutLink;
+        protected global::System.Web.UI.WebControls.GridView LinkedWalletView;
 
         /// <summary>
-        /// form1 control.
+        /// Message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
-
-        /// <summary>
-        /// FooterContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder FooterContent;
+        protected global::System.Web.UI.WebControls.Label Message;
     }
 }

@@ -11,70 +11,52 @@ namespace Telecom_Company_Team_9
 {
 
 
-    public partial class SiteMaster
+    public partial class UpdateTotalPoints
     {
 
         /// <summary>
-        /// HeadContent control.
+        /// InputNumberLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label InputNumberLabel;
 
         /// <summary>
-        /// navMenuPlaceholder control.
+        /// InputNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal navMenuPlaceholder;
+        protected global::System.Web.UI.WebControls.TextBox InputNumber;
 
         /// <summary>
-        /// LogoutContainer control.
+        /// UpdateTotalPointsButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogoutContainer;
+        protected global::System.Web.UI.WebControls.Button UpdateTotalPointsButton;
 
         /// <summary>
-        /// LogoutLink control.
+        /// UpdateTotalpPointsView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor LogoutLink;
+        protected global::System.Web.UI.WebControls.GridView UpdateTotalpPointsView;
 
         /// <summary>
-        /// form1 control.
+        /// Message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
-
-        /// <summary>
-        /// FooterContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder FooterContent;
+        protected global::System.Web.UI.WebControls.Label Message;
     }
 }

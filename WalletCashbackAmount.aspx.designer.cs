@@ -11,70 +11,70 @@ namespace Telecom_Company_Team_9
 {
 
 
-    public partial class SiteMaster
+    public partial class WalletCashbackAmount
     {
 
         /// <summary>
-        /// HeadContent control.
+        /// InputNumberLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label InputNumberLabel;
 
         /// <summary>
-        /// navMenuPlaceholder control.
+        /// InputNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal navMenuPlaceholder;
+        protected global::System.Web.UI.WebControls.TextBox InputNumber;
 
         /// <summary>
-        /// LogoutContainer control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogoutContainer;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// LogoutLink control.
+        /// InputNumber2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor LogoutLink;
+        protected global::System.Web.UI.WebControls.TextBox InputNumber2;
 
         /// <summary>
-        /// form1 control.
+        /// RetrieveAverageTransactionsAmountButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button RetrieveAverageTransactionsAmountButton;
 
         /// <summary>
-        /// MainContent control.
+        /// AverageTransactionsAmountsView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView AverageTransactionsAmountsView;
 
         /// <summary>
-        /// FooterContent control.
+        /// Message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder FooterContent;
+        protected global::System.Web.UI.WebControls.Label Message;
     }
 }

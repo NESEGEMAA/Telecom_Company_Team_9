@@ -14,6 +14,20 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
+
+            // Show ticket count for the default National ID on page load
+            if (!IsPostBack)
+            {
+                try
+                {
+                    Int64 DefaultNationalID = int.Parse(Session["NID"] as string); // Default mobile number
+                    DisplayTicketCount(DefaultNationalID);
+                }
+                catch
+                {
+                    lblTicketCount.Text = "Customer NID in database is invalid for some reason :(";
+                }
+            }
         }
 
         //Method to check if input is a number only
@@ -29,32 +43,36 @@ namespace Telecom_Company_Team_9
             return true;
         }
 
-        //Part 2 Component 2
+        // Part 2 Component 2
         protected void ViewTickets(object sender, EventArgs e)
         {
-            String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-
-            SqlConnection conn = new SqlConnection(connStr);
-            String nationalID = NID.Text;
-
-            SqlCommand count_func = new SqlCommand("Ticket_Account_Customer", conn);
-            count_func.CommandType = CommandType.StoredProcedure;
-
-            count_func.Parameters.Add(new SqlParameter("@NID", nationalID));
-
-            conn.Open();
-
-            if (!AreDigitsOnly(nationalID))
+            Int64 nationalID = 0;
+            try
+            {
+                nationalID = int.Parse(NID.Text);
+            }
+            catch
             {
                 lblTicketCount.Text = "Please insert a valid National ID";
                 return;
             }
 
-            if (!int.TryParse(nationalID, out _))
-            {
-                lblTicketCount.Text = "Error: National ID must be a valid integer and within the range of 0 to 2,147,483,647.";
-                return;
-            }
+            // Fetch ticket count for the entered National ID
+            DisplayTicketCount(nationalID);
+        }
+
+        // Method to display ticket count for a given National ID
+        private void DisplayTicketCount(Int64 nationalID)
+        {
+            String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
+            SqlConnection conn = new SqlConnection(connStr);
+
+            SqlCommand count_func = new SqlCommand("Ticket_Account_Customer", conn);
+            count_func.CommandType = CommandType.StoredProcedure;
+            count_func.Parameters.Add(new SqlParameter("@NID", nationalID));
+
+            conn.Open();
+
             object reader = count_func.ExecuteScalar();
 
             if (reader != null && int.TryParse(reader.ToString(), out int ticketcount))
@@ -65,7 +83,7 @@ namespace Telecom_Company_Team_9
                 }
                 else
                 {
-                    lblTicketCount.Text = "No data found for the given National ID.";
+                    lblTicketCount.Text = "No unresolved tickets found for the given National ID.";
                 }
             }
             else

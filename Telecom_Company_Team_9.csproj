@@ -72,9 +72,12 @@
     <Content Include="AllResolvedTickets.aspx" />
     <Content Include="AboutUs.aspx" />
     <Content Include="AllShops.aspx" />
+    <Content Include="UpdateTotalPoints.aspx" />
+    <Content Include="WalletCashbackAmount.aspx" />
     <Content Include="CashBack.aspx" />
     <Content Include="AllSMSOffers.aspx" />
     <Content Include="CashbackCalculator.aspx" />
+    <Content Include="LinkedWallet.aspx" />
     <Content Include="Content\Fonts\Montserrat\OFL.txt" />
     <Content Include="Content\Fonts\Montserrat\README.txt" />
     <Content Include="Content\Fonts\Poppins\OFL.txt" />
@@ -90,6 +93,8 @@
     <Content Include="AllServicePlans.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="LastFiveMonthSubscribedPlans.aspx" />
+    <Content Include="admin_view.aspx" />
+    <Content Include="AverageSentTransactionsAmounts.aspx" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="LoginCustomer.aspx" />
     <Content Include="MyCashBack.aspx" />
@@ -147,6 +152,20 @@
     <Compile Include="AllShops.aspx.designer.cs">
       <DependentUpon>AllShops.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateTotalPoints.aspx.cs">
+      <DependentUpon>UpdateTotalPoints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTotalPoints.aspx.designer.cs">
+      <DependentUpon>UpdateTotalPoints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WalletCashbackAmount.aspx.cs">
+      <DependentUpon>WalletCashbackAmount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WalletCashbackAmount.aspx.designer.cs">
+      <DependentUpon>WalletCashbackAmount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CashBack.aspx.cs">
       <DependentUpon>CashBack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +186,13 @@
     </Compile>
     <Compile Include="CashbackCalculator.aspx.designer.cs">
       <DependentUpon>CashbackCalculator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinkedWallet.aspx.cs">
+      <DependentUpon>LinkedWallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkedWallet.aspx.designer.cs">
+      <DependentUpon>LinkedWallet.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerWallets.aspx.cs">
       <DependentUpon>CustomerWallets.aspx</DependentUpon>
@@ -216,6 +242,13 @@
     </Compile>
     <Compile Include="LastFiveMonthSubscribedPlans.aspx.designer.cs">
       <DependentUpon>LastFiveMonthSubscribedPlans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AverageSentTransactionsAmounts.aspx.cs">
+      <DependentUpon>AverageSentTransactionsAmounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AverageSentTransactionsAmounts.aspx.designer.cs">
+      <DependentUpon>AverageSentTransactionsAmounts.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginAdmin.aspx.cs">
       <DependentUpon>LoginAdmin.aspx</DependentUpon>
