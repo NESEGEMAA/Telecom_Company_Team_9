@@ -14,7 +14,7 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not an admin
                 Response.Redirect("~/LoginAdmin.aspx");
             }
-
+            Message.Visible = false;
             TextBox2.Visible = true;
             TextBox3.Visible = true;
             Button7.Visible = true;

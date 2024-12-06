@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ErrorMessage.Visible =false;
         }
 
         protected void Login(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace Telecom_Company_Team_9
                 catch (Exception ex)
                 {
                     ErrorMessage.Text = "An error occurred: " + ex.Message;
+                    ErrorMessage.Visible=true;
                 }
             }
         }

@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ErrorMessage.Visible = false;
         }
 
         protected void login(object sender, EventArgs e)
