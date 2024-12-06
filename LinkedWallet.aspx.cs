@@ -30,6 +30,7 @@ namespace Telecom_Company_Team_9
                 string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
                 SqlConnection conn = new SqlConnection(connStr);
                 String mob = InputNumber.Text;
+                int test = int.Parse(mob);
                 SqlCommand login_func = new SqlCommand("Wallet_MobileNo", conn);
                 login_func.CommandText = "SELECT dbo.Wallet_MobileNo(@MobileNo)";
                 login_func.CommandType = CommandType.Text;
