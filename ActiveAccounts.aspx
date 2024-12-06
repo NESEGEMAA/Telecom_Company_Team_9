@@ -39,7 +39,7 @@
                           SelectCommand="SELECT * FROM [allCustomerAccounts]">
         </asp:SqlDataSource>
 
-                <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
+                <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
 
     </div>
 </asp:Content>

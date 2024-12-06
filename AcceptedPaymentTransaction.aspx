@@ -128,7 +128,9 @@
 
     <!-- Input Mobile Number Section -->
     <div class="input-section">
-        <asp:Label ID="InputNumberLabel" runat="server" Text="Input Mobile Number:" class="label-text"></asp:Label>
+        <h2>
+            Input Mobile Number:
+        </h2>
         <asp:TextBox ID="InputNumber" runat="server" CssClass="input-textbox"></asp:TextBox>
     </div>
 

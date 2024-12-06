@@ -8,6 +8,7 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             GridView4.Visible = false;
+            Message.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
                 // Redirect to login or access denied page if the user is not an admin
@@ -18,7 +19,10 @@ namespace Telecom_Company_Team_9
                 if (GridView4.Rows.Count != 0)
                     GridView4.Visible = true;
                 else
+                {
                     Message.Text = "No Data Found";
+                    Message.Visible = true;
+                }
             }
         }
 

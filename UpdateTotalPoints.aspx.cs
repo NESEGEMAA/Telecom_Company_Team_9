@@ -14,7 +14,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
+           if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Admin")
             {
                 // Redirect to login or access denied page if the user is not an admin
                 Response.Redirect("~/LoginAdmin.aspx");
@@ -54,7 +54,7 @@ namespace Telecom_Company_Team_9
                         }
                         else
                         {
-                            Message.Text = "No payments available to display.";
+                            Message.Text = "Wallet points updated";
                             Message.Visible = true;
                         }
                     }
