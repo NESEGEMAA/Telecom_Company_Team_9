@@ -16,7 +16,8 @@ namespace Telecom_Company_Team_9
                 Response.Redirect("~/LoginCustomer.aspx");
             }
 
-            InputAmount.Text = Session["Mobile"] as string;
+            if (!IsPostBack)
+                InputMobileNumber.Text = Session["Mobile"] as string;
         }
 
         protected void Recharge(object sender, EventArgs e)

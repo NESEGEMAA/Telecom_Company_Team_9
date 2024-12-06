@@ -2,10 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h1>View Cashback transactions</h1>
+        <h1>Cashback transactions</h1>
         <h2>National ID:</h2>
         <asp:TextBox ID="NID" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:Button ID="EnteredID" runat="server" Text="Enter" OnClick="MyCashBackTable" CssClass="btn-style" />
+        <br />
+        <br />
         <asp:GridView ID="GridViewMyCashBack" runat="server" AutoGenerateColumns="true" CssClass="gridview">
             <FooterStyle CssClass="gridview-footer" />
             <HeaderStyle CssClass="gridview-header" />
