@@ -138,15 +138,9 @@
                     OnClick="RetrievePaymentsButton_Click" CssClass="action-button" />
     </div>
 
-    <!-- GridView Section -->
-    <div class="gridview-container">
-        <asp:GridView ID="AcceptedPaymentTransactionView" runat="server" CssClass="gridview">
-            <FooterStyle CssClass="gridview-footer" />
-            <HeaderStyle CssClass="gridview-header" />
-            <PagerStyle CssClass="gridview-pager" />
-            <RowStyle CssClass="gridview-row" />
-        </asp:GridView>
-    </div>
+    <asp:Label ID="PaymentsNumLabel" runat="server" Text=""></asp:Label>
+    <br />
+    <asp:Label ID="SumOfPointsLabel" runat="server" Text=""></asp:Label>
 
     <!-- Message Label -->
     <p>

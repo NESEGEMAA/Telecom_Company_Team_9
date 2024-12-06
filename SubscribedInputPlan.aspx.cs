@@ -38,10 +38,10 @@ namespace Telecom_Company_Team_9
         {
             SqlDataSource5.SelectCommand = "SELECT Account_Plan_date_1.* FROM dbo.Account_Plan_date(@date,@plan) AS Account_Plan_date_1" + Request.QueryString["@date"] + Request.QueryString["@plan"];
             SqlDataSource5.DataBind();
-            if (GridView5.Rows.Count == 0) 
+            if (GridView5.Rows.Count == 0)
             {
-            Label3.Text = "No Data Found";
-            Label3.Visible = true;
+                Label3.Text = "No Data Found";
+                Label3.Visible = true;
             }
             GridView5.Visible = true;
         }

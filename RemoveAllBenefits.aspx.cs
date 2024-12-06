@@ -20,7 +20,7 @@ namespace Telecom_Company_Team_9
             Button7.Visible = true;
         }
 
-        protected void ExecuteStoredProcedure(String mobile, int PlanID)
+        protected void ExecuteStoredProcedure(Int64 mobile, int PlanID)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
             using (SqlConnection conn = new SqlConnection(connStr))
@@ -32,9 +32,30 @@ namespace Telecom_Company_Team_9
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@MobileNo", mobile);
-                        cmd.Parameters.AddWithValue("@PlanID", PlanID);
+                        cmd.Parameters.AddWithValue("@mobile_num", mobile);
+                        cmd.Parameters.AddWithValue("@plan_id", PlanID);
 
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine($"ID: {reader["Id"]}, Name: {reader["Name"]}");
+                            }
+                        }
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine($"ID: {reader["Id"]}, Name: {reader["Name"]}");
+                            }
+                        }
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine($"ID: {reader["Id"]}, Name: {reader["Name"]}");
+                            }
+                        }
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
@@ -62,7 +83,7 @@ namespace Telecom_Company_Team_9
                 String mobile = TextBox2.Text;
                 int mobileTest = int.Parse(mobile);
                 int planID = int.Parse(TextBox3.Text);
-                ExecuteStoredProcedure(mobile, planID);
+                ExecuteStoredProcedure(mobileTest, planID);
             }
             catch (Exception ex)
             {  

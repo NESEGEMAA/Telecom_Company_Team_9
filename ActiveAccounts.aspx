@@ -1,7 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ActiveAccounts.aspx.cs" Inherits="Telecom_Company_Team_9.ActiveAccounts" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <h1>
+        All Active Accounts
+    </h1>
     <div>
         <div class="gridview-wrapper">
             <asp:GridView ID="GridView1" runat="server" 
@@ -36,6 +38,8 @@
                           ConnectionString="<%$ ConnectionStrings:MyDatabaseConnection %>" 
                           SelectCommand="SELECT * FROM [allCustomerAccounts]">
         </asp:SqlDataSource>
+
+                <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
 
     </div>
 </asp:Content>

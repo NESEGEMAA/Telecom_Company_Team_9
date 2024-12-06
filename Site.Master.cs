@@ -38,22 +38,22 @@ namespace Telecom_Company_Team_9
             if (role == "Admin")
             {
                 navbarHtml += @"
-                <li><a href='ActiveAccounts.aspx'>View Active Accounts</a></li>
+                <li><a href='ActiveAccounts.aspx'>View All Active Accounts</a></li>
                 <li><a href='AllResolvedTickets.aspx'>View All Resolved Tickets</a></li>
-                <li><a href='PhysicalStoresVouchers.aspx'>View All Redeemed Vouchers & Stores</a></li>
                 <li><a href='SubscribedServicePlans.aspx'>View All Subscribed Plans</a></li>
-                <li><a href='SubscribedInputPlan.aspx'>View Input Subscribed Plans</a></li>
-                <li><a href='TotalPlanUsage.aspx'>View Input Account Total Plan Usage</a></li>
-                <li><a href='RemoveAllBenefits.aspx'>Remove Input Account Benefits</a></li>
-                <li><a href='CashBack.aspx'>Number of Cashback per wallet</a></li>
                 <li><a href='Payments_transactions.aspx'>View all payments</a></li>
                 <li><a href='E-shops.aspx'>View all E-shops</a></li>
-                <li><a href='AcceptedPaymentTransaction.aspx'>Accepted Payment Transaction</a></li>
+                <li><a href='PhysicalStoresVouchers.aspx'>View All Redeemed Vouchers & Stores</a></li>
+                <li><a href='AcceptedPaymentTransaction.aspx'>View Input Account Payment & Points</a></li>
+                <li><a href='SubscribedInputPlan.aspx'>View Input Subscribed Plans</a></li>
+                <li><a href='TotalPlanUsage.aspx'>View Input Account Total Plan Usage</a></li>
+                <li><a href='AllSMSOffers.aspx'>View All Input Account SMS Offers</a></li>
+                <li><a href='RemoveAllBenefits.aspx'>Remove Input Account Benefits</a></li>
+                <li><a href='CashBack.aspx'>View All Wallet Cashback Transaction Amounts</a></li>
                 <li><a href='2.aspx'>2</a></li>
                 <li><a href='3.aspx'>3</a></li>
                 <li><a href='4.aspx'>4</a></li>
-                <li><a href='5.aspx'>5</a></li>
-                <li><a href='AllSMSOffers.aspx'>View All Input Account SMS Offers</a></li>";
+                <li><a href='5.aspx'>5</a></li>";
             }
             else if (role == "Customer")
             {

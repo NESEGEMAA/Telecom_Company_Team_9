@@ -14,9 +14,16 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not a customer
                 Response.Redirect("~/LoginCustomer.aspx");
             }
+
+            // Only execute on the first page load, not on postback
+            if (!IsPostBack)
+            {
+                string defaultMobile = Session["Mobile"] as string; // Default mobile number
+                DisplayVoucher(defaultMobile);
+            }
         }
 
-        //Method to check if input is a number only
+        // Method to check if input is a number only
         public bool AreDigitsOnly(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -29,39 +36,52 @@ namespace Telecom_Company_Team_9
             return true;
         }
 
-        //Part 3 Component 2
-        protected void ViewVoucher(object sender, EventArgs e)
+        // Reusable method to query and display voucher information
+        private void DisplayVoucher(string mobile)
         {
-            String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-
-            SqlConnection conn = new SqlConnection(connStr);
-            String mobile = mobi.Text;
-            SqlCommand voucher_func = new SqlCommand("Account_Highest_Voucher", conn);
-            voucher_func.CommandType = CommandType.StoredProcedure;
-            voucher_func.Parameters.Add(new SqlParameter("@mobile_num", mobile));
-
-            conn.Open();
-            SqlDataReader reader = voucher_func.ExecuteReader();
-
-            if (String.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))
+            if (string.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))
             {
                 LabelVoucher.Visible = true;
                 LabelVoucher.Text = "Please insert a valid mobile number";
+                return;
             }
-            else
+
+            string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
+            using (SqlConnection conn = new SqlConnection(connStr))
             {
-                if (reader.Read())
+                SqlCommand voucherFunc = new SqlCommand("Account_Highest_Voucher", conn);
+                voucherFunc.CommandType = CommandType.StoredProcedure;
+                voucherFunc.Parameters.Add(new SqlParameter("@mobile_num", mobile));
+
+                try
                 {
-                    LabelVoucher.Visible = true;
-                    LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
+                    conn.Open();
+                    SqlDataReader reader = voucherFunc.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        LabelVoucher.Visible = true;
+                        LabelVoucher.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
+                    }
+                    else
+                    {
+                        LabelVoucher.Visible = true;
+                        LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
                     LabelVoucher.Visible = true;
-                    LabelVoucher.Text = "There are no Vouchers for this Mobile Number";
+                    LabelVoucher.Text = "An error occurred: " + ex.Message;
                 }
             }
-            conn.Close();
+        }
+
+        // Button click event to handle user input
+        protected void ViewVoucher(object sender, EventArgs e)
+        {
+            string mobile = mobi.Text;
+            DisplayVoucher(mobile);
         }
     }
 }

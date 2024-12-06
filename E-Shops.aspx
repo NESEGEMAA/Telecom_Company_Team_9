@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">View all E-Shops</h1>
+    <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">All E-Shops</h1>
 
     <!-- GridView container with some padding -->
     <div class="gridview-container">

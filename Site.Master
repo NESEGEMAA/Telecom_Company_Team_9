@@ -36,5 +36,12 @@
             </form>
         </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>PO27Y &copy; 2024. All rights reserved.</p>
+        <asp:ContentPlaceHolder id="FooterContent" runat="server" />
+    </footer>
+
 </body>
 </html>

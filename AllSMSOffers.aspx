@@ -1,9 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AllSMSOffers.aspx.cs" Inherits="Telecom_Company_Team_9.AllSMSOffers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>
+        All Input SMS Offers
+    </h1>
     <body>
         <div>
-            <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
             <br />
             Input Your Mobile Number:
                          <br />
@@ -18,5 +20,7 @@
                 <PagerStyle CssClass="gridview-pager" />
                 <RowStyle CssClass="gridview-row" />
             </asp:GridView>
+
+            <asp:Label ID="Label1" Visible="false" runat="server" CssClass="message-label" Text="Label"></asp:Label>
         </div>
 </asp:Content>
