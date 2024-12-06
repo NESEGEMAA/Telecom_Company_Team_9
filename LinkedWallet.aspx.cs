@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Reflection;
 
 namespace Telecom_Company_Team_9
 {
@@ -23,40 +24,33 @@ namespace Telecom_Company_Team_9
 
         protected void RetrieveCashbackButton_Click(object sender, EventArgs e)
         {
-            // Get the connection string from Web.config
-            string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-
-            // SQL query to get data from the function
-            string data = "Exec Wallet_MobileNo @mobile_num = @mobileNo";
-
-            string mobileNo = InputNumber.Text;
-
             try
             {
-                using (SqlConnection conn = new SqlConnection(connStr))
+                // Get the connection string from Web.config
+                string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
+                SqlConnection conn = new SqlConnection(connStr);
+                String mob = InputNumber.Text;
+                SqlCommand login_func = new SqlCommand("Wallet_MobileNo", conn);
+                login_func.CommandText = "SELECT dbo.Wallet_MobileNo(@MobileNo)";
+                login_func.CommandType = CommandType.Text;
+                login_func.Parameters.Add(new SqlParameter("@MobileNo", mob));
+
+
+                conn.Open();
+                login_func.ExecuteNonQuery();
+                Boolean success = (bool)login_func.ExecuteScalar();
+
+                /* hardcoded parameters */
+
+                if (success == true)
                 {
-                    using (SqlCommand cmd = new SqlCommand(data, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@mobileNo", mobileNo);
-
-                        // Open the connection
-                        conn.Open();
-
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        DataTable dt = new DataTable();
-                        dt.Load(reader);
-
-                        if (dt.Rows.Count > 0)
-                        {
-                            Message.Text = "There is a wallet associated with this mobile number";  
-                            Message.Visible = true;
-                        }
-                        else
-                        {
-                            Message.Text = "No wallets associated wiith this mobile number";
-                            Message.Visible = true;
-                        }
-                    }
+                    Message.Text = "There is a wallet associated to this mobile number";
+                    Message.Visible = true;
+                }
+                else
+                {
+                    Message.Text = "There is no wallet associated to this mobile number";
+                    Message.Visible = true;  // Show the error message
                 }
             }
             catch (Exception ex)

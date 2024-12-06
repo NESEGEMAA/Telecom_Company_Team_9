@@ -132,7 +132,7 @@
   </div>
     <!-- Button Section -->
     <div class="button-section">
-        <asp:Button ID="RetrieveValidityButton" runat="server" Text="Retrieve Data!" 
+        <asp:Button ID="RetrieveValidityButton" runat="server" Text="Check" 
                     OnClick="RetrieveCashbackButton_Click" CssClass="action-button" />
     </div>
 
