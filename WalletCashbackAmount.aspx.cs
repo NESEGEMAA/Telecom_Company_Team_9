@@ -55,7 +55,7 @@ namespace Telecom_Company_Team_9
                         }
                         else
                         {
-                            Message.Text = "No Transaction Amounts available to display.";
+                            Message.Text = "No Cashback Amounts available to display.";
                             Message.Visible = true;
                         }
                     }

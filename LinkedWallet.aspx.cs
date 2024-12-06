@@ -48,13 +48,12 @@ namespace Telecom_Company_Team_9
 
                         if (dt.Rows.Count > 0)
                         {
-                            LinkedWalletView.DataSource = dt;
-                            LinkedWalletView.DataBind();
-                            Message.Visible = false;
+                            Message.Text = "There is a wallet associated with this mobile number";  
+                            Message.Visible = true;
                         }
                         else
                         {
-                            Message.Text = "No payments available to display.";
+                            Message.Text = "No wallets associated wiith this mobile number";
                             Message.Visible = true;
                         }
                     }
