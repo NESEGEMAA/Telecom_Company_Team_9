@@ -6,7 +6,7 @@
             <h1>Checking Highest Voucher ID</h1>
 
             <h2>Mobile Number:</h2>
-            <asp:TextBox ID="mobi" runat="server"></asp:TextBox>
+            <asp:TextBox ID="mobi" runat="server" CssClass="form-control"></asp:TextBox>
             <br />
             <br />
 

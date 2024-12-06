@@ -3,9 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Renew your subscription here:</h1>
     <h2>Input your Mobile Number</h2>
-    <asp:TextBox ID="InputMobileNumber" runat="server"></asp:TextBox>
+    <asp:TextBox ID="InputMobileNumber" runat="server" CssClass="form-control"></asp:TextBox>
     <h2>Input the amount you want to recharge with</h2>
-    <asp:TextBox ID="InputAmount" runat="server"></asp:TextBox>
+    <asp:TextBox ID="InputAmount" runat="server" CssClass="form-control"></asp:TextBox>
     <h2>Choose the payment method</h2>
     <section>
         <asp:DropDownList ID="paymentMethodDropDownList" runat="server">
@@ -14,7 +14,7 @@
         </asp:DropDownList>
     </section>
     <h2>Input the plan ID you would like to renew</h2>
-    <asp:TextBox ID="InputPlanId" runat="server"></asp:TextBox>
+    <asp:TextBox ID="InputPlanId" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
     <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
     <asp:Button ID="renewButton" runat="server" Text="Renew" OnClick="Renew" CssClass="btn-style"/>

@@ -4,7 +4,7 @@
     <div>
         <h1>Your plan usage</h1>
         <h2>Mobile no:</h2>
-        <asp:TextBox ID="Mobileno" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Mobileno" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:Button ID="EnteredNumber" runat="server" Text="Enter" OnClick ="MyUsageTable" CssClass="btn-style"/>
         <asp:GridView ID="GridViewMyUsage" runat="server" AutoGenerateColumns="true" CssClass="gridview">
             <FooterStyle CssClass="gridview-footer" />

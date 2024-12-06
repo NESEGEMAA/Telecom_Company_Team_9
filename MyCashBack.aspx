@@ -4,7 +4,7 @@
     <div>
         <h1>View Cashback transactions</h1>
         <h2>National ID:</h2>
-        <asp:TextBox ID="NID" runat="server"></asp:TextBox>
+        <asp:TextBox ID="NID" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:Button ID="EnteredID" runat="server" Text="Enter" OnClick ="MyCashBackTable" CssClass="btn-style"/>
         <asp:GridView ID="GridViewMyCashBack" runat="server" AutoGenerateColumns="true" CssClass="gridview">
             <FooterStyle CssClass="gridview-footer" />

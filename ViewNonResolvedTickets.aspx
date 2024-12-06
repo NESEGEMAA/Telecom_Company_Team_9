@@ -7,7 +7,7 @@
         <br />
         <h2> Enter National ID:</h2>
         <br />
-        <asp:TextBox ID="NID" runat="server" Placeholder="Enter National ID"></asp:TextBox>
+        <asp:TextBox ID="NID" runat="server" Placeholder="Enter National ID" CssClass="form-control"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="ButtonTickets" runat="server" Text="Check" OnClick="ViewTickets" CssClass="btn-style"/>

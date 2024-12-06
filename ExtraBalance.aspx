@@ -5,9 +5,9 @@
     <h1>Check Here for the Extra Balance on the account</h1>
     <br />
     <h2>Mobile Number:</h2>
-    <asp:TextBox ID="mobileNumE" runat="server"></asp:TextBox>
+    <asp:TextBox ID="mobileNumE" runat="server" CssClass="form-control"></asp:TextBox>
     <h2>Plan name:</h2>
-    <asp:TextBox ID="plannameE" runat="server"></asp:TextBox>
+    <asp:TextBox ID="plannameE" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
     <br />
     <asp:Button ID="ButtonExtAmount" runat="server" Text="Check" OnClick ="ViewExtraAmount" CssClass="btn-style"/>

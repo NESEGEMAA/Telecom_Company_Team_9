@@ -6,7 +6,7 @@
     <h1>Check Top 10 Successful Payments on the account</h1>
     <br />
     <h2>Mobile Number:</h2>
-    <asp:TextBox ID="mob" runat="server"></asp:TextBox>
+    <asp:TextBox ID="mob" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
     <br />
         
