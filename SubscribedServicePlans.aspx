@@ -114,7 +114,7 @@
 
     <!-- Message Display -->
     <p>
-        <asp:Label ID="Message" runat="server" Text="" CssClass="message-label"></asp:Label>
+        <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
     </p>
 
     <!-- SqlDataSource for Data Binding -->

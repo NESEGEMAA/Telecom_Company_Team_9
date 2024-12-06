@@ -19,6 +19,6 @@
             <RowStyle CssClass="gridview-row" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MyDatabaseConnection %>" SelectCommand="SELECT * FROM [PhysicalStoreVouchers]"></asp:SqlDataSource>
-        <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
+        <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
     </div>
 </asp:Content>

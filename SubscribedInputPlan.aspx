@@ -37,6 +37,6 @@
         <PagerStyle CssClass="gridview-pager" />
         <RowStyle CssClass="gridview-row" />
     </asp:GridView>
-    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label3" runat="server" CssClass="label" Text="Label"></asp:Label>
         </div>
 </asp:Content>

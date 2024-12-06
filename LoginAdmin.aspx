@@ -19,6 +19,6 @@
         <div class="form-group">
             <asp:Button ID="login_button" runat="server" OnClick="login" Text="Login" CssClass="btn-style" />
         </div>
-        <asp:Label ID="ErrorMessage" runat="server" ForeColor="Red" Text="" />
+        <asp:Label ID="ErrorMessage" runat="server" CssClass="label" />
     </div>
 </asp:Content>

@@ -124,28 +124,22 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 class="page-heading">Accepted Payment Transactions</h1>
+    <h1>Accepted Payment Transactions</h1>
 
     <!-- Input Mobile Number Section -->
-    <div class="input-section">
         <h2>
             Input Mobile Number:
         </h2>
-        <asp:TextBox ID="InputNumber" runat="server" CssClass="input-textbox"></asp:TextBox>
-    </div>
+        <asp:TextBox ID="InputNumber" runat="server" CssClass="form-control"></asp:TextBox>
 
     <!-- Button Section -->
-    <div class="button-section">
         <asp:Button ID="RetrievePaymentsButton" runat="server" Text="Retrieve Data!" 
-                    OnClick="RetrievePaymentsButton_Click" CssClass="action-button" />
-    </div>
+                    OnClick="RetrievePaymentsButton_Click" CssClass="btn-style" />
 
-    <asp:Label ID="PaymentsNumLabel" runat="server" Text=""></asp:Label>
+    <asp:Label ID="PaymentsNumLabel" runat="server"></asp:Label>
     <br />
     <asp:Label ID="SumOfPointsLabel" runat="server" Text=""></asp:Label>
     <br />
     <!-- Message Label -->
-    <p>
-        <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
-    </p>
+        <asp:Label ID="Message" runat="server" Text="" CssStyle="label"></asp:Label>
 </asp:Content>

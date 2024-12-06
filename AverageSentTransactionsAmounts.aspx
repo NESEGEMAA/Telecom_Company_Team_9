@@ -125,33 +125,30 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1 class="page-heading">Average Transaction Amounts</h1>
+    <h1>Average Transaction Amounts</h1>
 
     <!-- Input Mobile Number Section -->
-    <div class="input-section">
-        <asp:Label ID="InputWalletLabel" runat="server" Text="Input WalletID:" class="label-text"></asp:Label>
-        <asp:TextBox ID="InputWallet" runat="server" CssClass="input-textbox"></asp:TextBox>
-    </div>
+        <h2>
+            Input WalletID:
+        </h2>
+        <asp:TextBox ID="InputWallet" runat="server" CssClass="form-control"></asp:TextBox>
     
-        <br />
-        <asp:Label ID="Startdate" runat="server" Text="Choose the start date"></asp:Label>
-        <br />
+    <h2>
+          Choose the start date
+    </h2>
         <div class="calendar-container">
             <asp:Calendar ID="Calendar1" runat="server" CssClass="calendar-table" />
         </div>
-        <br />
-        <asp:Label ID="Enddate" runat="server" Text="Choose the end date"></asp:Label>
-        <br />
+        <h2>
+            Choose the end date
+        </h2>
         <div class="calendar-container">
             <asp:Calendar ID="Calendar2" runat="server" CssClass="calendar-table" />
         </div>
         <br />
     <!-- Button Section -->
-    <div class="button-section">
         <asp:Button ID="RetrievePaymentsButton" runat="server" Text="Retrieve Data!" 
-                    OnClick="RetrievePaymentsButton_Click" CssClass="action-button" />
-    </div>
-
+                    OnClick="RetrievePaymentsButton_Click" CssClass="btn-style" />
     <!-- GridView Section -->
     <div class="gridview-container">
         <asp:GridView ID="LinkedWalletsView" runat="server" CssClass="gridview">
@@ -163,7 +160,9 @@
     </div>
 
     <!-- Message Label -->
-    <p>
-        <asp:Label ID="Message" runat="server" Text="" class="message-label"></asp:Label>
-    </p>
+        <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
+
+    <div>
+
+    </div>
 </asp:Content>

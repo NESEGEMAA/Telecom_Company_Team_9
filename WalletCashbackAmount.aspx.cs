@@ -26,34 +26,51 @@ namespace Telecom_Company_Team_9
             // Get the connection string from Web.config
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
-            // SQL query to get data from the function
-            string data = "SELECT Wallet_Cashback_Amount_1.* FROM dbo.Wallet_Cashback_Amount(@walletID,@planID) AS Wallet_Cashback_Amount_1";
-
             try
             {
-                Int32 wallet_ID = int.Parse(InputNumber.Text);
-                Int32 plan_ID = int.Parse(InputNumber2.Text);
+                // Validate inputs
+                if (!int.TryParse(InputNumber.Text, out int wallet_ID))
+                {
+                    Message.Text = "Invalid Wallet ID. Please enter a valid number.";
+                    Message.Visible = true;
+                    return;
+                }
+
+                if (!int.TryParse(InputNumber2.Text, out int plan_ID))
+                {
+                    Message.Text = "Invalid Plan ID. Please enter a valid number.";
+                    Message.Visible = true;
+                    return;
+                }
+
+                // Create SQL connection and command
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    using (SqlCommand cmd = new SqlCommand(data, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@planID", plan_ID);
-                        cmd.Parameters.AddWithValue("@walletID", wallet_ID);
+                    SqlCommand login_func = new SqlCommand("SELECT dbo.Wallet_Cashback_Amount(@walletID, @planID)", conn);
+                    login_func.CommandType = CommandType.Text;
+                    login_func.Parameters.AddWithValue("@walletID", wallet_ID);
+                    login_func.Parameters.AddWithValue("@planID", plan_ID);
 
-                        // Open the connection
-                        conn.Open();
-                        int cashback = (Int32)cmd.ExecuteScalar();
+                    conn.Open();
+
+                    // Execute the query and retrieve the scalar result
+                    object result = login_func.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out int cashback))
+                    {
                         if (cashback > 0)
                         {
-                            Message.Text = "Your Cashback is: "  + cashback;
-                            Message.Visible = true;
+                            Message.Text = "Your Cashback Amount is: " + cashback + " EGP";
                         }
                         else
                         {
                             Message.Text = "No Cashback Amounts available to display.";
-                            Message.Visible = true;
                         }
                     }
+                    else
+                    {
+                        Message.Text = "No Cashback Amounts available to display.";
+                    }
+                    Message.Visible = true;
                 }
             }
             catch (Exception ex)
