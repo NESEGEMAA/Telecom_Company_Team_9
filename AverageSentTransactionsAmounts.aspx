@@ -151,7 +151,7 @@
                     OnClick="RetrievePaymentsButton_Click" CssClass="btn-style" />
     <!-- GridView Section -->
     <div class="gridview-container">
-        <asp:GridView ID="LinkedWalletsView" runat="server" CssClass="gridview">
+        <asp:GridView ID="AverageTransactionAmountView" runat="server" CssClass="gridview">
             <FooterStyle CssClass="gridview-footer" />
             <HeaderStyle CssClass="gridview-header" />
             <PagerStyle CssClass="gridview-pager" />
