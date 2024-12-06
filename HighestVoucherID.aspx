@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Part 3-->
-    <h1>Checking Highest Voucher ID</h1>
+    <h1>Highest Voucher ID</h1>
 
     <h2>Mobile Number:</h2>
     <asp:TextBox ID="mobi" runat="server" CssClass="form-control"></asp:TextBox>

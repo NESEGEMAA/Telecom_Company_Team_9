@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1>View Input Cashback Amount</h1>
+    <h1>Check Input Cashback Amount</h1>
 
     <!-- Input Mobile Number Section -->
     <h2>Input WalletID:

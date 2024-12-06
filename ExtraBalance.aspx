@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!--Part 5-->
-    <h1>Check Here for the Extra Balance on the account</h1>
+    <h1>Extra Balance Paid For Plan</h1>
     <br />
     <h2>Mobile Number:</h2>
     <asp:TextBox ID="mobileNumE" runat="server" CssClass="form-control"></asp:TextBox>

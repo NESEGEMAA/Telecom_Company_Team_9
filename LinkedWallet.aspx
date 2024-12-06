@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Page Heading -->
-    <h1>View Account Wallet</h1>
+    <h1>Account Wallet</h1>
 
     <!-- Input Mobile Number Section -->
     <h2>Input Mobile Number:

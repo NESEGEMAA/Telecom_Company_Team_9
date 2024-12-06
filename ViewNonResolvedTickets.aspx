@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- Part 2-->
-    <h1>Check for Unresolved Tickets Here </h1>
+    <h1>Unresolved Tickets Here </h1>
     <br />
     <h2>Enter National ID:</h2>
     <br />
