@@ -9,6 +9,7 @@ using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.ComponentModel;
+using System.Reflection.Emit;
 
 namespace Telecom_Company_Team_9
 {
@@ -21,6 +22,9 @@ namespace Telecom_Company_Team_9
                 // Redirect to login or access denied page if the user is not an admin
                 Response.Redirect("~/LoginAdmin.aspx");
             }
+
+            PaymentsNumLabel.Text = "Number of Payments: ";
+            SumOfPointsLabel.Text = "Sum of points over payments: ";
         }
 
 
@@ -46,14 +50,20 @@ namespace Telecom_Company_Team_9
                         conn.Open();
 
                         SqlDataReader reader = cmd.ExecuteReader();
-                        DataTable dt = new DataTable();
-                        dt.Load(reader);
-                        dt.Rows.ToString().Trim();
 
-                        if (dt.Rows.Count > 0)
+                        if (reader.HasRows)
                         {
-                            AcceptedPaymentTransactionView.DataSource = dt;
-                            AcceptedPaymentTransactionView.DataBind();
+                            while (reader.Read())
+                            {
+                                // Access each column value by alias
+                                string paymentCount = reader[0].ToString(); // First column - count of paymentID
+                                string totalPoints = reader[1].ToString();   // Second column - sum of pointsAmount
+
+                                // Display the values manually (using Labels or any other control)
+                                PaymentsNumLabel.Text = paymentCount;
+                                SumOfPointsLabel.Text = totalPoints;
+                            }
+
                             Message.Visible = false;
                         }
                         else
@@ -70,5 +80,6 @@ namespace Telecom_Company_Team_9
                 Message.Visible = true;
             }
         }
+
     }
 }
