@@ -97,24 +97,23 @@ header {
         color: white;
     }
 
-/* GridView Styling */
+/* GridView Wrapper Styling */
 .gridview-wrapper {
-    width: auto; /* Full width for responsiveness */
-    max-height: 500px; /* Set the maximum height for the table container */
     display: block;
     margin: 0 auto; /* Center the table wrapper */
     position: relative;
     z-index: 0; /* Ensure the content is under the navbar */
+    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
 }
 
 /* Table Styling */
 .gridview {
-    width: 100%;
-    display: block; /* Ensures the table behaves as a block-level element */
-    border-collapse: collapse;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    width: auto; /* Set width based on content */
+    min-width: 600px; /* Set a minimum width for the table */
+    margin: 0 auto; /* Center the table within the container */
+    border-collapse: collapse; /* Remove spacing between table cells */
     transition: all 0.3s ease-in-out;
+    table-layout: auto; /* Table width depends on content */
 }
 
 /* Header Styles */
@@ -175,6 +174,24 @@ header {
     z-index: 0; /* Ensure content remains under navbar */
 }
 
+/* Button Styles */
+.btn-style {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px; /* Limit the width of the button */
+    transition: background-color 0.3s ease;
+}
+
+    .btn-style:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .gridview-wrapper {
@@ -183,7 +200,7 @@ header {
 
     .gridview {
         font-size: 12px; /* Smaller font on mobile */
-        padding: 8px;
+        width: 100%; /* Use full width on smaller screens */
     }
 
     .gridview-header, .gridview-footer, .gridview-pager {

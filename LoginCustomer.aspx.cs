@@ -31,6 +31,7 @@ namespace Telecom_Company_Team_9
                         if (result)
                         {
                             Session["UserRole"] = "Customer";
+                            Session["Mobile"] = mobile_num;
                             Response.Redirect("Home.aspx");
                         }
                         else
