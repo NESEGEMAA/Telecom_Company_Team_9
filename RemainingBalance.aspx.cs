@@ -51,7 +51,7 @@ namespace Telecom_Company_Team_9
             Check_amount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
 
             conn.Open();
-            if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob) || !AreDigitsOnly(plan_name))
+            if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
             {
                 LabelRem.Text = "Please insert a valid mobile number and plan name";
                 LabelRem.Visible = true;
