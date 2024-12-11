@@ -42,6 +42,15 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.TextBox InputBenefitID;
 
         /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
         /// Message control.
         /// </summary>
         /// <remarks>
@@ -51,12 +60,12 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.Label Message;
 
         /// <summary>
-        /// Calculatebutton control.
+        /// Message2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Calculatebutton;
+        protected global::System.Web.UI.WebControls.Label Message2;
     }
 }

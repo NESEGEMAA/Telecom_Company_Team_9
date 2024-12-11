@@ -10,7 +10,8 @@ namespace Telecom_Company_Team_9
         protected void Page_Load(object sender, EventArgs e)
         {
             LabelExt.Visible = false;
-        
+            LabelExt2.Visible = false;
+
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
@@ -53,7 +54,8 @@ namespace Telecom_Company_Team_9
             conn.Open();
             if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
             {
-                LabelExt.Text = "Please insert a valid mobile number and plan name";
+                LabelExt2.Text = "Please insert a valid mobile number and plan name";
+                LabelExt2.Visible = true;
                 return;
             }
 
@@ -67,6 +69,7 @@ namespace Telecom_Company_Team_9
             {
                 LabelExt.Text = "There is no extra balance for this account";
             }
+            LabelExt.Visible = true;
             conn.Close();
         }
     }

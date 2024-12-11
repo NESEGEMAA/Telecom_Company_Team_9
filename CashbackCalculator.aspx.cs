@@ -8,6 +8,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message2.Visible = false;
             Message.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
@@ -51,14 +52,15 @@ namespace Telecom_Company_Team_9
                         // Execute the stored procedure
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            Message.Text = "Transaction completed";
+                            Message2.Text = "Transaction completed";
                         }
                         else
                         {
-                            Message.Text = "Transaction failed";
+                            Message2.Text = "Transaction failed";
                         }
 
-                        Message.Visible = true;
+                        Message2.Visible = true;
+                        Message.Visible = false;
                     }
                 }
             }
@@ -66,6 +68,7 @@ namespace Telecom_Company_Team_9
             {
                 Message.Text = "An error occurred: " + ex.Message;
                 Message.Visible = true;
+                Message2.Visible = false;
             }
         }
     }

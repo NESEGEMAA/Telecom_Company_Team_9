@@ -3,12 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Recharge your balance here:</h1>
     <h2>Input your Mobile Number:</h2>
-    <asp:TextBox ID="InputMobileNumber" runat="server"></asp:TextBox>
+    <asp:TextBox ID="InputMobileNumber" CssClass="form-control" runat="server"></asp:TextBox>
     <h2>Input the amount you want to recharge with:</h2>
-    <asp:TextBox ID="InputAmount" runat="server"></asp:TextBox>
+    <asp:TextBox ID="InputAmount" CssClass="form-control" runat="server"></asp:TextBox>
     <h2>Choose the payment method</h2>
     <section>
-        <asp:DropDownList ID="paymentMethodDropDownList" runat="server">
+        <asp:DropDownList CssClass="form-control" ID="paymentMethodDropDownList" runat="server">
             <asp:ListItem>cash</asp:ListItem>
             <asp:ListItem>credit</asp:ListItem>
         </asp:DropDownList>

@@ -60,6 +60,15 @@ namespace Telecom_Company_Team_9
         protected global::System.Web.UI.WebControls.GridView GridViewMyConsumption;
 
         /// <summary>
+        /// Message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Message;
+
+        /// <summary>
         /// ErrorMessageMyConsumption control.
         /// </summary>
         /// <remarks>

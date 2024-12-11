@@ -22,11 +22,15 @@
     <br />
     <asp:Button ID="ButtonMC" runat="server" Text="Submit" OnClick="Compute" CssClass="btn-style" />
     <asp:GridView ID="GridViewMyConsumption" runat="server" CssClass="gridview">
-        <footerstyle cssclass="gridview-footer" />
-        <headerstyle cssclass="gridview-header" />
-        <pagerstyle cssclass="gridview-pager" />
-        <rowstyle cssclass="gridview-row" />
+        <FooterStyle CssClass="gridview-footer" />
+        <HeaderStyle CssClass="gridview-header" />
+        <PagerStyle CssClass="gridview-pager" />
+        <RowStyle CssClass="gridview-row" />
     </asp:GridView>
+    <br />
+    <br />
+    <br />
+    <asp:Label ID="Message" runat="server" Text="" CssClass="label2"></asp:Label>
     <asp:Label ID="ErrorMessageMyConsumption" runat="server" Text="" CssClass="label"></asp:Label>
 </asp:Content>
 

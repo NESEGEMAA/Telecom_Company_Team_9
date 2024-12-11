@@ -9,9 +9,13 @@
     <h2>Input Benefit ID:</h2>
     <asp:TextBox ID="InputBenefitID" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
-    <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
+    <asp:Button ID="Button1" runat="server" Text="Calculate!" OnClick="Calculate" CssClass="btn-style"/>
     <br />
-    <asp:Button ID="Calculatebutton" runat="server" Text="Calculate!" OnClick="Calculate" CssClass="btn-style"/>
+    <br />
+    <br />
+    <asp:Label ID="Message" runat="server" Text="" CssClass="label"></asp:Label>
+    <asp:Label ID="Message2" runat="server" Text="" CssClass="label2"></asp:Label>
+    <br />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="FooterContent" Runat="Server">

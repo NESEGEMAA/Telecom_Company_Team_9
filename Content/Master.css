@@ -285,7 +285,10 @@ header {
 }
 
     .btn-style:hover {
-        background-color: #2f855a; /* Slightly darker green for hover */
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Intensify shadow on hover */
+        background-color: #2f855a; /* Darker red on hover for intensity */
+        transition: 0.3s ease-in-out;
     }
 
 /* Mobile Responsiveness */
