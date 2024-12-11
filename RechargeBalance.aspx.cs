@@ -31,7 +31,7 @@ namespace Telecom_Company_Team_9
             try
             {
                 // Get the mobile number from the input field
-                String mobileNumber = InputMobileNumber.Text;
+                Int64 mobileNumber = int.Parse(InputMobileNumber.Text);
                 Int32 rechargeAmount = int.Parse(InputAmount.Text);
                 string paymentMethod = paymentMethodDropDownList.SelectedValue;
 
@@ -56,17 +56,17 @@ namespace Telecom_Company_Team_9
                             }
                             else
                             {
-                                Message2.Text = "Transaction failed";
+                                Message.Text = "Transaction failed";
                             }
 
-                            Message.Visible = false;
+                            Message.Visible = true;
                             Message2.Visible = true;
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Message.Text = "Mobile Number Not Found";
+                    Message.Text = "An error occurred: " + ex.Message;
                     Message.Visible = true;
                 }
             }

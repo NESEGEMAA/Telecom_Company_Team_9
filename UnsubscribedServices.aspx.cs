@@ -37,16 +37,12 @@ namespace Telecom_Company_Team_9
                     if (string.IsNullOrEmpty(MobileNumber))
                     {
                         ErrorMessageUnsubscribtion.Text = "Mobile Number Cannot be empty";
-                        ErrorMessageUnsubscribtion.Visible = true;
-                        GridViewUnsubscribedPlans.Visible = false;
                         return;
                     }
 
                     if (MobileNumber.Length < 11 || MobileNumber.Length > 11)
                     {
                         ErrorMessageUnsubscribtion.Text = "Invalid Mobile number";
-                        ErrorMessageUnsubscribtion.Visible = true;
-                        GridViewUnsubscribedPlans.Visible = false;
                         return;
                     }
 
@@ -61,27 +57,14 @@ namespace Telecom_Company_Team_9
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
 
-                            if (dt.Rows.Count > 0)
-                            {
-                                GridViewUnsubscribedPlans.DataSource = dt;
-                                GridViewUnsubscribedPlans.DataBind();
-                                ErrorMessageUnsubscribtion.Visible = false;
-                                GridViewUnsubscribedPlans.Visible = true;
-                            }
-                            else
-                            {
-                                 ErrorMessageUnsubscribtion.Text = "No Data Found";
-                                 ErrorMessageUnsubscribtion.Visible=true;
-                                 GridViewUnsubscribedPlans.Visible=false;
-                            }
+                            GridViewUnsubscribedPlans.DataSource = dt;
+                            GridViewUnsubscribedPlans.DataBind();
                         }
                     }
                 }
                 catch (Exception ex)
                 {
                     ErrorMessageUnsubscribtion.Text = "An error occurred: " + ex.Message;
-                    ErrorMessageUnsubscribtion.Visible = true;
-                    GridViewUnsubscribedPlans.Visible = false;
                 }
             }
         }

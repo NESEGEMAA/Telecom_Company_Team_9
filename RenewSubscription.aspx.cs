@@ -60,16 +60,16 @@ namespace Telecom_Company_Team_9
                         }
                         else
                         {
-                            Message2.Text = "Transaction failed";
+                            Message.Text = "Transaction failed";
                         }
-                        Message.Visible = false;
+                        Message.Visible = true;
                         Message2.Visible = true;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Message.Text = "An error occurred: Invalid Input";
+                Message.Text = "An error occurred: " + ex.Message;
                 Message.Visible = true;
             }
         }

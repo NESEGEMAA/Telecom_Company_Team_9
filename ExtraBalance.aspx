@@ -14,7 +14,6 @@
     <br />
     <br />
     <asp:Label ID="LabelExt" runat="server" CssClass="label2"></asp:Label>
-    <asp:Label ID="LabelExt2" runat="server" CssClass="label"></asp:Label>
     <br />
 </asp:Content>
 

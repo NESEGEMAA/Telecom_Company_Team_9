@@ -9,9 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridViewMyConsumption.Visible = false;
             ErrorMessageMyConsumption.Visible = false;
-            Message.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
                 // Redirect to login or access denied page if the user is not a customer
@@ -39,8 +37,6 @@ namespace Telecom_Company_Team_9
                         if (StartDate > EndDate)
                         {
                             ErrorMessageMyConsumption.Text = "Start date is greater than the end date";
-                            ErrorMessageMyConsumption.Visible = true;
-                            GridViewMyConsumption.Visible = false;
                             return;
                         }
 
@@ -48,29 +44,16 @@ namespace Telecom_Company_Team_9
                         {
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
-                            if (dt.Rows.Count > 0)
-                            {
 
-                                GridViewMyConsumption.DataSource = dt;
-                                GridViewMyConsumption.DataBind();
-                                GridViewMyConsumption.Visible = true;
-                            }
-                            else 
-                            {
-                                Message.Text = "No Data Found";
-                                GridViewMyConsumption.Visible = false;
-                                Message.Visible = true;
-                                ErrorMessageMyConsumption.Visible = false;
-                            }
-
-                            }
+                            GridViewMyConsumption.DataSource = dt;
+                            GridViewMyConsumption.DataBind();
                         }
+                    }
                 }
                 catch (Exception ex)
                 {
                     ErrorMessageMyConsumption.Text = "An error occurred: " + ex.Message;
                     ErrorMessageMyConsumption.Visible = true;
-                    GridViewMyConsumption.Visible = false;
                 }
             }
         }

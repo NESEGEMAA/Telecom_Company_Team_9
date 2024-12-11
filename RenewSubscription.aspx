@@ -8,7 +8,7 @@
     <asp:TextBox ID="InputAmount" runat="server" CssClass="form-control"></asp:TextBox>
     <h2>Choose the payment method</h2>
     <section>
-        <asp:DropDownList ID="paymentMethodDropDownList" CssClass="form-control" runat="server">
+        <asp:DropDownList ID="paymentMethodDropDownList" runat="server">
             <asp:ListItem>cash</asp:ListItem>
             <asp:ListItem>credit</asp:ListItem>
         </asp:DropDownList>
