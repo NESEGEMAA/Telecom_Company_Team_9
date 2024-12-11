@@ -9,6 +9,7 @@ namespace Telecom_Company_Team_9
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label1.Visible = false;
             ErrorMessageMyUsage.Visible = false;
             if (Session["UserRole"] == null || Session["UserRole"].ToString() != "Customer")
             {
@@ -38,12 +39,16 @@ namespace Telecom_Company_Team_9
                     if (string.IsNullOrEmpty(MobileNumber))
                     {
                         ErrorMessageMyUsage.Text = "Mobile Number Cannot be empty";
+                        ErrorMessageMyUsage.Visible = true;
+                        GridViewMyUsage.Visible = false;
                         return;
                     }
 
                     if (MobileNumber.Length != 11) // Mobile number must be exactly 11 digits
                     {
                         ErrorMessageMyUsage.Text = "Invalid Mobile number";
+                        ErrorMessageMyUsage.Visible = true;
+                        GridViewMyUsage.Visible = false;
                         return;
                     }
 
@@ -56,9 +61,19 @@ namespace Telecom_Company_Team_9
                         {
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
-
-                            GridViewMyUsage.DataSource = dt;
-                            GridViewMyUsage.DataBind();
+                            if (dt.Rows.Count > 0)
+                            {
+                                GridViewMyUsage.DataSource = dt;
+                                GridViewMyUsage.DataBind();
+                                GridViewMyUsage.Visible = true;
+                                ErrorMessageMyUsage.Visible = false;
+                            }
+                            else
+                            {
+                                GridViewMyUsage.Visible=false;
+                                Label1.Text = "No Data Found";
+                                Label1.Visible = true;
+                            }
                         }
                     }
                 }
@@ -66,6 +81,7 @@ namespace Telecom_Company_Team_9
                 {
                     ErrorMessageMyUsage.Text = "An error occurred: " + ex.Message;
                     ErrorMessageMyUsage.Visible = true;
+                    GridViewMyUsage.Visible = false;
                 }
             }
         }

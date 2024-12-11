@@ -12,6 +12,7 @@
             <PagerStyle CssClass="gridview-pager" />
             <RowStyle CssClass="gridview-row" />
         </asp:GridView>
+        <asp:Label ID="Label1" runat="server" Text="" CssClass="label2"></asp:Label>
         <asp:Label ID="ErrorMessageMyUsage" runat="server" Text="" CssClass="label"></asp:Label>
     </div>
 </asp:Content>
