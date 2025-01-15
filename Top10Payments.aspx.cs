@@ -45,7 +45,7 @@ namespace Telecom_Company_Team_9
 
             SqlCommand payment_func = new SqlCommand("Top_Successful_Payments", conn);
             payment_func.CommandType = CommandType.StoredProcedure;
-            payment_func.Parameters.Add(new SqlParameter("@mobile_num", mobile));
+            payment_func.Parameters.Add(new SqlParameter("@MobileNo", mobile));
             conn.Open();
 
             if (string.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))

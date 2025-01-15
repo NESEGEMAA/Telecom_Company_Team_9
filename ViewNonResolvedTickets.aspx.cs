@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.AccessControl;
 using System.Web.Configuration;
+using System.Web.Services.Description;
 
 namespace Telecom_Company_Team_9
 {
@@ -69,36 +71,49 @@ namespace Telecom_Company_Team_9
         private void DisplayTicketCount(Int64 nationalID)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-            SqlConnection conn = new SqlConnection(connStr);
 
-            SqlCommand count_func = new SqlCommand("Ticket_Account_Customer", conn);
-            count_func.CommandType = CommandType.StoredProcedure;
-            count_func.Parameters.Add(new SqlParameter("@NID", nationalID));
+            string data = "EXEC Ticket_Account_Customer @NationalID, @unresolved OUTPUT";
 
-            conn.Open();
-
-            object reader = count_func.ExecuteScalar();
-
-            if (reader != null && int.TryParse(reader.ToString(), out int ticketcount))
+            try
             {
-                if (ticketcount > 0)
+                using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    lblTicketCount2.Text = "Number of Unresolved Tickets:  " + ticketcount;
+                    using (SqlCommand cmd = new SqlCommand(data, conn))
+                    {
+                        // Set the command type to Text (for raw SQL)
+                        cmd.CommandType = CommandType.Text;
+
+                        // Add input parameter
+                        cmd.Parameters.AddWithValue("@NationalID", nationalID);
+
+                        // Add output parameter
+                        SqlParameter outputParam = new SqlParameter("@unresolved", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputParam);
+
+                        // Open the connection and execute
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        // Retrieve the output parameter value
+                        int ticketcount = int.Parse(outputParam.Value.ToString());
+
+                        if (ticketcount > 0)
+                            lblTicketCount2.Text = "Number of Unresolved Tickets:  " + ticketcount;
+                        else lblTicketCount2.Text = "No unresolved tickets found for the given National ID.";
+
+                        lblTicketCount2.Visible = true;
+                        lblTicketCount.Visible = false;
+                    }
                 }
-                else
-                {
-                    lblTicketCount2.Text = "No unresolved tickets found for the given National ID.";
-                }
-                lblTicketCount2.Visible = true;
-                lblTicketCount.Visible = false;
             }
-            else
+            catch (Exception ex)
             {
                 lblTicketCount.Text = "No data found for the given National ID.";
                 lblTicketCount.Visible = true;
             }
-
-            conn.Close();
         }
     }
 }

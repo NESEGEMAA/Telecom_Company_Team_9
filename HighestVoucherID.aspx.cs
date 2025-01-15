@@ -41,6 +41,9 @@ namespace Telecom_Company_Team_9
         // Reusable method to query and display voucher information
         private void DisplayVoucher(string mobile)
         {
+            LabelVoucher.Visible = false;
+            LabelVoucher2.Visible = false;
+
             if (string.IsNullOrEmpty(mobile) || mobile.Length != 11 || !AreDigitsOnly(mobile))
             {
                 LabelVoucher.Visible = true;
@@ -49,35 +52,51 @@ namespace Telecom_Company_Team_9
             }
 
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
+
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                SqlCommand voucherFunc = new SqlCommand("Account_Highest_Voucher", conn);
-                voucherFunc.CommandType = CommandType.StoredProcedure;
-                voucherFunc.Parameters.Add(new SqlParameter("@mobile_num", mobile));
-
-                try
+                using (SqlCommand voucherFunc = new SqlCommand("Account_Highest_Voucher", conn))
                 {
-                    conn.Open();
-                    SqlDataReader reader = voucherFunc.ExecuteReader();
+                    voucherFunc.CommandType = CommandType.StoredProcedure;
 
-                    if (reader.Read())
+                    // Input parameter
+                    voucherFunc.Parameters.Add(new SqlParameter("@MobileNo", mobile));
+
+                    // Output parameter
+                    SqlParameter outputParam = new SqlParameter("@Voucher_id", SqlDbType.Int)
                     {
-                        LabelVoucher2.Visible = true;
-                        LabelVoucher2.Text = "The ID of the highest value voucher is: " + reader["voucherID"];
-                    }
-                    else
+                        Direction = ParameterDirection.Output
+                    };
+                    voucherFunc.Parameters.Add(outputParam);
+
+                    try
                     {
-                        LabelVoucher2.Visible = true;
-                        LabelVoucher2.Text = "There are no Vouchers for this Mobile Number";
+                        conn.Open();
+                        voucherFunc.ExecuteNonQuery(); // Use ExecuteNonQuery for procedures with output parameters
+
+                        // Retrieve the output value
+                        var voucherID = outputParam.Value == DBNull.Value ? null : outputParam.Value.ToString();
+
+                        if (voucherID != null)
+                        {
+                            LabelVoucher2.Visible = true;
+                            LabelVoucher2.Text = "The ID of the highest value voucher is: " + voucherID;
+                        }
+                        else
+                        {
+                            LabelVoucher2.Visible = true;
+                            LabelVoucher2.Text = "There are no Vouchers for this Mobile Number";
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    LabelVoucher.Visible = true;
-                    LabelVoucher.Text = "An error occurred: " + ex.Message;
+                    catch (Exception ex)
+                    {
+                        LabelVoucher.Visible = true;
+                        LabelVoucher.Text = "An error occurred: " + ex.Message;
+                    }
                 }
             }
         }
+
 
         // Button click event to handle user input
         protected void ViewVoucher(object sender, EventArgs e)

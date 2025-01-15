@@ -26,7 +26,7 @@ namespace Telecom_Company_Team_9
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
             // SQL query to get data from the function
-            string data = "EXEC Initiate_balance_payment @mobile_num = @mobileNo, @amount = @inputAmount, @payment_method = @paymentMethod";
+            string data = "EXEC Initiate_balance_payment @MobileNo = @mobileNo, @amount = @inputAmount, @payment_method = @paymentMethod";
 
             try
             {

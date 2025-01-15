@@ -46,6 +46,7 @@ namespace Telecom_Company_Team_9
                 {
                     ErrorMessageMyCashBack.Text = "National ID must be a valid number.";
                     ErrorMessageMyCashBack.Visible = true;
+                    ErrorMessageMyCashBack2.Visible = false;
 
                     // Removing previously output table
                     GridViewMyCashBack.DataSource = null;

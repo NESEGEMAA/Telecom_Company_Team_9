@@ -30,12 +30,12 @@ namespace Telecom_Company_Team_9
                 try
                 {
                     con.Open();
-                    string query = "SELECT * FROM dbo.Consumption(@PlanName ,@StartDate, @EndDate)";
+                    string query = "SELECT * FROM dbo.Consumption(@Plan_name ,@start_date, @end_date)";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@PlanName", planName);
-                        cmd.Parameters.AddWithValue("@StartDate", StartDate);
-                        cmd.Parameters.AddWithValue("@EndDate", EndDate);
+                        cmd.Parameters.AddWithValue("@Plan_name", planName);
+                        cmd.Parameters.AddWithValue("@start_date", StartDate);
+                        cmd.Parameters.AddWithValue("@end_date", EndDate);
                         if (StartDate > EndDate)
                         {
                             ErrorMessageMyConsumption.Text = "Start date is greater than the end date";

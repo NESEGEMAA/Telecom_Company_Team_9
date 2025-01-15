@@ -28,7 +28,7 @@ namespace Telecom_Company_Team_9
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
             // SQL query to get data from the function
-            string data = "EXEC Payment_wallet_cashback @mobile_num = @mobileNo, @payment_id = @paymentID, @benefit_id = @benefitID";
+            string data = "EXEC Payment_wallet_cashback @MobileNo = @mobileNo, @payment_id = @paymentID, @benefit_id = @benefitID";
 
             // Get the mobile number from the input field
 

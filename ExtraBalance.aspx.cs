@@ -40,18 +40,12 @@ namespace Telecom_Company_Team_9
         //Part 5 Component 2
         protected void ViewExtraAmount(object sender, EventArgs e)
         {
+            // Retrieve the connection string
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-            SqlConnection conn = new SqlConnection(connStr);
-            String mob = mobileNumE.Text;
-            String plan_name = plannameE.Text;
+            String mob = mobileNumE.Text.Trim();
+            String plan_name = plannameE.Text.Trim();
 
-            SqlCommand Check_amount = new SqlCommand("Extra_plan_amount", conn);
-            Check_amount.CommandText = "SELECT dbo.Extra_plan_amount(@mobile_num, @plan_name)";
-            Check_amount.CommandType = CommandType.Text;
-            Check_amount.Parameters.Add(new SqlParameter("@mobile_num", mob));
-            Check_amount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
-
-            conn.Open();
+            // Validate input
             if (String.IsNullOrEmpty(mob) || String.IsNullOrEmpty(plan_name) || mob.Length != 11 || !AreDigitsOnly(mob))
             {
                 LabelExt2.Text = "Please insert a valid mobile number and plan name";
@@ -59,18 +53,48 @@ namespace Telecom_Company_Team_9
                 return;
             }
 
-            int amount = (int)Check_amount.ExecuteScalar();
+            // Database interaction
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                using (SqlCommand checkAmount = new SqlCommand("SELECT dbo.Extra_plan_amount(@mobile_num, @plan_name)", conn))
+                {
+                    checkAmount.CommandType = CommandType.Text;
+                    checkAmount.Parameters.Add(new SqlParameter("@mobile_num", mob));
+                    checkAmount.Parameters.Add(new SqlParameter("@plan_name", plan_name));
 
-            if (amount > 0)
-            {
-                LabelExt.Text = "The extra amount is: " + amount;
+                    try
+                    {
+                        conn.Open();
+
+                        // ExecuteScalar to retrieve the extra amount
+                        object result = checkAmount.ExecuteScalar();
+
+                        if (result != null && decimal.TryParse(result.ToString(), out decimal amount))
+                        {
+                            if (amount > 0)
+                            {
+                                LabelExt.Text = "The extra amount is: " + amount;
+                            }
+                            else
+                            {
+                                LabelExt.Text = "There is no extra balance for this account";
+                            }
+                        }
+                        else
+                        {
+                            LabelExt.Text = "An error occurred or no result found.";
+                        }
+
+                        LabelExt.Visible = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        LabelExt2.Text = "An error occurred: " + ex.Message;
+                        LabelExt2.Visible = true;
+                    }
+                }
             }
-            else
-            {
-                LabelExt.Text = "There is no extra balance for this account";
-            }
-            LabelExt.Visible = true;
-            conn.Close();
         }
+
     }
 }

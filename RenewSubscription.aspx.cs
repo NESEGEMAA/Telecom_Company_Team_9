@@ -29,7 +29,7 @@ namespace Telecom_Company_Team_9
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
 
             // SQL query to get data from the function
-            string data = "EXEC Initiate_plan_payment @mobile_num = @mobileNo, @amount = @inputAmount, @payment_method = @paymentMethod" +
+            string data = "EXEC Initiate_plan_payment @MobileNo = @mobileNo, @amount = @inputAmount, @payment_method = @paymentMethod" +
                 ", @plan_id = @planID";
 
             // Get the mobile number from the input field
@@ -37,9 +37,12 @@ namespace Telecom_Company_Team_9
             try
             {
                 String mobileNumber = InputMobileNumber.Text;
-                Int32 rechargeAmount = int.Parse(InputAmount.Text);
+                int rechargeAmount = int.Parse(InputAmount.Text);
                 string paymentMethod = paymentMethodDropDownList.SelectedValue;
-                Int32 planID = int.Parse(InputPlanId.Text);
+                int planID = int.Parse(InputPlanId.Text);
+
+                Response.Write(mobileNumber + " " + rechargeAmount + " " + paymentMethod + " " + planID);
+
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     using (SqlCommand cmd = new SqlCommand(data, conn))
@@ -69,7 +72,7 @@ namespace Telecom_Company_Team_9
             }
             catch (Exception ex)
             {
-                Message.Text = "An error occurred: Invalid Input";
+                Message.Text = "An error occurred: Invalid Input " + ex.Message;
                 Message.Visible = true;
             }
         }

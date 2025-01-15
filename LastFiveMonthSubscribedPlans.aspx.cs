@@ -36,7 +36,7 @@ namespace Telecom_Company_Team_9
             try
             {
                 // Get the mobile number from the input field
-                Int64 mobileNumber = Int64.Parse(LastFiveMonthsPlansInputNumber.Text);
+                string mobileNumber = LastFiveMonthsPlansInputNumber.Text;
 
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {

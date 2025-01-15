@@ -53,10 +53,10 @@ namespace Telecom_Company_Team_9
                     }
 
                     con.Open();
-                    string query = "SELECT * FROM dbo.Usage_Plan_CurrentMonth(@MobileNumber)";
+                    string query = "SELECT * FROM dbo.Usage_Plan_CurrentMonth(@MobileNo)";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@MobileNumber", MobileNumber);
+                        cmd.Parameters.AddWithValue("@MobileNo", MobileNumber);
                         using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                         {
                             DataTable dt = new DataTable();
