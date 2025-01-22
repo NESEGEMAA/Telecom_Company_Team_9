@@ -27,35 +27,46 @@ namespace Telecom_Company_Team_9
         {
             // Get the connection string from Web.config
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-
-            // SQL query to get data from the function
-            string data = "Exec Total_Points_Account @mobile_num = @mobileNo";
-
-            string mobileNo = InputNumber.Text;
+            string mobileNo = InputNumber.Text.Trim();
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    using (SqlCommand cmd = new SqlCommand(data, conn))
+                    using (SqlCommand cmd = new SqlCommand("Total_Points_Account", conn))
                     {
-                        cmd.Parameters.AddWithValue("@mobileNo", mobileNo);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Add input parameter
+                        cmd.Parameters.Add(new SqlParameter("@MobileNo", SqlDbType.VarChar, 15)
+                        {
+                            Value = mobileNo
+                        });
+
+                        // Add output parameter
+                        SqlParameter newPointsParam = new SqlParameter("@newPoints", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(newPointsParam);
 
                         // Open the connection
                         conn.Open();
 
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        DataTable dt = new DataTable();
-                        dt.Load(reader);
+                        // Execute the stored procedure
+                        cmd.ExecuteNonQuery();
 
-                        if (cmd.ExecuteNonQuery() != 0)
+                        // Retrieve the output parameter value with DBNull check
+                        int newPoints = newPointsParam.Value != DBNull.Value ? (int) newPointsParam.Value : 0;
+
+                        if (newPoints > 0)
                         {
-                            Message2.Text = "Wallet points updated";
+                            Message2.Text = $"Wallet points updated successfully. New Points: {newPoints}";
                             Message2.Visible = true;
                         }
                         else
                         {
-                            Message.Text = "Mobile Number Not Found";
+                            Message.Text = "No points found or Mobile Number not found.";
                             Message.Visible = true;
                         }
                     }

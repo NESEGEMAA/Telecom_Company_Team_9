@@ -23,7 +23,7 @@
                     <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
                     <asp:BoundField DataField="start_date" HeaderText="Start Date" SortExpression="start_date" />
                     <asp:BoundField DataField="balance" HeaderText="Balance" SortExpression="balance" />
-                    <asp:BoundField DataField="points" HeaderText="Points" SortExpression="points" />
+                    <asp:BoundField DataField="point" HeaderText="Point" SortExpression="point" />
                 </Columns>
 
                 <FooterStyle CssClass="gridview-footer" />

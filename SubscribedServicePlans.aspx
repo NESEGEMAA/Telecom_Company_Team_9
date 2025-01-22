@@ -16,7 +16,7 @@
                 <asp:BoundField DataField="account_type" HeaderText="account_type" SortExpression="account_type" />
                 <asp:BoundField DataField="start_date" HeaderText="start_date" SortExpression="start_date" />
                 <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
-                <asp:BoundField DataField="points" HeaderText="points" SortExpression="points" />
+                <asp:BoundField DataField="point" HeaderText="point" SortExpression="point" />
                 <asp:BoundField DataField="nationalID" HeaderText="nationalID" SortExpression="nationalID" />
                 <asp:BoundField DataField="planID" HeaderText="planID" InsertVisible="False" ReadOnly="True" SortExpression="planID" />
                 <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />

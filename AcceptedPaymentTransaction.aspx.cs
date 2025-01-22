@@ -30,28 +30,21 @@ namespace Telecom_Company_Team_9
             PaymentsNumLabel.Text = "Number of Payments: ";
             SumOfPointsLabel.Text = "Sum of points over payments: ";
         }
-
-
         protected void RetrievePaymentsButton_Click(object sender, EventArgs e)
         {
-            PaymentsNumLabel.Text = "Number of Payments: ";
-            SumOfPointsLabel.Text = "Sum of points over payments: ";
+            PaymentsNumLabel.Visible = false;
+            SumOfPointsLabel.Visible = false;
+            Message.Visible = false;
 
-            // Get the connection string from Web.config
+            // Get the connection string
             string connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
-
-            // SQL query to get data from the function
-            string data = "Exec Account_Payment_Points @mobile_num = @mobileNo";
-
             string mobileNo = InputNumber.Text.Trim();
 
             // Validate input
-            if (string.IsNullOrEmpty(mobileNo) || !long.TryParse(mobileNo, out _))
+            if (string.IsNullOrEmpty(mobileNo) || mobileNo.Length != 11 || !long.TryParse(mobileNo, out _))
             {
-                Message.Text = "Invalid mobile number. Please enter a valid number.";
+                Message.Text = "Invalid mobile number. Please enter a valid 11-digit number.";
                 Message.Visible = true;
-                PaymentsNumLabel.Visible = false;
-                SumOfPointsLabel.Visible = false;
                 return;
             }
 
@@ -59,39 +52,38 @@ namespace Telecom_Company_Team_9
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    using (SqlCommand cmd = new SqlCommand(data, conn))
+                    using (SqlCommand cmd = new SqlCommand("Account_Payment_Points", conn))
                     {
-                        cmd.Parameters.AddWithValue("@mobileNo", mobileNo);
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                        // Open the connection
+                        // Add input parameter
+                        cmd.Parameters.Add(new SqlParameter("@MobileNo", mobileNo));
+
+                        // Add output parameters
+                        SqlParameter totalTransactionsParam = new SqlParameter("@TotalTransactions", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        SqlParameter totalPointsParam = new SqlParameter("@TotalPoints", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(totalTransactionsParam);
+                        cmd.Parameters.Add(totalPointsParam);
+
+                        // Open connection and execute
                         conn.Open();
+                        cmd.ExecuteNonQuery();
 
-                        SqlDataReader reader = cmd.ExecuteReader();
+                        // Retrieve output values
+                        int totalTransactions = totalTransactionsParam.Value != DBNull.Value ? (int)totalTransactionsParam.Value : 0;
+                        int totalPoints = totalPointsParam.Value != DBNull.Value ? (int)totalPointsParam.Value : 0;
 
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                // Access each column value by alias
-                                string paymentCount = reader.IsDBNull(0) ? "N/A" : reader[0].ToString(); // First column - count of paymentID
-                                string totalPoints = reader.IsDBNull(1) ? "N/A" : reader[1].ToString();   // Second column - sum of pointsAmount
-
-                                // Display the values manually (using Labels or any other control)
-                                PaymentsNumLabel.Text += paymentCount;
-                                SumOfPointsLabel.Text += totalPoints;
-                                PaymentsNumLabel.Visible = true;
-                                SumOfPointsLabel.Visible = true;
-                            }
-
-                            Message.Visible = false;
-                        }
-                        else
-                        {
-                            Message.Text = "No payments available to display.";
-                            Message.Visible = true;
-                            PaymentsNumLabel.Visible = false;
-                            SumOfPointsLabel.Visible = false;
-                        }
+                        // Update labels
+                        PaymentsNumLabel.Text = "Number of Payments: " + totalTransactions;
+                        SumOfPointsLabel.Text = "Sum of points over payments: " + totalPoints;
+                        PaymentsNumLabel.Visible = true;
+                        SumOfPointsLabel.Visible = true;
                     }
                 }
             }
@@ -99,18 +91,12 @@ namespace Telecom_Company_Team_9
             {
                 Message.Text = "A database error occurred: " + sqlEx.Message;
                 Message.Visible = true;
-                PaymentsNumLabel.Visible = false;
-                SumOfPointsLabel.Visible = false;
             }
             catch (Exception ex)
             {
                 Message.Text = "An unexpected error occurred: " + ex.Message;
                 Message.Visible = true;
-                PaymentsNumLabel.Visible = false;
-                SumOfPointsLabel.Visible = false;
             }
         }
-
-
     }
 }

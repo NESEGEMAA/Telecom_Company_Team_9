@@ -21,7 +21,7 @@ namespace Telecom_Company_Team_9
             Button7.Visible = true;
         }
 
-        protected void ExecuteStoredProcedure(Int64 mobile, int PlanID)
+        protected void ExecuteStoredProcedure(string mobile, int PlanID)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ToString();
             using (SqlConnection conn = new SqlConnection(connStr))
@@ -33,8 +33,8 @@ namespace Telecom_Company_Team_9
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@mobile_num", mobile);
-                        cmd.Parameters.AddWithValue("@plan_id", PlanID);
+                        cmd.Parameters.AddWithValue("@MobileNo", mobile);
+                        cmd.Parameters.AddWithValue("@planID", PlanID);
                         if (cmd.ExecuteNonQuery() != 0)
                             Message2.Text = "Benefits Deleted Successfully!";
                         else
@@ -55,9 +55,8 @@ namespace Telecom_Company_Team_9
             try
             {
                 String mobile = TextBox2.Text;
-                int mobileTest = int.Parse(mobile);
                 int planID = int.Parse(TextBox3.Text);
-                ExecuteStoredProcedure(mobileTest, planID);
+                ExecuteStoredProcedure(mobile, planID);
             }
             catch (Exception ex)
             {
